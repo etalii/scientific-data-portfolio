@@ -99,7 +99,7 @@ Analysis of epidemiological datasets using reproducible statistical workflows.
 
 Repository:
 
-`disease-ecology-analysis`
+`argentina-dengue-analysis`
 
 ---
 
