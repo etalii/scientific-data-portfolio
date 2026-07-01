@@ -1,0 +1,23 @@
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# Quarto
+.quarto/
+
+# VS Code
+.vscode/
+
+# Output files
+*.html
+*.pdf
+
+# Temporary files
+*.tmp
