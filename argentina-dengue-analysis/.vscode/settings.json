@@ -1,0 +1,16 @@
+{
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnSave": true,
+    "r.alwaysUseActiveTerminal": true,
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "editor.tabSize": 2,
+    "editor.rulers": [
+        80
+    ],
+    "yaml.format.enable": true,
+    "files.associations": {
+        "*.yml": "yaml"
+    },
+    "editor.renderWhitespace": "selection"
+}

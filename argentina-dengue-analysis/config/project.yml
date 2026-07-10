@@ -1,0 +1,27 @@
+project:
+
+  name: "Argentina Dengue Analysis"
+
+  version: "0.1"
+
+dataset:
+
+  id: "salud-vigilancia-enfermedades-por-virus-dengue-zika"
+
+  preferred_format: "CSV"
+
+  overwrite_existing: false
+
+directories:
+
+  raw_data: "data/raw"
+
+  processed_data: "data/processed"
+
+  metadata: "data/metadata"
+
+logs:
+
+  download: "data/metadata/download_log.csv"
+
+  validation: "data/metadata/validation_log.csv"

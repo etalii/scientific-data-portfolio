@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "REditorSupport.r",
+    "quarto.quarto",
+    "ms-python.python",
+    "GitHub.vscode-pull-request-github",
+    "eamodio.gitlens",
+    "redhat.vscode-yaml",
+    "yzhang.markdown-all-in-one"
+  ]
+}

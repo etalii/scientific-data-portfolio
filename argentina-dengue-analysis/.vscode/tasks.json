@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run metadata pipeline",
+      "type": "shell",
+      "command": "Rscript scripts/acquisition/00_fetch_metadata.R",
+      "group": "build"
+    }
+  ]
+}
