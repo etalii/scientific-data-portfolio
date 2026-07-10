@@ -2,6 +2,21 @@
 .Rhistory
 .RData
 .Rproj.user/
+.Ruserdata
+
+# renv
+renv/library/
+renv/staging/
+
+# Data
+data/raw/*
+!data/raw/.gitkeep
+
+data/processed/*
+!data/processed/.gitkeep
+
+outputs/*
+!outputs/.gitkeep
 
 # macOS
 .DS_Store
