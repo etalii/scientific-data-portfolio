@@ -1,0 +1,35 @@
+Package: argentinaDengueAnalysis
+Title: Argentina Dengue Surveillance Analysis
+Version: 0.1.0
+Authors@R:
+    person(
+        "Andrés Lemos",
+        "",
+        email = "andlefa@gmail.com",
+        role = c("aut", "cre")
+    )
+Description:
+    Reproducible data science pipeline for the acquisition,
+    validation, processing and exploratory analysis of official
+    dengue surveillance data from Argentina.
+
+License: MIT + file LICENSE
+
+Encoding: UTF-8
+
+LazyData: true
+
+Depends:
+    R (>= 4.3)
+
+Imports:
+    yaml,
+    httr2,
+    jsonlite,
+    dplyr,
+    readr,
+    stringr,
+    purrr,
+    janitor,
+    lubridate,
+    tibble
