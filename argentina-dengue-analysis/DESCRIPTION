@@ -1,7 +1,6 @@
 Package: argentinaDengueAnalysis
 Title: Argentina Dengue Surveillance Analysis
 Version: 0.1.0
-
 Authors@R:
     person(
         "Andrés",
@@ -9,7 +8,6 @@ Authors@R:
         email = "andlefa@gmail.com",
         role = c("aut", "cre")
     )
-
 Description:
     Reproducible data science project for the acquisition,
     validation, processing, exploratory analysis and
@@ -18,16 +16,11 @@ Description:
     The project emphasizes reproducibility, transparent
     data provenance and good practices in statistical
     programming.
-
 License: MIT + file LICENSE
-
 Encoding: UTF-8
-
 Language: en
-
 Depends:
     R (>= 4.1)
-
 Imports:
     yaml,
     httr2,
@@ -39,11 +32,8 @@ Imports:
     janitor,
     lubridate,
     tibble
-
 URL:
     https://github.com/andlefa/scientific-data-portfolio
-
 BugReports:
     https://github.com/andlefa/scientific-data-portfolio/issues
-
 Roxygen: list(markdown = TRUE)

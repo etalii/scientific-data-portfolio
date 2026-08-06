@@ -49,7 +49,7 @@ The project aims to:
 
 **Source**
 
-Official Argentine Health minister´s open data portal (datos.org.ar)
+Official Argentine Ministry of Health open data portal (datos.gob.ar)
 
 Dataset:
 
@@ -167,22 +167,24 @@ This project follows reproducible research principles.
 
 **Current stage**
 
-🟢 Planning
+🟡 Project foundation complete; data pipeline implementation pending
 
 Completed:
 
 * Project definition
 * Analysis protocol
 * Repository organization
+* Dataset assessment (draft)
+* Reproducible R environment with renv
+* Environment validation utility
+* Pipeline architecture
 
 Next milestones:
 
-* Dataset assessment
 * Data acquisition
-* Data cleaning
-* Exploratory data analysis
-* Statistical analysis
-* Quarto report
+* Download validation and data processing
+* Data cleaning and exploratory analysis
+* Visualizations and reproducible Quarto report
 
 ---
 
@@ -195,6 +197,7 @@ The repository contains complementary documentation describing the project.
 | `README.md`                  | General project overview                     |
 | `docs/analysis_protocol.md`  | Analytical methodology                       |
 | `docs/dataset_assessment.md` | Dataset evaluation                           |
+| `docs/resources_catalog_contract.md` | Internal resource catalog contract            |
 | `docs/project_log.md`        | Chronological record of analytical decisions |
 
 ---

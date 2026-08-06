@@ -4,13 +4,21 @@ project:
 
   version: "0.1"
 
+api:
+
+  package_show_url: "https://datos.gob.ar/api/3/action/package_show"
+
 dataset:
 
-  id: "salud-vigilancia-enfermedades-por-virus-dengue-zika"
+  id: "vigilancia-de-las-enfermedades-por-virus-del-dengue-y-zika"
 
   preferred_format: "CSV"
 
   overwrite_existing: false
+
+selection:
+
+  required_resource_state: "active"
 
 directories:
 
@@ -19,6 +27,10 @@ directories:
   processed_data: "data/processed"
 
   metadata: "data/metadata"
+
+artifacts:
+
+  resources_catalog: "data/metadata/resources_catalog.csv"
 
 logs:
 

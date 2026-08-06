@@ -57,6 +57,8 @@ Resource catalogue
 
 resources_catalog.csv
 
+Contract: resources_catalog v1.0.0
+
 ↓
 
 Download

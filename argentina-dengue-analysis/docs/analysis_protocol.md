@@ -95,7 +95,7 @@ These topics may be incorporated into future versions of the project.
 
 ## Data source
 
-Official Argentine Open Data Portal: Datos Argentina (datos.org.ar)
+Official Argentine Open Data Portal: Datos Argentina (datos.gob.ar)
 
 Dataset: "Vigilancia de las enfermedades por virus del Dengue y Zika"
 

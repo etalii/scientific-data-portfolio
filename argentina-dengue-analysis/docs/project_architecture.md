@@ -1,4 +1,4 @@
-R# Project architecture
+# Project architecture
 
 ## Purpose
 
@@ -58,6 +58,10 @@ Reports and Figures
 
 Each script has a single responsibility, following a modular pipeline design.
 
+The catalog is a versioned internal contract. Its schema, data types, source
+mapping and selection policy are defined in
+`docs/resources_catalog_contract.md`.
+
 ---
 
 # Directory structure
@@ -71,6 +75,13 @@ outputs/
 references/
 reports/
 scripts/
+    acquisition/
+    validation/
+    processing/
+    cleaning/
+    analysis/
+    visualization/
+    utils/
 ```
 
 Each directory has a clearly defined purpose to improve maintainability and reproducibility.
@@ -89,6 +100,10 @@ This file stores project parameters only.
 
 Dataset metadata are never hardcoded and are always retrieved from the CKAN API.
 
+For metadata acquisition, the configuration defines the CKAN package endpoint,
+the dataset identifier, the resource-selection criteria and the path of the
+catalog artifact. Scripts must not hardcode those values.
+
 ---
 
 # Metadata management
@@ -102,6 +117,11 @@ data/metadata/resources_catalog.csv
 ```
 
 This file serves as the input for the download pipeline.
+
+The catalog is an internal, generated artifact rather than a copy of the CKAN
+response. It records every discovered resource and explicitly identifies the
+resources selected for download. The contract is versioned independently so
+schema changes can be managed explicitly.
 
 ---
 
