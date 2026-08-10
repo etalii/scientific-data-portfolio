@@ -198,6 +198,7 @@ The repository contains complementary documentation describing the project.
 | `docs/analysis_protocol.md`  | Analytical methodology                       |
 | `docs/dataset_assessment.md` | Dataset evaluation                           |
 | `docs/resources_catalog_contract.md` | Internal resource catalog contract            |
+| `docs/download_log_contract.md` | Operational download log contract              |
 | `docs/project_log.md`        | Chronological record of analytical decisions |
 
 ---

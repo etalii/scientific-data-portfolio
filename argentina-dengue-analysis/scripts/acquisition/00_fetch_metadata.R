@@ -257,26 +257,48 @@ build_local_filename <- function(resource_id, download_url, resource_format) {
   sprintf("%s.%s", resource_id, format_suffix)
 }
 
-#' Determine whether a resource meets the configured selection policy.
+#' Determine whether a resource meets the configured download-eligibility policy.
 #'
 #' @param resource_format Normalized source resource format.
 #' @param source_resource_state Nullable normalized source resource state.
 #' @param config Acquisition-specific configuration values.
-#' @return A list with selected and selection_reason values.
-select_resource <- function(resource_format, source_resource_state, config) {
+#' @return A list with eligible_for_download and eligibility_reason values.
+determine_download_eligibility <- function(
+  resource_format,
+  source_resource_state,
+  config
+) {
   if (is.na(source_resource_state)) {
-    return(list(selected = FALSE, selection_reason = "excluded_missing_source_state"))
+    return(
+      list(
+        eligible_for_download = FALSE,
+        eligibility_reason = "ineligible_missing_source_state"
+      )
+    )
   }
 
   if (!identical(source_resource_state, config$required_resource_state)) {
-    return(list(selected = FALSE, selection_reason = "excluded_non_active_source_state"))
+    return(
+      list(
+        eligible_for_download = FALSE,
+        eligibility_reason = "ineligible_non_active_source_state"
+      )
+    )
   }
 
   if (!identical(resource_format, config$preferred_format)) {
-    return(list(selected = FALSE, selection_reason = "excluded_non_preferred_format"))
+    return(
+      list(
+        eligible_for_download = FALSE,
+        eligibility_reason = "ineligible_non_preferred_format"
+      )
+    )
   }
 
-  list(selected = TRUE, selection_reason = "selected_preferred_format")
+  list(
+    eligible_for_download = TRUE,
+    eligibility_reason = "eligible_preferred_format"
+  )
 }
 
 #' Transform one CKAN resource into one resources_catalog contract row.
@@ -306,7 +328,7 @@ build_catalog_row <- function(resource, resource_index, config) {
     source_resource_state <- tolower(source_resource_state)
   }
 
-  selection <- select_resource(
+  eligibility <- determine_download_eligibility(
     resource_format = resource_format,
     source_resource_state = source_resource_state,
     config = config
@@ -322,8 +344,8 @@ build_catalog_row <- function(resource, resource_index, config) {
     source_created_at = get_optional_resource_field(resource, "created"),
     source_last_modified_at = get_optional_resource_field(resource, "last_modified"),
     source_resource_state = source_resource_state,
-    selected = selection$selected,
-    selection_reason = selection$selection_reason
+    eligible_for_download = eligibility$eligible_for_download,
+    eligibility_reason = eligibility$eligibility_reason
   )
 }
 

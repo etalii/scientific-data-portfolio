@@ -65,7 +65,7 @@ download_log.csv
         ↓
 02_validate_downloads.R
         ↓
-validation_log.csv
+validation_snapshot.csv
         ↓
 03_merge_raw_files.R
         ↓
@@ -104,6 +104,15 @@ Preferred source:
 https://datos.gob.ar/
 
 Raw files are immutable.
+
+`data/raw/` must never expose an incomplete or unverified file under the final
+name defined by `local_filename`. Hidden publication temporaries are permitted
+only during an atomic publish operation within the same filesystem. They are
+not raw datasets and must never be consumed by downstream stages.
+
+Only one acquisition or validation execution may run in a workspace at a time.
+The configured acquisition-validation lock protects raw-data state and its
+associated metadata.
 
 Never edit files inside:
 

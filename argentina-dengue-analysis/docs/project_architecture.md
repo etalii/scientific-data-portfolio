@@ -41,7 +41,7 @@ data/raw/
 02_validate_downloads.R
     │
     ▼
-validation_log.csv
+validation_snapshot.csv
     │
     ▼
 03_merge_raw_files.R
@@ -59,7 +59,7 @@ Reports and Figures
 Each script has a single responsibility, following a modular pipeline design.
 
 The catalog is a versioned internal contract. Its schema, data types, source
-mapping and selection policy are defined in
+mapping and download-eligibility policy are defined in
 `docs/resources_catalog_contract.md`.
 
 ---
@@ -123,6 +123,24 @@ response. It records every discovered resource and explicitly identifies the
 resources selected for download. The contract is versioned independently so
 schema changes can be managed explicitly.
 
+The catalog is versioned as provenance metadata. The append-only operational
+download log is defined separately in `docs/download_log_contract.md` and is
+excluded from Git.
+
+Acquisition and validation are mutually exclusive per workspace. A configured,
+Git-ignored acquisition-validation lock directory in `data/metadata/` is
+acquired atomically before either stage observes or changes raw-data state and
+associated metadata. The acquisition stage also uses external staging, a verified hidden
+publication temporary inside `data/raw/` when required for atomic publication,
+and an atomically updated operational log.
+
+Validation produces `data/metadata/validation_snapshot.csv`, a current-state
+snapshot rather than a historical event log. It reports physical integrity,
+provenance and basic readability without deciding which technically valid
+resources are epidemiologically canonical. A later canonicalization stage will
+make that selection explicitly before merging.
+Its contract is defined in `docs/validation_snapshot_contract.md`.
+
 ---
 
 # Data management
@@ -132,6 +150,13 @@ Raw datasets remain immutable.
 ```
 data/raw/
 ```
+
+The raw-data directory must never expose an incomplete or unverified file under
+its final catalog filename. Downloads are staged outside this directory. When
+an atomic cross-directory move is unavailable, the acquisition stage may use a
+hidden, project-owned publication temporary inside `data/raw/`, verify it, and
+atomically rename it to the final filename. These temporaries are not raw data
+and are excluded from every downstream stage.
 
 Processed datasets are generated separately.
 

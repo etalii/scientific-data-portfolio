@@ -15,6 +15,11 @@ data/raw/*
 data/processed/*
 !data/processed/.gitkeep
 
+# Operational metadata logs
+data/metadata/download_log.csv
+data/metadata/validation_snapshot.csv
+data/metadata/.argentina_dengue_acquisition_validation.lock/
+
 outputs/*
 !outputs/.gitkeep
 

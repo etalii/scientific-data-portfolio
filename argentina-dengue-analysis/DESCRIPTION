@@ -31,6 +31,7 @@ Imports:
     purrr,
     janitor,
     lubridate,
+    openssl,
     tibble
 URL:
     https://github.com/andlefa/scientific-data-portfolio

@@ -57,7 +57,7 @@ Resource catalogue
 
 resources_catalog.csv
 
-Contract: resources_catalog v1.0.0
+Contract: resources_catalog v2.0.0
 
 ↓
 
@@ -67,9 +67,21 @@ Download
 
 ↓
 
+Operational log
+
+download_log.csv (download_log v1.0.0)
+
+↓
+
 Validation
 
 02_validate_downloads.R
+
+↓
+
+Validation snapshot
+
+validation_snapshot.csv (validation_snapshot v1.0.0)
 
 ↓
 

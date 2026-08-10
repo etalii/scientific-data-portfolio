@@ -14,8 +14,6 @@ dataset:
 
   preferred_format: "CSV"
 
-  overwrite_existing: false
-
 selection:
 
   required_resource_state: "active"
@@ -28,12 +26,24 @@ directories:
 
   metadata: "data/metadata"
 
+  download_staging: "outputs/download_staging"
+
 artifacts:
 
   resources_catalog: "data/metadata/resources_catalog.csv"
+
+  acquisition_validation_lock: "data/metadata/.argentina_dengue_acquisition_validation.lock"
+
+  validation_snapshot: "data/metadata/validation_snapshot.csv"
 
 logs:
 
   download: "data/metadata/download_log.csv"
 
-  validation: "data/metadata/validation_log.csv"
+download:
+
+  timeout_seconds: 60
+
+  max_retries: 3
+
+  retry_backoff_seconds: 2
