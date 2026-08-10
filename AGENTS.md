@@ -94,7 +94,8 @@ Small commits.
 
 Meaningful commit messages.
 
-Never commit generated data.
+Never commit generated data, except provenance metadata explicitly designated
+for version control by a project contract.
 
 Never commit temporary files.
 
