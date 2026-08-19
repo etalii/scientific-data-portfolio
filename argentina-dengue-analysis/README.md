@@ -167,7 +167,7 @@ This project follows reproducible research principles.
 
 **Current stage**
 
-🟡 Acquisition through deterministic primary analysis-table derivation complete
+🟡 Acquisition through reproducible descriptive portfolio visualization complete
 
 Completed:
 
@@ -184,12 +184,12 @@ Completed:
 * Reproducible harmonized-quality assessment without corrective transformations
 * Explicit, row-preserving primary dengue analysis scope
 * Reconciled weekly, provincial, provincial-weekly and age-group tables of published counts
+* Four reproducible descriptive portfolio figures based only on the C.9 tables
 
 Next milestones:
 
-* Visualizations and descriptive analytical narrative
 * Data cleaning and exploratory analysis
-* Visualizations and reproducible Quarto report
+* Descriptive analytical narrative and reproducible Quarto report
 
 ---
 
@@ -209,6 +209,7 @@ The repository contains complementary documentation describing the project.
 | `docs/harmonized_quality_assessment_contract.md` | Harmonized-quality assessment contract |
 | `docs/analysis_scope_selection_contract.md` | Primary analysis-scope selection contract |
 | `docs/analysis_table_derivation_contract.md` | Published-count analysis-table derivation contract |
+| `docs/portfolio_descriptive_visualization_contract.md` | Curated descriptive portfolio-figure contract |
 | `docs/download_log_contract.md` | Operational download log contract              |
 | `docs/project_log.md`        | Chronological record of analytical decisions |
 

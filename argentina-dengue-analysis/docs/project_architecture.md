@@ -77,7 +77,10 @@ analysis_weekly_province.csv
 analysis_age_group_summary.csv
     │
     ▼
-Future policy-controlled visualization and analysis
+08_generate_figures.R
+    │
+    ▼
+Four curated descriptive portfolio figures
     │
     ▼
 Reports and Figures
@@ -203,6 +206,12 @@ weekly, provincial, provincial-weekly, and source-age-group summaries. It does
 not resolve quality findings, deduplicate observations, or infer individual
 cases. Its contract is defined in `docs/analysis_table_derivation_contract.md`.
 
+Descriptive visualization reads only those four C.9 tables and publishes four
+curated PNG portfolio figures. It preserves their published-count semantics and
+does not read raw data, repair quality findings, complete absent observations,
+or make epidemiological inferences. Its contract is defined in
+`docs/portfolio_descriptive_visualization_contract.md`.
+
 ---
 
 # Data management
@@ -225,6 +234,12 @@ Processed datasets are generated separately.
 ```
 data/processed/
 ```
+
+Regenerable intermediate data and metadata snapshots are ignored by Git. The
+four final C.10 portfolio figures in `figures/` are a deliberate exception:
+they are versioned deliverables and must be reproducible from their versioned
+producer, configuration, and C.9 inputs. Exploratory graphics and controlled
+temporary graphics are not deliverables and must not be committed.
 
 Logs documenting downloads and validation are stored in:
 

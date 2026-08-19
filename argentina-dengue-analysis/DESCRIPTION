@@ -26,6 +26,7 @@ Imports:
     httr2,
     jsonlite,
     dplyr,
+    ggplot2,
     readr,
     stringr,
     purrr,

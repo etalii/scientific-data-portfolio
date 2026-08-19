@@ -139,7 +139,17 @@ analysis_age_group_summary.csv
 
 ↓
 
-Future policy-controlled visualization and analysis
+Descriptive portfolio visualization
+
+08_generate_figures.R
+
+↓
+
+dengue_2024_weekly_national.png
+dengue_2024_province_ranking.png
+dengue_2024_top5_provinces_weekly.png
+dengue_2024_age_group_composition.png
+(portfolio_descriptive_visualization v1.0.0)
 
 data/processed
 

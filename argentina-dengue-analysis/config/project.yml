@@ -24,6 +24,8 @@ directories:
 
   processed_data: "data/processed"
 
+  figures: "figures"
+
   metadata: "data/metadata"
 
   download_staging: "outputs/download_staging"
@@ -51,6 +53,14 @@ artifacts:
   analysis_weekly_province: "data/processed/analysis_weekly_province.csv"
 
   analysis_age_group_summary: "data/processed/analysis_age_group_summary.csv"
+
+  dengue_2024_weekly_national_figure: "figures/dengue_2024_weekly_national.png"
+
+  dengue_2024_province_ranking_figure: "figures/dengue_2024_province_ranking.png"
+
+  dengue_2024_top5_provinces_weekly_figure: "figures/dengue_2024_top5_provinces_weekly.png"
+
+  dengue_2024_age_group_composition_figure: "figures/dengue_2024_age_group_composition.png"
 
 logs:
 
@@ -91,3 +101,6 @@ analysis_scope:
       - 2024
     events:
       - "Dengue"
+
+visualization:
+  png_resolution_dpi: 150
