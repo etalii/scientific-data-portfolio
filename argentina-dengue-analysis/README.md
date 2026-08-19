@@ -167,7 +167,7 @@ This project follows reproducible research principles.
 
 **Current stage**
 
-🟡 Acquisition, validation, canonical selection, structural harmonization and quality assessment complete
+🟡 Acquisition, validation, canonical selection, structural harmonization, quality assessment and primary-scope selection complete
 
 Completed:
 
@@ -182,10 +182,11 @@ Completed:
 * Canonical resource selection
 * Conservative structural harmonization with row-level provenance
 * Reproducible harmonized-quality assessment without corrective transformations
+* Explicit, row-preserving primary dengue analysis scope
 
 Next milestones:
 
-* Policy for geography, age groups, event semantics and consolidation
+* Policy-controlled aggregation, geography and age-group analysis
 * Data cleaning and exploratory analysis
 * Visualizations and reproducible Quarto report
 
@@ -205,6 +206,7 @@ The repository contains complementary documentation describing the project.
 | `docs/canonical_resource_selection_contract.md` | Canonical resource-selection contract |
 | `docs/structural_harmonization_contract.md` | Structural harmonization contract |
 | `docs/harmonized_quality_assessment_contract.md` | Harmonized-quality assessment contract |
+| `docs/analysis_scope_selection_contract.md` | Primary analysis-scope selection contract |
 | `docs/download_log_contract.md` | Operational download log contract              |
 | `docs/project_log.md`        | Chronological record of analytical decisions |
 

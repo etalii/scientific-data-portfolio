@@ -62,7 +62,13 @@ canonical_resources_structural.csv
 harmonized_quality_snapshot.csv
     │
     ▼
-Future policy-controlled consolidation and analysis
+06_select_analysis_scope.R
+    │
+    ▼
+primary_dengue_analysis_rows.csv
+    │
+    ▼
+Future policy-controlled aggregation and analysis
     │
     ▼
 Reports and Figures
@@ -174,6 +180,13 @@ deterministic, Git-ignored metadata snapshot of reproducible quality findings.
 It is an assessment stage, not a cleaning or consolidation stage: it never
 changes rows, values, counts, source provenance, or raw files. Its contract is
 defined in `docs/harmonized_quality_assessment_contract.md`.
+
+Analysis-scope selection reads the structural artifact and explicit scope
+criteria from the project configuration. It publishes a deterministic,
+row-preserving analytical subset. It does not consume quality findings to
+alter selection, deduplicate records, or aggregate counts; quality assessment
+remains a separate source of evidence for subsequent analytical decisions. Its
+contract is defined in `docs/analysis_scope_selection_contract.md`.
 
 ---
 

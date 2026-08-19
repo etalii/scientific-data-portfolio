@@ -42,6 +42,8 @@ artifacts:
 
   harmonized_quality_snapshot: "data/metadata/harmonized_quality_snapshot.csv"
 
+  primary_dengue_analysis_rows: "data/processed/primary_dengue_analysis_rows.csv"
+
 logs:
 
   download: "data/metadata/download_log.csv"
@@ -73,3 +75,11 @@ harmonization:
   body_encodings:
     - "UTF-8"
     - "latin1"
+
+analysis_scope:
+  primary:
+    scope_id: "primary_dengue_2024"
+    source_years:
+      - 2024
+    events:
+      - "Dengue"

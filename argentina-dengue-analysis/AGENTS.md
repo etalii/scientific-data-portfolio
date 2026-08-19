@@ -79,7 +79,11 @@ canonical_resources_structural.csv
         ↓
 harmonized_quality_snapshot.csv
         ↓
-future policy-controlled consolidation and analysis
+06_select_analysis_scope.R
+        ↓
+primary_dengue_analysis_rows.csv
+        ↓
+future policy-controlled aggregation and analysis
 ```
 
 Scripts should never duplicate responsibilities.
@@ -139,6 +143,11 @@ reproducible quality findings without correcting, deleting, consolidating,
 filtering, or otherwise changing its observations. A quality finding is not an
 execution error: severe findings identify properties that later stages must not
 resolve automatically without an approved policy.
+
+Analysis-scope selection consumes structural rows and an explicit methodological
+scope from configuration. It preserves every selected published row and its
+source provenance; it neither resolves quality findings nor aggregates or
+changes source values.
 
 Never edit files inside:
 

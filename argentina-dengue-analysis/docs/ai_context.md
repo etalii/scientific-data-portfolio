@@ -115,7 +115,17 @@ harmonized_quality_snapshot.csv (harmonized_quality_assessment v1.0.0)
 
 ↓
 
-Future policy-controlled consolidation and analysis
+Analysis scope selection
+
+06_select_analysis_scope.R
+
+↓
+
+primary_dengue_analysis_rows.csv (analysis_scope_selection v1.0.0)
+
+↓
+
+Future policy-controlled aggregation and analysis
 
 data/processed
 
