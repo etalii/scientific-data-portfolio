@@ -9,13 +9,12 @@ Authors@R:
         role = c("aut", "cre")
     )
 Description:
-    Reproducible data science project for the acquisition,
-    validation, processing, exploratory analysis and
-    visualization of official dengue surveillance data
-    published by the Argentine Ministry of Health.
-    The project emphasizes reproducibility, transparent
-    data provenance and good practices in statistical
-    programming.
+    Reproducible R workflow for acquiring, validating,
+    canonically selecting, structurally harmonizing, and
+    descriptively visualizing official dengue surveillance data
+    published by the Argentine Ministry of Health. The project
+    emphasizes contract-first design, transparent provenance,
+    and explicit analytical scope.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Language: en

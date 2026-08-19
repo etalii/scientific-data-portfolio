@@ -163,6 +163,9 @@ Never overwrite official datasets.
 
 Every execution must produce logs.
 
+The four final figures are versioned portfolio deliverables. Regenerable
+intermediate data and operational metadata remain ignored by Git.
+
 ---
 
 ## Coding standards

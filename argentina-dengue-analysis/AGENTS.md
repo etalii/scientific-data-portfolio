@@ -87,7 +87,9 @@ primary_dengue_analysis_rows.csv
         ↓
 analysis tables
         ↓
-future policy-controlled visualization and analysis
+08_generate_figures.R
+        ↓
+four curated descriptive portfolio figures
 ```
 
 Scripts should never duplicate responsibilities.
@@ -158,6 +160,11 @@ deterministic aggregates of published rows and published counts. It does not
 deduplicate, correct, filter, or interpret the aggregates as individual people
 or cases.
 
+Descriptive visualization consumes only the four analysis-table artifacts. It
+creates the versioned portfolio figures without reading raw data, completing
+absent observations, resolving quality findings, or interpreting published
+counts as unique people, rates, or risk.
+
 Never edit files inside:
 
 ```
@@ -177,7 +184,7 @@ Metadata include:
 - download date
 - original URL
 - filename
-- checksum (future)
+- checksum
 - source identifier
 
 Metadata files belong in:
@@ -260,6 +267,10 @@ Figures should be reproducible.
 Never edit figures manually.
 
 All figures must be generated from scripts.
+
+Regenerable data artifacts and operational metadata are ignored by Git. The
+four C.10 figures in the figures directory are an explicit exception: they are
+curated, versioned portfolio deliverables.
 
 ---
 

@@ -108,7 +108,6 @@ scripts/
     acquisition/
     validation/
     processing/
-    cleaning/
     analysis/
     visualization/
     utils/
@@ -167,8 +166,8 @@ and an atomically updated operational log.
 Validation produces `data/metadata/validation_snapshot.csv`, a current-state
 snapshot rather than a historical event log. It reports physical integrity,
 provenance and basic readability without deciding which technically valid
-resources are epidemiologically canonical. A later canonicalization stage will
-make that selection explicitly before merging.
+resources are epidemiologically canonical. Canonicalization subsequently makes
+that selection explicitly at resource level.
 Its contract is defined in `docs/validation_snapshot_contract.md`.
 
 Canonical resource selection consumes only technically processable validation
@@ -267,8 +266,7 @@ No manual modification of downloaded datasets is allowed.
 
 Future versions of the project will include:
 
-* automatic data validation;
 * spatial analysis using sf;
 * epidemiological modelling;
 * interactive dashboards;
-* automated report generation.
+* a policy-controlled narrative report.

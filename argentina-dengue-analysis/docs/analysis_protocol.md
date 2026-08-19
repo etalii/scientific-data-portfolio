@@ -1,332 +1,95 @@
-# Argentina dengue analysis
+# Analysis Protocol
 
-**Analysis protocol**
+## Status and purpose
 
----
+- **Version:** 1.0
+- **Status:** completed descriptive portfolio scope
+- **Project:** Argentina Dengue Surveillance
 
-**Version:** 0.1
+This protocol defines the methodological boundary of the completed portfolio
+analysis. It documents a reproducible public-health surveillance data workflow,
+not an official epidemiological reporting system.
 
-**Status:** planning
+## Analytical question
 
-**Author:** Andrés Lemos
+> How were published Dengue counts distributed over source weeks, reported
+> provincial categories, and reported age categories in the explicit 2024
+> primary scope?
 
-**Last updated:** june 2026
+The question is intentionally descriptive. It does not ask about incidence,
+risk, unique people, causal mechanisms, or a directly comparable 2018–2025
+trend.
 
----
+## Source and primary scope
 
-# 1. Project overview
+The source is the Argentine Ministry of Health dataset *Vigilancia de las
+enfermedades por virus del Dengue y Zika*, published through Datos Argentina.
 
-## Project title
+The configured primary scope is:
 
-**Argentina dengue analysis: a reproducible workflow for the exploratory analysis of national dengue surveillance data**
+- source year: 2024;
+- source event: Dengue;
+- one canonical resource selected by the documented resource-level policy.
 
-## Project description
+The general Dengue event is not combined with Dengue durante la gestación; the
+available documentation does not establish event exclusivity. Zika is outside
+this portfolio scope.
 
-This project aims to develop a fully reproducible analytical workflow to explore the temporal and spatial dynamics of dengue surveillance in Argentina using official epidemiological data published through the argentine open data portal "Datos Argentina".
+## Design principles
 
-The project is designed as both a scientific data analysis case study and a professional Data Analytics portfolio project. Rather than focusing exclusively on epidemiological findings, it emphasizes reproducibility, transparent methodology, and effective communication of analytical results.
+- Preserve raw files and source-row provenance.
+- Separate integrity validation, canonical resource selection, structural
+  harmonization, quality assessment, analytical selection, aggregation, and
+  visualization.
+- Preserve uncertainty when the evidence does not justify a corrective
+  transformation.
+- Treat source-case-count aggregates as published counts, not reconstructed
+  individual cases.
+- Keep the analysis scope explicit in configuration.
 
----
+## Pipeline
 
-# 2. Background
+~~~text
+CKAN metadata
+  → immutable download and provenance log
+  → local integrity/provenance/readability validation
+  → resource-level canonical selection
+  → structural harmonization
+  → quality assessment without correction
+  → primary scope selection
+  → deterministic published-count tables
+  → descriptive portfolio figures
+~~~
 
-Dengue is one of the fastest-growing arborne diseases worldwide and has become an increasingly important public health concern in Argentina over the past decade.
+The detailed implementation and hand-off invariants are defined in the
+project's versioned contracts and [architecture document](project_architecture.md).
 
-The availability of official surveillance data provides an opportunity to explore temporal trends, geographic variation, and epidemiological patterns through reproducible analytical workflows.
+## Descriptive outputs
 
-Beyond its public health relevance, this project demonstrates how scientific research practices can be integrated into modern data analytics by combining statistical analysis, reproducible programming, version control, and clear documentation.
+The completed scope produces:
 
----
+- national weekly published counts;
+- published-count rankings of reported provincial categories;
+- observed weekly dynamics for the five highest-count known jurisdictions;
+- published-count composition by source-reported age category.
 
-# 3. Research question
+No absent source week or province-week is completed with zero. Source labels,
+including dÍas and Sin Especificar, are retained as published.
 
-**Primary question**
+## Interpretation limits
 
-> How has dengue surveillance evolved across Argentina since 2018, and what spatial and temporal patterns emerge from official epidemiological data?
+- Counts do not represent deduplicated people.
+- Population denominators are unavailable; no incidence or risk estimates are
+  produced.
+- Exact duplicates and visible-dimension count conflicts are preserved because
+  their error status is not established.
+- Unknown geography is retained and not redistributed.
+- Heterogeneous schemas, coverage, and semantic evidence do not support a
+  direct interannual 2018–2025 comparison.
+- The temporal pattern is descriptive and does not attribute causes.
 
----
+## Future work
 
-# 4. Objectives
-
-## General objective
-
-To build a reproducible data analysis workflow that explores dengue surveillance patterns in Argentina using official open data.
-
-## Specific Objectives
-
-* Import and document official surveillance datasets.
-* Clean and standardize epidemiological records.
-* Explore temporal trends in dengue notifications.
-* Identify seasonal patterns across epidemiological weeks.
-* Compare dengue activity among Argentine provinces.
-* Produce high-quality statistical visualizations.
-* Generate a fully reproducible analytical report.
-
----
-
-# 5. Project scope
-
-## Included
-
-* Official epidemiological surveillance data
-* Data import and validation
-* Data cleaning
-* Exploratory data analysis (EDA)
-* Descriptive statistics
-* Temporal analysis
-* Spatial visualization
-* Reproducible reporting
-* Version control using Git
-
-## Excluded
-
-* Predictive modelling
-* Machine Learning
-* Causal inference
-* Climate-driven modelling
-* Individual-level epidemiological analysis
-* Real-time surveillance
-
-These topics may be incorporated into future versions of the project.
-
----
-
-# 6. Dataset
-
-## Data source
-
-Official Argentine Open Data Portal: Datos Argentina (datos.gob.ar)
-
-Dataset: "Vigilancia de las enfermedades por virus del Dengue y Zika"
-
-**Surveillance of dengue and zika virus diseases**
-
-## Expected coverage
-
-* Argentina
-* Weekly epidemiological reports
-* Provincial level
-* Beginning in 2018
-
-## Data characteristics
-
-Expected variables include:
-
-* Epidemiological week
-* Year
-* Province
-* Disease
-* Number of reported cases
-
-A complete evaluation of dataset quality will be documented separately in **docs/dataset_assessment.md**.
-
----
-
-# 7. Analytical strategy
-
-The project will follow a sequential and fully reproducible workflow.
-
-```
-Research question
-        │
-        ▼
-Dataset acquisition
-        │
-        ▼
-Data validation
-        │
-        ▼
-Data import
-        │
-        ▼
-Data cleaning
-        │
-        ▼
-Exploratory data analysis
-        │
-        ▼
-Descriptive statistics
-        │
-        ▼
-Visualization
-        │
-        ▼
-Interpretation
-        │
-        ▼
-Reproducible report
-```
-
-Each stage will be implemented through independent scripts to maximize transparency and reproducibility.
-
----
-
-# 8. Statistical approach
-
-The project focuses primarily on descriptive and exploratory analyses.
-
-Planned methods include:
-
-* Summary statistics
-* Frequency distributions
-* Time series visualization
-* Seasonal trend analysis
-* Province-level comparisons
-* Distribution analysis
-* Correlation analysis (if appropriate)
-
-The selection of statistical methods may evolve after the initial exploration of the dataset.
-
----
-
-# 9. Software and technologies
-
-## Programming languages
-
-* R
-* SQL (future integration)
-
-## R packages
-
-* tidyverse
-* janitor
-* lubridate
-* ggplot2
-* sf (planned)
-
-## Tools
-
-* Git
-* GitHub
-* Quarto
-* Visual Studio Code
-
----
-
-# 10. Expected outputs
-
-The final repository will contain:
-
-* Cleaned datasets
-* Reproducible R scripts
-* Statistical tables
-* Publication-quality figures
-* Quarto report
-* Complete project documentation
-* Version-controlled analytical workflow
-
----
-
-# 11. Reproducibility plan
-
-The project follows reproducible research principles.
-
-Specifically:
-
-* Raw datasets will never be modified manually.
-* Every transformation will be scripted.
-* Every figure will be generated automatically.
-* All analytical decisions will be documented.
-* The complete analysis will be executable from the repository.
-
----
-
-# 12. Data management plan
-
-The project follows a structured data management strategy to ensure traceability, reproducibility, and long-term maintainability.
-
-## Directory structure
-
-Raw data will be stored in:
-
-`data/raw/`
-
-Processed datasets generated by analysis scripts will be stored in:
-
-`data/processed/`
-
-Metadata describing data sources, variables and download information will be stored in:
-
-`data/metadata/`
-
-## Data integrity
-
-- Raw data will remain unchanged after download.
-- Every processed dataset will be generated through scripted workflows.
-- No manual editing of datasets will be performed.
-- Intermediate datasets will be clearly documented.
-
-## File naming convention
-
-Files will follow descriptive, lowercase names using underscores.
-
-Examples:
-
-- dengue_cases_2018.csv
-- dengue_cleaned.csv
-- province_summary.csv
-
-## Version control
-
-Only analysis code, documentation and lightweight processed datasets will be tracked with Git.
-
-Large raw datasets may be excluded through `.gitignore` when appropriate.
-
-## Documentation
-
-All data transformations will be documented within analysis scripts and recorded in the project log whenever major analytical decisions are made.
-
----
-
-# 13. Quality criteria
-
-The project will be considered complete when:
-
-* All scripts execute without errors.
-* Figures are generated automatically.
-* Documentation is complete.
-* Results are reproducible.
-* Repository organization is clear.
-* The Quarto report can be rendered successfully.
-* All Git commits are documented.
-
----
-
-# 14. Known limitations
-
-Potential limitations include:
-
-* Aggregated surveillance data
-* Possible underreporting
-* Reporting delays
-* Changes in surveillance practices
-* Limited environmental covariates
-* No individual-level observations
-
-These limitations will be acknowledged throughout the analysis.
-
----
-
-# 15. Future extensions
-
-Possible future developments include:
-
-* Integration of climate variables
-* Population-adjusted incidence calculations
-* Spatial statistical models
-* Interactive dashboards
-* Comparison with other arboviruses
-* Automated data update pipeline
-
----
-
-# 16. Project philosophy
-
-This project is based on the idea that scientific research and modern data analytics share the same fundamental principles:
-
-* rigorous methodology,
-* transparent workflows,
-* reproducible analyses,
-* evidence-based conclusions.
-
-Rather than presenting only analytical results, this repository documents the complete process through which those results are produced.
+Any report, spatial display, population-adjusted analysis, additional event
+scope, or interannual comparison must be introduced by a separate documented
+policy. It must not be inferred from the current structural pipeline.

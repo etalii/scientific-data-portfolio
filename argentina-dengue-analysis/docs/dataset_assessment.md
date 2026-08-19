@@ -1,200 +1,55 @@
-# Argentina dengue analysis
+# Dataset Assessment: Historical Preflight
 
-## Dataset assessment
+## Status
 
----
+- **Status:** historical preflight record
+- **Scope:** source suitability before the contract-first pipeline was built
+- **Current authority:** the versioned pipeline contracts and the completed
+  [analysis protocol](analysis_protocol.md)
 
-**Version:** 0.1
+This document records why the official source was initially selected. It is not
+a data dictionary, a claim of interannual comparability, or the specification
+for the completed pipeline.
 
-**Status:** draft
+## Source
 
-**Last Updated:** June 2026
+- **Dataset:** *Vigilancia de las enfermedades por virus del Dengue y Zika*
+- **Publisher:** Argentine Ministry of Health
+- **Portal:** [Datos Argentina](https://datos.gob.ar/dataset/salud-vigilancia-enfermedades-por-virus-dengue-zika)
+- **Published formats:** CSV resources with heterogeneous schemas and encodings
 
----
+## What the preflight established
 
-# Purpose
+The source is official, publicly accessible, geographically national in
+coverage, and supplies temporal, geographic, event, age-category, and
+published-count fields. Those properties justified building a reproducible
+acquisition and assessment workflow.
 
-This document evaluates the suitability of the selected dataset for answering the research question defined in the Analysis Protocol.
+## What subsequent pipeline evidence changed
 
-Rather than providing a simple dataset description, this assessment identifies the dataset's strengths, limitations, potential biases and overall fitness for the objectives of this project.
+The completed pipeline found multiple revisions for the same temporal coverage,
+schema drift across releases, heterogeneous file encodings, exact duplicates,
+visible-dimension count conflicts, and an unknown geographic category. It
+therefore does not assume that all 2018–2025 resources form one comparable
+longitudinal series.
 
----
+For the completed portfolio scope, the analytical question is limited to
+published Dengue counts in the explicit 2024 primary scope. See the
+[analysis protocol](analysis_protocol.md) and
+[project architecture](project_architecture.md).
 
-# Research question
+## Current evidence and limitations
 
-> **How has dengue surveillance evolved across Argentina since 2018, and what spatial and temporal patterns emerge from official epidemiological data?**
+The source is appropriate for the completed descriptive workflow only under its
+documented contracts:
 
----
+- raw resources remain immutable and are verified for integrity and provenance;
+- resource-level canonical selection is editorial and reproducible, not a
+  statement of epidemiological truth;
+- structural harmonization preserves source values and row provenance;
+- quality findings are recorded rather than silently corrected;
+- published counts are not deduplicated people, rates, or incidence estimates.
 
-# Dataset identification
-
-**Dataset**
-
-Vigilancia de las enfermedades por virus del Dengue y Zika
-
-**Publisher**
-
-Ministry of Health of Argentina
-
-**Portal**
-
-Datos Argentina – Open Data Portal
-
-**URL**
-
-https://datos.gob.ar/dataset/salud-vigilancia-enfermedades-por-virus-dengue-zika
-
-**Format**
-
-CSV
-
-**Geographic coverage**
-
-Argentina
-
-**Temporal coverage**
-
-2018 – 2025
-
-**Update frequency**
-
-Weekly
-
-**License**
-
-Open Government Data.
-
----
-
-# Why this dataset?
-
-The selected dataset satisfies several important criteria for this project.
-
-* It is an official government data source.
-* It contains national epidemiological surveillance information.
-* It provides temporal information through epidemiological weeks.
-* It includes geographic information at the provincial level.
-* It is openly accessible.
-* It can be downloaded without registration.
-* It is regularly updated.
-
-These characteristics make it suitable for building a reproducible analytical workflow.
-
----
-
-# Expected variables
-
-Based on the official documentation, the dataset is expected to contain variables such as:
-
-* epidemiological year
-* epidemiological week
-* province
-* localidad/ partido/ comuna
-* disease
-* age
-* reported cases
-
-The final variable list will be confirmed after data acquisition.
-
----
-
-# Strengths
-
-The dataset offers several advantages.
-
-* Official public source.
-* National geographic coverage.
-* Standardized epidemiological reporting.
-* Longitudinal observations.
-* Suitable for temporal analyses.
-* Suitable for spatial comparisons.
-* Appropriate for reproducible workflows.
-
----
-
-# Potential limitations
-
-Several limitations should be considered before interpreting analytical results.
-
-* Surveillance data may underestimate true incidence.
-* Reporting delays may occur.
-* Surveillance protocols may change over time.
-* Data are aggregated rather than individual-level.
-* Environmental variables are not included.
-* Population size is not directly incorporated.
-
-These limitations do not invalidate the analysis but should be acknowledged throughout the project.
-
----
-
-# Potential sources of bias
-
-Possible biases include:
-
-* underreporting
-* changes in surveillance intensity
-* diagnostic availability
-* regional differences in reporting
-* temporal inconsistencies
-
-These factors should be considered when interpreting observed patterns.
-
----
-
-# Suitability for the research question
-
-The dataset is considered highly appropriate for answering the project's primary research question.
-
-It enables:
-
-* temporal trend analysis
-* seasonal exploration
-* province-level comparisons
-* descriptive epidemiology
-* exploratory statistical analysis
-* reproducible data visualization
-
-However, it is not appropriate for:
-
-* causal inference
-* predictive modelling
-* estimating infection risk
-* evaluating environmental drivers without additional datasets
-
----
-
-# Additional data required
-
-Future versions of the project may incorporate:
-
-* provincial population estimates
-* climate variables
-* geographic boundaries
-* socioeconomic indicators
-
-These complementary datasets would enable more advanced analyses.
-
----
-
-# Data quality checklist
-
-| Item                          | Status |
-| ----------------------------- | ------ |
-| Official source identified    | ✅      |
-| Public access                 | ✅      |
-| Download URL available        | ✅      |
-| Metadata available            | ☐      |
-| Variable dictionary reviewed  | ☐      |
-| License verified              | ✅      |
-| File integrity verified       | ☐      |
-| Initial exploration completed | ☐      |
-
----
-
-# Assessment conclusion
-
-The selected dataset provides an appropriate foundation for a reproducible exploratory analysis of dengue surveillance in Argentina.
-
-Although the dataset presents expected limitations inherent to surveillance systems, its official origin, national coverage and standardized reporting structure make it well suited for the objectives of this project.
-
-The next phase will focus on automated data acquisition, validation and documentation prior to exploratory analysis.
+No source-only assessment resolves reporting changes, underreporting, or
+semantic comparability across years. Any broader comparison, population-based
+measure, or additional data integration requires a new documented policy.

@@ -162,10 +162,9 @@ packages <- c(
   "purrr",
   "janitor",
   "lubridate",
+  "openssl",
   "tibble",
-  "cli",
-  "glue",
-  "fs"
+  "ggplot2"
 )
 
 for (pkg in packages) {
