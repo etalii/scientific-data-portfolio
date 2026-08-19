@@ -85,6 +85,16 @@ validation_snapshot.csv (validation_snapshot v1.0.0)
 
 ↓
 
+Canonical resource selection
+
+03_select_canonical_resources.R
+
+↓
+
+canonical_resources.csv (canonical_resource_selection v1.0.0)
+
+↓
+
 Merge
 
 03_merge_raw_files.R

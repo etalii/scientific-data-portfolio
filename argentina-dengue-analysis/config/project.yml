@@ -36,6 +36,8 @@ artifacts:
 
   validation_snapshot: "data/metadata/validation_snapshot.csv"
 
+  canonical_resources: "data/metadata/canonical_resources.csv"
+
 logs:
 
   download: "data/metadata/download_log.csv"
@@ -47,3 +49,17 @@ download:
   max_retries: 3
 
   retry_backoff_seconds: 2
+
+canonicalization:
+
+  header_encodings:
+    - "UTF-8"
+    - "latin1"
+
+  temporal_column_pairs:
+    - year_column: "ano"
+      week_column: "semanas_epidemiologicas"
+    - year_column: "año"
+      week_column: "semanas_epidemiologicas"
+    - year_column: "anio_min"
+      week_column: "sepi_min"

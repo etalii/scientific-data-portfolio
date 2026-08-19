@@ -44,6 +44,12 @@ data/raw/
 validation_snapshot.csv
     │
     ▼
+03_select_canonical_resources.R
+    │
+    ▼
+canonical_resources.csv
+    │
+    ▼
 03_merge_raw_files.R
     │
     ▼
@@ -140,6 +146,14 @@ provenance and basic readability without deciding which technically valid
 resources are epidemiologically canonical. A later canonicalization stage will
 make that selection explicitly before merging.
 Its contract is defined in `docs/validation_snapshot_contract.md`.
+
+Canonical resource selection consumes only technically processable validation
+records and calculates exact temporal coverage from explicitly configured
+column pairs. It publishes `data/metadata/canonical_resources.csv`, a stable,
+Git-versioned analytical-provenance manifest. The stage selects one resource
+per equivalent coverage group using a documented editorial precedence rule;
+it does not merge, clean, filter, harmonize, or deduplicate observations. Its
+contract is defined in `docs/canonical_resource_selection_contract.md`.
 
 ---
 

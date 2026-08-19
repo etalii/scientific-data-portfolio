@@ -67,6 +67,10 @@ download_log.csv
         ↓
 validation_snapshot.csv
         ↓
+03_select_canonical_resources.R
+        ↓
+canonical_resources.csv
+        ↓
 03_merge_raw_files.R
         ↓
 processed dataset
@@ -113,6 +117,10 @@ not raw datasets and must never be consumed by downstream stages.
 Only one acquisition or validation execution may run in a workspace at a time.
 The configured acquisition-validation lock protects raw-data state and its
 associated metadata.
+
+Canonical resource selection consumes the validation snapshot and produces a
+versioned analytical-provenance manifest. It selects resources at resource
+level only; it must not merge, filter, harmonize, or deduplicate observations.
 
 Never edit files inside:
 
