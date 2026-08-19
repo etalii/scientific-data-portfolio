@@ -38,6 +38,8 @@ artifacts:
 
   canonical_resources: "data/metadata/canonical_resources.csv"
 
+  canonical_resources_structural: "data/processed/canonical_resources_structural.csv"
+
 logs:
 
   download: "data/metadata/download_log.csv"
@@ -63,3 +65,9 @@ canonicalization:
       week_column: "semanas_epidemiologicas"
     - year_column: "anio_min"
       week_column: "sepi_min"
+
+harmonization:
+
+  body_encodings:
+    - "UTF-8"
+    - "latin1"

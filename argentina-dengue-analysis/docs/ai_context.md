@@ -95,9 +95,19 @@ canonical_resources.csv (canonical_resource_selection v1.0.0)
 
 ↓
 
+Structural harmonization
+
+04_harmonize_canonical_resources.R
+
+↓
+
+canonical_resources_structural.csv (structural_harmonization v1.0.0)
+
+↓
+
 Merge
 
-03_merge_raw_files.R
+05_merge_raw_files.R
 
 ↓
 

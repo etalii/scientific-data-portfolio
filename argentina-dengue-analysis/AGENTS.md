@@ -71,7 +71,11 @@ validation_snapshot.csv
         ↓
 canonical_resources.csv
         ↓
-03_merge_raw_files.R
+04_harmonize_canonical_resources.R
+        ↓
+canonical_resources_structural.csv
+        ↓
+05_merge_raw_files.R
         ↓
 processed dataset
 ```
@@ -121,6 +125,12 @@ associated metadata.
 Canonical resource selection consumes the validation snapshot and produces a
 versioned analytical-provenance manifest. It selects resources at resource
 level only; it must not merge, filter, harmonize, or deduplicate observations.
+
+Structural harmonization consumes only canonical resources authorized for
+processing. It preserves one source CSV record per output row and retains
+source-level provenance. It must not infer epidemiological equivalence,
+normalize geography or text, recode age groups, filter events, aggregate, or
+deduplicate records.
 
 Never edit files inside:
 

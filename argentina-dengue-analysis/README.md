@@ -167,7 +167,7 @@ This project follows reproducible research principles.
 
 **Current stage**
 
-🟡 Project foundation complete; data pipeline implementation pending
+🟡 Acquisition, validation, canonical selection and structural harmonization complete
 
 Completed:
 
@@ -177,12 +177,15 @@ Completed:
 * Dataset assessment (draft)
 * Reproducible R environment with renv
 * Environment validation utility
-* Pipeline architecture
+* Metadata acquisition and resource catalog
+* Verified raw-data acquisition and validation
+* Canonical resource selection
+* Conservative structural harmonization with row-level provenance
 
 Next milestones:
 
-* Data acquisition
-* Download validation and data processing
+* Semantic geography and age-group policy
+* Event-selection policy and downstream merge design
 * Data cleaning and exploratory analysis
 * Visualizations and reproducible Quarto report
 
@@ -200,6 +203,7 @@ The repository contains complementary documentation describing the project.
 | `docs/resources_catalog_contract.md` | Internal resource catalog contract            |
 | `docs/validation_snapshot_contract.md` | Local validation snapshot contract           |
 | `docs/canonical_resource_selection_contract.md` | Canonical resource-selection contract |
+| `docs/structural_harmonization_contract.md` | Structural harmonization contract |
 | `docs/download_log_contract.md` | Operational download log contract              |
 | `docs/project_log.md`        | Chronological record of analytical decisions |
 

@@ -6,7 +6,7 @@
 - **Version:** `1.0.0`
 - **Artifact:** `data/metadata/canonical_resources.csv`
 - **Producer:** `scripts/processing/03_select_canonical_resources.R`
-- **Consumers:** later processing stages, beginning with merge design
+- **Primary consumer:** `scripts/processing/04_harmonize_canonical_resources.R`
 
 ## Purpose and scope
 

@@ -50,7 +50,13 @@ validation_snapshot.csv
 canonical_resources.csv
     │
     ▼
-03_merge_raw_files.R
+04_harmonize_canonical_resources.R
+    │
+    ▼
+canonical_resources_structural.csv
+    │
+    ▼
+05_merge_raw_files.R
     │
     ▼
 data/processed/
@@ -154,6 +160,14 @@ Git-versioned analytical-provenance manifest. The stage selects one resource
 per equivalent coverage group using a documented editorial precedence rule;
 it does not merge, clean, filter, harmonize, or deduplicate observations. Its
 contract is defined in `docs/canonical_resource_selection_contract.md`.
+
+Structural harmonization reads the canonical manifest, the validation snapshot
+for its previously validated delimiters, and the immutable raw resources. It
+creates one deterministic structural row per source CSV record while preserving
+source IDs, source text and source-row provenance. It deliberately does not
+assert epidemiological comparability of time, count, geography or age-group
+fields across source-schema families. Its contract is defined in
+`docs/structural_harmonization_contract.md`.
 
 ---
 
