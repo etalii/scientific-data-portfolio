@@ -167,7 +167,7 @@ This project follows reproducible research principles.
 
 **Current stage**
 
-🟡 Acquisition, validation, canonical selection and structural harmonization complete
+🟡 Acquisition, validation, canonical selection, structural harmonization and quality assessment complete
 
 Completed:
 
@@ -181,11 +181,11 @@ Completed:
 * Verified raw-data acquisition and validation
 * Canonical resource selection
 * Conservative structural harmonization with row-level provenance
+* Reproducible harmonized-quality assessment without corrective transformations
 
 Next milestones:
 
-* Semantic geography and age-group policy
-* Event-selection policy and downstream merge design
+* Policy for geography, age groups, event semantics and consolidation
 * Data cleaning and exploratory analysis
 * Visualizations and reproducible Quarto report
 
@@ -204,6 +204,7 @@ The repository contains complementary documentation describing the project.
 | `docs/validation_snapshot_contract.md` | Local validation snapshot contract           |
 | `docs/canonical_resource_selection_contract.md` | Canonical resource-selection contract |
 | `docs/structural_harmonization_contract.md` | Structural harmonization contract |
+| `docs/harmonized_quality_assessment_contract.md` | Harmonized-quality assessment contract |
 | `docs/download_log_contract.md` | Operational download log contract              |
 | `docs/project_log.md`        | Chronological record of analytical decisions |
 

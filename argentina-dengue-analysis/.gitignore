@@ -18,6 +18,7 @@ data/processed/*
 # Operational metadata logs
 data/metadata/download_log.csv
 data/metadata/validation_snapshot.csv
+data/metadata/harmonized_quality_snapshot.csv
 data/metadata/.argentina_dengue_acquisition_validation.lock/
 
 outputs/*

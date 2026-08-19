@@ -75,9 +75,11 @@ canonical_resources.csv
         ↓
 canonical_resources_structural.csv
         ↓
-05_merge_raw_files.R
+05_assess_harmonized_quality.R
         ↓
-processed dataset
+harmonized_quality_snapshot.csv
+        ↓
+future policy-controlled consolidation and analysis
 ```
 
 Scripts should never duplicate responsibilities.
@@ -131,6 +133,12 @@ processing. It preserves one source CSV record per output row and retains
 source-level provenance. It must not infer epidemiological equivalence,
 normalize geography or text, recode age groups, filter events, aggregate, or
 deduplicate records.
+
+Harmonized-quality assessment consumes the structural artifact and publishes
+reproducible quality findings without correcting, deleting, consolidating,
+filtering, or otherwise changing its observations. A quality finding is not an
+execution error: severe findings identify properties that later stages must not
+resolve automatically without an approved policy.
 
 Never edit files inside:
 

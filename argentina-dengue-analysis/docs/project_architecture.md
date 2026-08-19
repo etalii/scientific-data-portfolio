@@ -56,13 +56,13 @@ canonical_resources.csv
 canonical_resources_structural.csv
     │
     ▼
-05_merge_raw_files.R
+05_assess_harmonized_quality.R
     │
     ▼
-data/processed/
+harmonized_quality_snapshot.csv
     │
     ▼
-Exploratory Analysis
+Future policy-controlled consolidation and analysis
     │
     ▼
 Reports and Figures
@@ -168,6 +168,12 @@ source IDs, source text and source-row provenance. It deliberately does not
 assert epidemiological comparability of time, count, geography or age-group
 fields across source-schema families. Its contract is defined in
 `docs/structural_harmonization_contract.md`.
+
+Harmonized-quality assessment reads the structural artifact and publishes a
+deterministic, Git-ignored metadata snapshot of reproducible quality findings.
+It is an assessment stage, not a cleaning or consolidation stage: it never
+changes rows, values, counts, source provenance, or raw files. Its contract is
+defined in `docs/harmonized_quality_assessment_contract.md`.
 
 ---
 

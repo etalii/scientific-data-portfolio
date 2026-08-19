@@ -105,13 +105,17 @@ canonical_resources_structural.csv (structural_harmonization v1.0.0)
 
 ↓
 
-Merge
+Harmonized quality assessment
 
-05_merge_raw_files.R
+05_assess_harmonized_quality.R
 
 ↓
 
-Processed datasets
+harmonized_quality_snapshot.csv (harmonized_quality_assessment v1.0.0)
+
+↓
+
+Future policy-controlled consolidation and analysis
 
 data/processed
 

@@ -40,6 +40,8 @@ artifacts:
 
   canonical_resources_structural: "data/processed/canonical_resources_structural.csv"
 
+  harmonized_quality_snapshot: "data/metadata/harmonized_quality_snapshot.csv"
+
 logs:
 
   download: "data/metadata/download_log.csv"
