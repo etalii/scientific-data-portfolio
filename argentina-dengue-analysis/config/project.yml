@@ -44,6 +44,14 @@ artifacts:
 
   primary_dengue_analysis_rows: "data/processed/primary_dengue_analysis_rows.csv"
 
+  analysis_weekly_national: "data/processed/analysis_weekly_national.csv"
+
+  analysis_province_summary: "data/processed/analysis_province_summary.csv"
+
+  analysis_weekly_province: "data/processed/analysis_weekly_province.csv"
+
+  analysis_age_group_summary: "data/processed/analysis_age_group_summary.csv"
+
 logs:
 
   download: "data/metadata/download_log.csv"

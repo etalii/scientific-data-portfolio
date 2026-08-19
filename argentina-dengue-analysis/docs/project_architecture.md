@@ -68,7 +68,16 @@ harmonized_quality_snapshot.csv
 primary_dengue_analysis_rows.csv
     │
     ▼
-Future policy-controlled aggregation and analysis
+07_build_analysis_tables.R
+    │
+    ▼
+analysis_weekly_national.csv
+analysis_province_summary.csv
+analysis_weekly_province.csv
+analysis_age_group_summary.csv
+    │
+    ▼
+Future policy-controlled visualization and analysis
     │
     ▼
 Reports and Figures
@@ -187,6 +196,12 @@ row-preserving analytical subset. It does not consume quality findings to
 alter selection, deduplicate records, or aggregate counts; quality assessment
 remains a separate source of evidence for subsequent analytical decisions. Its
 contract is defined in `docs/analysis_scope_selection_contract.md`.
+
+Analysis-table derivation reads only the selected primary scope and builds four
+deterministic aggregations of published rows and published counts: national
+weekly, provincial, provincial-weekly, and source-age-group summaries. It does
+not resolve quality findings, deduplicate observations, or infer individual
+cases. Its contract is defined in `docs/analysis_table_derivation_contract.md`.
 
 ---
 

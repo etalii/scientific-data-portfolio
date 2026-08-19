@@ -167,7 +167,7 @@ This project follows reproducible research principles.
 
 **Current stage**
 
-🟡 Acquisition, validation, canonical selection, structural harmonization, quality assessment and primary-scope selection complete
+🟡 Acquisition through deterministic primary analysis-table derivation complete
 
 Completed:
 
@@ -183,10 +183,11 @@ Completed:
 * Conservative structural harmonization with row-level provenance
 * Reproducible harmonized-quality assessment without corrective transformations
 * Explicit, row-preserving primary dengue analysis scope
+* Reconciled weekly, provincial, provincial-weekly and age-group tables of published counts
 
 Next milestones:
 
-* Policy-controlled aggregation, geography and age-group analysis
+* Visualizations and descriptive analytical narrative
 * Data cleaning and exploratory analysis
 * Visualizations and reproducible Quarto report
 
@@ -207,6 +208,7 @@ The repository contains complementary documentation describing the project.
 | `docs/structural_harmonization_contract.md` | Structural harmonization contract |
 | `docs/harmonized_quality_assessment_contract.md` | Harmonized-quality assessment contract |
 | `docs/analysis_scope_selection_contract.md` | Primary analysis-scope selection contract |
+| `docs/analysis_table_derivation_contract.md` | Published-count analysis-table derivation contract |
 | `docs/download_log_contract.md` | Operational download log contract              |
 | `docs/project_log.md`        | Chronological record of analytical decisions |
 

@@ -83,7 +83,11 @@ harmonized_quality_snapshot.csv
         ↓
 primary_dengue_analysis_rows.csv
         ↓
-future policy-controlled aggregation and analysis
+07_build_analysis_tables.R
+        ↓
+analysis tables
+        ↓
+future policy-controlled visualization and analysis
 ```
 
 Scripts should never duplicate responsibilities.
@@ -148,6 +152,11 @@ Analysis-scope selection consumes structural rows and an explicit methodological
 scope from configuration. It preserves every selected published row and its
 source provenance; it neither resolves quality findings nor aggregates or
 changes source values.
+
+Analysis-table derivation consumes the selected primary scope and creates
+deterministic aggregates of published rows and published counts. It does not
+deduplicate, correct, filter, or interpret the aggregates as individual people
+or cases.
 
 Never edit files inside:
 

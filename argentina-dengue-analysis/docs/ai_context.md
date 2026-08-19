@@ -125,7 +125,21 @@ primary_dengue_analysis_rows.csv (analysis_scope_selection v1.0.0)
 
 ↓
 
-Future policy-controlled aggregation and analysis
+Analysis-table derivation
+
+07_build_analysis_tables.R
+
+↓
+
+analysis_weekly_national.csv
+analysis_province_summary.csv
+analysis_weekly_province.csv
+analysis_age_group_summary.csv
+(analysis_table_derivation v1.0.0)
+
+↓
+
+Future policy-controlled visualization and analysis
 
 data/processed
 
