@@ -182,6 +182,10 @@ C.16 publishes descriptive published-count rates by combining C.12 aggregates
 with C.14 denominators and C.15 eligibility evidence. It does not claim
 incidence and does not reaggregate C.11 or read raw datasets.
 
+C.17 is a row-preserving, configured source-week selection from C.11 for the
+SE31/2024--SE30/2025 season window. It validates exact tuple coverage and
+preserves annual-scope lineage, but does not calculate seasonal rates.
+
 ---
 
 ## Coding standards

@@ -254,6 +254,12 @@ the distinction between published counts and person-level incidence, and do
 not re-read raw data or recreate C.12 aggregations. Its contract is
 `docs/published_count_rate_indicators_contract.md`.
 
+Epidemiological season scope construction (C.17) selects, without changing,
+published Dengue rows from C.11 for a configured cross-year source-week
+window. It proves only tuple coverage and structural continuity for that
+window; it does not calculate seasonal rates or select a seasonal denominator.
+Its contract is `docs/epidemiological_season_scope_contract.md`.
+
 ---
 
 # Data management

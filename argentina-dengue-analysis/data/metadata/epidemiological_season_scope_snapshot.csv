@@ -1,0 +1,2 @@
+season_scope_snapshot_schema_version,season_scope_id,season_label,expected_season_week_count,observed_season_week_count,missing_season_week_count,unexpected_season_week_count,season_week_coverage_status,source_schema_family,source_resource_count,source_resource_ids,season_row_count,season_published_case_count
+1.0.0,dengue_season_2024_2025_se31_30,SE31/2024–SE30/2025,52,52,0,0,complete_expected_week_set,indec_residence_geography,2,18c883dc-cfa7-5986-b018-467b0d0adae9|7d5a0c5e-ca1e-56b5-84bc-66d9aaebf16e,3229,17844

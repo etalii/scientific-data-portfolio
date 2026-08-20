@@ -70,6 +70,10 @@ artifacts:
 
   multiyear_dengue_scopes: "data/processed/multiyear_dengue_scopes.csv"
 
+  epidemiological_season_rows: "data/processed/dengue_season_2024_2025_rows.csv"
+
+  epidemiological_season_scope_snapshot: "data/metadata/epidemiological_season_scope_snapshot.csv"
+
   multiyear_dengue_weekly_national: "data/processed/multiyear_dengue_weekly_national.csv"
 
   multiyear_dengue_province_summary: "data/processed/multiyear_dengue_province_summary.csv"
@@ -235,6 +239,18 @@ published_count_rate:
       "2024": "indec_census_2010_projection_2010_2040"
       "2025": "indec_census_2010_projection_2010_2040"
   ben_region_order: ["Centro", "Cuyo", "NEA", "NOA", "Sur"]
+
+epidemiological_season:
+  scope_id: "dengue_season_2024_2025_se31_30"
+  season_label: "SE31/2024–SE30/2025"
+  event: "Dengue"
+  segments:
+    - source_year: 2024
+      week_start: 31
+      week_end: 52
+    - source_year: 2025
+      week_start: 1
+      week_end: 30
 
 visualization:
   png_resolution_dpi: 150

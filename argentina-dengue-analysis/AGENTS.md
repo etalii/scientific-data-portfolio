@@ -102,6 +102,10 @@ multiyear descriptive tables
 13_assess_multiyear_comparability.R
         ↓
 versioned comparability metadata
+        ↓
+17_build_epidemiological_season_scope.R
+        ↓
+row-preserving epidemiological season scope
 ```
 
 Scripts should never duplicate responsibilities.
