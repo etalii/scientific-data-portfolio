@@ -62,6 +62,18 @@ artifacts:
 
   dengue_2024_age_group_composition_figure: "figures/dengue_2024_age_group_composition.png"
 
+  multiyear_dengue_scopes: "data/processed/multiyear_dengue_scopes.csv"
+
+  multiyear_dengue_weekly_national: "data/processed/multiyear_dengue_weekly_national.csv"
+
+  multiyear_dengue_province_summary: "data/processed/multiyear_dengue_province_summary.csv"
+
+  multiyear_dengue_weekly_province: "data/processed/multiyear_dengue_weekly_province.csv"
+
+  multiyear_dengue_age_summary: "data/processed/multiyear_dengue_age_summary.csv"
+
+  multiyear_comparability_snapshot: "data/metadata/multiyear_comparability_snapshot.csv"
+
 logs:
 
   download: "data/metadata/download_log.csv"
@@ -101,6 +113,15 @@ analysis_scope:
       - 2024
     events:
       - "Dengue"
+
+multiyear_scope:
+  source_years:
+    - 2018
+    - 2022
+    - 2024
+    - 2025
+
+  event: "Dengue"
 
 visualization:
   png_resolution_dpi: 150

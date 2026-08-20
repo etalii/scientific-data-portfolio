@@ -83,6 +83,20 @@ analysis_age_group_summary.csv
 Four curated descriptive portfolio figures
     │
     ▼
+11_build_multiyear_dengue_scopes.R
+    │
+    ▼
+multiyear_dengue_scopes.csv
+    │
+    ├── 12_build_multiyear_analysis_tables.R
+    │       ↓
+    │   multiyear descriptive tables
+    │
+    └── 13_assess_multiyear_comparability.R
+            ↓
+        multiyear_comparability_snapshot.csv
+    │
+    ▼
 Reports and Figures
 ```
 
@@ -210,6 +224,13 @@ curated PNG portfolio figures. It preserves their published-count semantics and
 does not read raw data, repair quality findings, complete absent observations,
 or make epidemiological inferences. Its contract is defined in
 `docs/portfolio_descriptive_visualization_contract.md`.
+
+The v1.1 multiyear extension leaves C.1--C.10 unchanged. It creates
+row-preserving Dengue scopes, descriptive multiyear tables, and a versioned
+comparability assessment before introducing population denominators, rates,
+seasons, or models. Its contracts are `docs/multiyear_dengue_scope_contract.md`,
+`docs/multiyear_analysis_table_derivation_contract.md`, and
+`docs/multiyear_comparability_assessment_contract.md`.
 
 ---
 

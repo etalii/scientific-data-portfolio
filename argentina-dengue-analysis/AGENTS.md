@@ -90,6 +90,18 @@ analysis tables
 08_generate_figures.R
         ↓
 four curated descriptive portfolio figures
+        ↓
+11_build_multiyear_dengue_scopes.R
+        ↓
+multiyear Dengue scopes
+        ↓
+12_build_multiyear_analysis_tables.R
+        ↓
+multiyear descriptive tables
+        ↓
+13_assess_multiyear_comparability.R
+        ↓
+versioned comparability metadata
 ```
 
 Scripts should never duplicate responsibilities.
@@ -164,6 +176,11 @@ Descriptive visualization consumes only the four analysis-table artifacts. It
 creates the versioned portfolio figures without reading raw data, completing
 absent observations, resolving quality findings, or interpreting published
 counts as unique people, rates, or risk.
+
+The multiyear extension remains descriptive and assessment-only. It preserves
+source rows and C.7 quality evidence; it must not introduce denominators,
+rates, seasonal reconstruction, models, or cross-year equivalence claims until
+their separate contracts are approved.
 
 Never edit files inside:
 

@@ -166,6 +166,10 @@ Every execution must produce logs.
 The four final figures are versioned portfolio deliverables. Regenerable
 intermediate data and operational metadata remain ignored by Git.
 
+The v1.1 multiyear extension adds row-preserving Dengue scopes, descriptive
+tables, and a versioned comparability snapshot. It does not yet add population
+denominators, rates, seasons, models, Quarto, or Power BI artifacts.
+
 ---
 
 ## Coding standards
