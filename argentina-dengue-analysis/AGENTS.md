@@ -182,6 +182,10 @@ source rows and C.7 quality evidence; it must not introduce denominators,
 rates, seasonal reconstruction, models, or cross-year equivalence claims until
 their separate contracts are approved.
 
+Population-reference acquisition is an independent external-reference stage.
+It may publish only validated INDEC population denominator sources and their
+provenance; it must not calculate rates or create geographic mappings.
+
 Never edit files inside:
 
 ```

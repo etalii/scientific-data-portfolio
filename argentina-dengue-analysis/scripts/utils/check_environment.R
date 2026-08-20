@@ -163,6 +163,7 @@ packages <- c(
   "janitor",
   "lubridate",
   "openssl",
+  "readxl",
   "tibble",
   "ggplot2"
 )

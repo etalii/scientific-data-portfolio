@@ -167,8 +167,11 @@ The four final figures are versioned portfolio deliverables. Regenerable
 intermediate data and operational metadata remain ignored by Git.
 
 The v1.1 multiyear extension adds row-preserving Dengue scopes, descriptive
-tables, and a versioned comparability snapshot. It does not yet add population
-denominators, rates, seasons, models, Quarto, or Power BI artifacts.
+tables, a versioned comparability snapshot, and an independent C.14 population
+reference acquisition stage. C.14 reads official INDEC C1 workbooks, preserves
+their immutable raw bytes, versions source provenance, and creates a
+regenerable normalized denominator reference. It does not calculate rates,
+seasons, models, Quarto, or Power BI artifacts.
 
 ---
 

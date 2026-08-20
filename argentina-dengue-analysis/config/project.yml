@@ -30,6 +30,12 @@ directories:
 
   download_staging: "outputs/download_staging"
 
+  population_raw: "data/raw/population"
+
+  population_staging: "outputs/population_staging"
+
+  reference_data: "data/reference"
+
 artifacts:
 
   resources_catalog: "data/metadata/resources_catalog.csv"
@@ -73,6 +79,12 @@ artifacts:
   multiyear_dengue_age_summary: "data/processed/multiyear_dengue_age_summary.csv"
 
   multiyear_comparability_snapshot: "data/metadata/multiyear_comparability_snapshot.csv"
+
+  population_source_provenance: "data/metadata/population_source_provenance.csv"
+
+  population_denominators: "data/reference/population_denominators.csv"
+
+  population_reference_lock: "data/metadata/.argentina_dengue_population_reference.lock"
 
 logs:
 
@@ -122,6 +134,39 @@ multiyear_scope:
     - 2025
 
   event: "Dengue"
+
+population_reference:
+  required_years:
+    indec_census_2010_projection_2010_2040: [2018, 2022, 2024, 2025]
+    indec_census_2022_projection_2022_2040: [2022, 2024, 2025]
+
+  sources:
+    indec_census_2022_projection_2022_2040:
+      source_resource_identifier: "indec_proyecciones_jurisdiccionales_2022_2040_c1"
+      source_authority: "INDEC"
+      source_title: "Población estimada al 1 de julio, por sexo, según año calendario. Total del país y jurisdicciones. Años 2022-2040"
+      source_landing_url: "https://www.indec.gob.ar/indec/web/Nivel4-Tema-2-24-85"
+      expected_filename: "proyecciones_jurisdicciones_2022_2040_c1.xlsx"
+      accepted_formats: ["xlsx"]
+      census_basis: "Censo Nacional de Población, Hogares y Viviendas 2022"
+      workbook:
+        national_sheet: "01-TOTAL DEL PAÍS"
+        province_sheet_pattern: "^[0-9]{2}-"
+        header_skip: 3
+        required_columns: ["Año", "Ambos sexos", "Varones", "Mujeres"]
+    indec_census_2010_projection_2010_2040:
+      source_resource_identifier: "indec_proyecciones_provinciales_2010_2040"
+      source_authority: "INDEC"
+      source_title: "Población estimada al 1 de julio según año calendario por sexo para el total del país y provincias. Años 2010-2040"
+      source_landing_url: "https://www.indec.gob.ar/indec/web/Institucional-Indec-InformacionDeArchivo-1"
+      expected_filename: "c1_proyecciones_prov_2010_2040.xls"
+      accepted_formats: ["xls"]
+      census_basis: "Censo Nacional de Población, Hogares y Viviendas 2010"
+      workbook:
+        national_sheet: "01-TOTAL DEL PAÍS"
+        province_sheet_pattern: "^[0-9]{2}-"
+        header_skip: 3
+        required_columns: ["Año", "Ambos sexos", "Varones", "Mujeres"]
 
 visualization:
   png_resolution_dpi: 150

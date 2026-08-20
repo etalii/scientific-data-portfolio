@@ -32,6 +32,7 @@ Imports:
     janitor,
     lubridate,
     openssl,
+    readxl,
     tibble
 URL:
     https://github.com/andlefa/scientific-data-portfolio

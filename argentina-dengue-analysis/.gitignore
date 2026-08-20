@@ -11,18 +11,24 @@ renv/staging/
 # Data
 data/raw/*
 !data/raw/.gitkeep
+data/raw/population/*
+!data/raw/population/.gitkeep
 
 data/processed/*
 !data/processed/.gitkeep
+
+data/reference/population_denominators.csv
 
 # Operational metadata logs
 data/metadata/download_log.csv
 data/metadata/validation_snapshot.csv
 data/metadata/harmonized_quality_snapshot.csv
 data/metadata/.argentina_dengue_acquisition_validation.lock/
+data/metadata/.argentina_dengue_population_reference.lock/
 
 outputs/*
 !outputs/.gitkeep
+outputs/population_staging/*
 
 # macOS
 .DS_Store

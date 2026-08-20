@@ -232,6 +232,14 @@ seasons, or models. Its contracts are `docs/multiyear_dengue_scope_contract.md`,
 `docs/multiyear_analysis_table_derivation_contract.md`, and
 `docs/multiyear_comparability_assessment_contract.md`.
 
+Population-reference acquisition (C.14) is deliberately separate from the
+multiyear epidemiological pipeline. It acquires immutable, official INDEC C1
+population workbooks, records versioned source provenance, and publishes a
+regenerable normalized reference table only after both Censo 2010 and Censo
+2022 projection vintages validate together. It does not calculate rates or
+construct geographic crosswalks. Its contract is
+`docs/population_denominator_reference_contract.md`.
+
 ---
 
 # Data management
