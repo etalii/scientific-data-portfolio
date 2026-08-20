@@ -74,6 +74,14 @@ artifacts:
 
   epidemiological_season_scope_snapshot: "data/metadata/epidemiological_season_scope_snapshot.csv"
 
+  season_geographic_validation_snapshot: "data/metadata/season_geographic_validation_snapshot.csv"
+  season_national_summary: "data/processed/season_national_summary.csv"
+  season_weekly_national: "data/processed/season_weekly_national.csv"
+  season_province_summary: "data/processed/season_province_summary.csv"
+  season_weekly_province: "data/processed/season_weekly_province.csv"
+  season_region_summary: "data/processed/season_region_summary.csv"
+  season_weekly_region: "data/processed/season_weekly_region.csv"
+
   multiyear_dengue_weekly_national: "data/processed/multiyear_dengue_weekly_national.csv"
 
   multiyear_dengue_province_summary: "data/processed/multiyear_dengue_province_summary.csv"
