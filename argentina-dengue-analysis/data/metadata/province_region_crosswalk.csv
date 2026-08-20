@@ -1,0 +1,25 @@
+region_crosswalk_schema_version,reference_province_id,reference_province_name,epidemiological_region,source_authority,source_document,source_url,effective_context
+1.0.0,02,CABA,Centro,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,06,Buenos Aires,Centro,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,10,Catamarca,NOA,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,14,Córdoba,Centro,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,18,Corrientes,NEA,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,22,Chaco,NEA,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,26,Chubut,Sur,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,30,Entre Ríos,Centro,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,34,Formosa,NEA,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,38,Jujuy,NOA,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,42,La Pampa,Sur,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,46,La Rioja,NOA,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,50,Mendoza,Cuyo,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,54,Misiones,NEA,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,58,Neuquén,Sur,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,62,Río Negro,Sur,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,66,Salta,NOA,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,70,San Juan,Cuyo,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,74,San Luis,Cuyo,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,78,Santa Cruz,Sur,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,82,Santa Fe,Centro,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,86,Santiago del Estero,NOA,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,90,Tucumán,NOA,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization
+1.0.0,94,Tierra del Fuego,Sur,Ministerio de Salud de la Nación,Boletín Epidemiológico Nacional,https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional,National epidemiological regionalization

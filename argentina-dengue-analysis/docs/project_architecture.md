@@ -240,6 +240,20 @@ regenerable normalized reference table only after both Censo 2010 and Censo
 construct geographic crosswalks. Its contract is
 `docs/population_denominator_reference_contract.md`.
 
+Geographic reference mapping (C.15) derives the 24-jurisdiction INDEC
+reference from the C.14 denominator artifact, maps observed source geography
+without changing source values, and adds BEN regional reference metadata. It
+publishes scope-level mapping completeness and future geographic-rate
+eligibility evidence, but does not calculate rates. Its contract is
+`docs/geographic_reference_mapping_contract.md`.
+
+Published count-rate indicators (C.16) reuse C.12 aggregated counts, C.14
+official population denominators, and C.15 validated mappings to create six
+descriptive national, provincial, and BEN regional artifacts. They preserve
+the distinction between published counts and person-level incidence, and do
+not re-read raw data or recreate C.12 aggregations. Its contract is
+`docs/published_count_rate_indicators_contract.md`.
+
 ---
 
 # Data management

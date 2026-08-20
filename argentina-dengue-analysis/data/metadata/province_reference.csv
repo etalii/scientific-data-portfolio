@@ -1,0 +1,25 @@
+province_reference_schema_version,reference_province_id,reference_province_name,reference_system,source_authority,population_source_label,population_source_label_status
+1.0.0,02,CABA,INDEC_jurisdiction,INDEC,CABA,matched_official_reference
+1.0.0,06,Buenos Aires,INDEC_jurisdiction,INDEC,BUENOS AIRES,matched_official_reference
+1.0.0,10,Catamarca,INDEC_jurisdiction,INDEC,CATAMARCA,matched_official_reference
+1.0.0,14,Córdoba,INDEC_jurisdiction,INDEC,CÓRDOBA,matched_official_reference
+1.0.0,18,Corrientes,INDEC_jurisdiction,INDEC,CORRIENTES,matched_official_reference
+1.0.0,22,Chaco,INDEC_jurisdiction,INDEC,CHACO,matched_official_reference
+1.0.0,26,Chubut,INDEC_jurisdiction,INDEC,CHUBUT,matched_official_reference
+1.0.0,30,Entre Ríos,INDEC_jurisdiction,INDEC,ENTRE RÍOS,matched_official_reference
+1.0.0,34,Formosa,INDEC_jurisdiction,INDEC,FORMOSA,matched_official_reference
+1.0.0,38,Jujuy,INDEC_jurisdiction,INDEC,JUJUY,matched_official_reference
+1.0.0,42,La Pampa,INDEC_jurisdiction,INDEC,LA PAMPA,matched_official_reference
+1.0.0,46,La Rioja,INDEC_jurisdiction,INDEC,LA RIOJA,matched_official_reference
+1.0.0,50,Mendoza,INDEC_jurisdiction,INDEC,MENDOZA,matched_official_reference
+1.0.0,54,Misiones,INDEC_jurisdiction,INDEC,MISIONES,matched_official_reference
+1.0.0,58,Neuquén,INDEC_jurisdiction,INDEC,NEUQUÉN,matched_official_reference
+1.0.0,62,Río Negro,INDEC_jurisdiction,INDEC,RÍO NEGRO,matched_official_reference
+1.0.0,66,Salta,INDEC_jurisdiction,INDEC,SALTA,matched_official_reference
+1.0.0,70,San Juan,INDEC_jurisdiction,INDEC,SAN JUAN,matched_official_reference
+1.0.0,74,San Luis,INDEC_jurisdiction,INDEC,SAN LUIS,matched_official_reference
+1.0.0,78,Santa Cruz,INDEC_jurisdiction,INDEC,SANTA CRUZ,matched_official_reference
+1.0.0,82,Santa Fe,INDEC_jurisdiction,INDEC,SANTE FE,population_source_label_mismatch
+1.0.0,86,Santiago del Estero,INDEC_jurisdiction,INDEC,SANTIAGO DEL ESTERO,matched_official_reference
+1.0.0,90,Tucumán,INDEC_jurisdiction,INDEC,TUCUMÁN,matched_official_reference
+1.0.0,94,Tierra del Fuego,INDEC_jurisdiction,INDEC,TIERRA DEL FUEGO,matched_official_reference

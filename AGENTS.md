@@ -97,6 +97,9 @@ Meaningful commit messages.
 Never commit generated data, except provenance metadata explicitly designated
 for version control by a project contract.
 
+Generated processed indicators are regenerable unless their own contract
+explicitly designates them as version-controlled provenance metadata.
+
 Never commit temporary files.
 
 ---

@@ -186,6 +186,10 @@ Population-reference acquisition is an independent external-reference stage.
 It may publish only validated INDEC population denominator sources and their
 provenance; it must not calculate rates or create geographic mappings.
 
+Geographic-reference mapping derives the INDEC province reference from C.14
+and maps source geography without modifying published source values. It may
+assess eligibility for later rate work but must not calculate rates.
+
 Never edit files inside:
 
 ```

@@ -86,6 +86,21 @@ artifacts:
 
   population_reference_lock: "data/metadata/.argentina_dengue_population_reference.lock"
 
+  province_reference: "data/metadata/province_reference.csv"
+
+  source_geography_crosswalk: "data/metadata/source_geography_crosswalk.csv"
+
+  province_region_crosswalk: "data/metadata/province_region_crosswalk.csv"
+
+  geographic_mapping_validation_snapshot: "data/metadata/geographic_mapping_validation_snapshot.csv"
+
+  epidemiology_national_summary: "data/processed/epidemiology_national_summary.csv"
+  epidemiology_weekly_national: "data/processed/epidemiology_weekly_national.csv"
+  epidemiology_province_summary: "data/processed/epidemiology_province_summary.csv"
+  epidemiology_weekly_province: "data/processed/epidemiology_weekly_province.csv"
+  epidemiology_region_summary: "data/processed/epidemiology_region_summary.csv"
+  epidemiology_weekly_region: "data/processed/epidemiology_weekly_region.csv"
+
 logs:
 
   download: "data/metadata/download_log.csv"
@@ -154,6 +169,7 @@ population_reference:
         province_sheet_pattern: "^[0-9]{2}-"
         header_skip: 3
         required_columns: ["Año", "Ambos sexos", "Varones", "Mujeres"]
+
     indec_census_2010_projection_2010_2040:
       source_resource_identifier: "indec_proyecciones_provinciales_2010_2040"
       source_authority: "INDEC"
@@ -167,6 +183,58 @@ population_reference:
         province_sheet_pattern: "^[0-9]{2}-"
         header_skip: 3
         required_columns: ["Año", "Ambos sexos", "Varones", "Mujeres"]
+
+geographic_mapping:
+  indec_geographic_reference_document: "INDEC CODGEO: Definiciones"
+  indec_geographic_reference_url: "https://geoservicios.indec.gob.ar/codgeo/index.php?pagina=definiciones"
+  indec_jurisdictions:
+    "02": "CABA"
+    "06": "Buenos Aires"
+    "10": "Catamarca"
+    "14": "Córdoba"
+    "18": "Corrientes"
+    "22": "Chaco"
+    "26": "Chubut"
+    "30": "Entre Ríos"
+    "34": "Formosa"
+    "38": "Jujuy"
+    "42": "La Pampa"
+    "46": "La Rioja"
+    "50": "Mendoza"
+    "54": "Misiones"
+    "58": "Neuquén"
+    "62": "Río Negro"
+    "66": "Salta"
+    "70": "San Juan"
+    "74": "San Luis"
+    "78": "Santa Cruz"
+    "82": "Santa Fe"
+    "86": "Santiago del Estero"
+    "90": "Tucumán"
+    "94": "Tierra del Fuego"
+  ben_region_source_document: "Boletín Epidemiológico Nacional"
+  ben_region_source_url: "https://www.argentina.gob.ar/salud/boletin-epidemiologico-nacional"
+  ben_region_effective_context: "National epidemiological regionalization"
+  ben_regions:
+    Centro: ["02", "06", "14", "30", "82"]
+    Cuyo: ["50", "70", "74"]
+    NEA: ["18", "22", "34", "54"]
+    NOA: ["10", "38", "46", "66", "86", "90"]
+    Sur: ["26", "42", "58", "62", "78", "94"]
+
+published_count_rate:
+  scenarios:
+    contemporary:
+      "2018": "indec_census_2010_projection_2010_2040"
+      "2022": "indec_census_2022_projection_2022_2040"
+      "2024": "indec_census_2022_projection_2022_2040"
+      "2025": "indec_census_2022_projection_2022_2040"
+    sensitivity_interannual:
+      "2018": "indec_census_2010_projection_2010_2040"
+      "2022": "indec_census_2010_projection_2010_2040"
+      "2024": "indec_census_2010_projection_2010_2040"
+      "2025": "indec_census_2010_projection_2010_2040"
+  ben_region_order: ["Centro", "Cuyo", "NEA", "NOA", "Sur"]
 
 visualization:
   png_resolution_dpi: 150

@@ -173,6 +173,15 @@ their immutable raw bytes, versions source provenance, and creates a
 regenerable normalized denominator reference. It does not calculate rates,
 seasons, models, Quarto, or Power BI artifacts.
 
+C.15 derives the INDEC provincial reference from C.14, records source-to-
+reference and reference-to-BEN-region crosswalks, and measures geographic
+mapping completeness. It preserves source geography and does not calculate
+rates.
+
+C.16 publishes descriptive published-count rates by combining C.12 aggregates
+with C.14 denominators and C.15 eligibility evidence. It does not claim
+incidence and does not reaggregate C.11 or read raw datasets.
+
 ---
 
 ## Coding standards
