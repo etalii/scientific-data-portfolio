@@ -27,11 +27,31 @@ publish_csv_atomically <- function(data, path) {
 
 published_count_rate <- function(case_count, population) 100000 * case_count / population
 
-rate_period_basis <- function(weeks) {
-  if (identical(sort(unique(weeks)), 1:52)) "observed_weeks_01_52" else "observed_week_subset"
+validated_observed_weeks <- function(weeks) {
+  numeric_weeks <- suppressWarnings(as.numeric(weeks))
+  integer_weeks <- suppressWarnings(as.integer(numeric_weeks))
+
+  if (length(weeks) == 0L || anyNA(numeric_weeks) || any(!is.finite(numeric_weeks)) ||
+      any(numeric_weeks != integer_weeks)) {
+    abort_rate("C.12 source_week values must parse strictly as finite integers.")
+  }
+
+  sort(unique(integer_weeks))
 }
 
-observed_week_set <- function(weeks) paste(sprintf("W%02d", sort(unique(weeks))), collapse = "|")
+rate_period_basis <- function(weeks) {
+  observed_weeks <- validated_observed_weeks(weeks)
+  if (length(observed_weeks) == 52L && min(observed_weeks) == 1L &&
+      max(observed_weeks) == 52L && all(observed_weeks == seq_len(52L))) {
+    "observed_weeks_01_52"
+  } else {
+    "observed_week_subset"
+  }
+}
+
+observed_week_set <- function(weeks) {
+  paste(sprintf("W%02d", validated_observed_weeks(weeks)), collapse = "|")
+}
 
 indicator_metadata <- function(scope, scenario, vintage, reference_date, basis, rows) {
   tibble::tibble(
