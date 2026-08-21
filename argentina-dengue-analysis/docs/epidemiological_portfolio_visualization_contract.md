@@ -33,11 +33,20 @@ All outputs are distinct project-relative paths inside `directories.figures`.
 They are final portfolio deliverables and are versioned in Git. C.20 creates
 no plotting CSVs.
 
+Each figure specification may also be rendered as a localized English variant
+at its separately configured `_en` output path. Localization changes only
+visible prose, numeric formatting, and human-readable labels. It reuses the
+same validated inputs, analytical values, scopes, ordering, ties, geometries,
+dimensions, and rendering policy; it is not a new analytical contract or a
+new version of the specification.
+
 ## Required semantics and caveats
 
-All plot text is Spanish, while contract field names remain technical. The
-stage uses the terms `Conteos publicados`, `Tasa de conteos publicados por
-100.000`, `Pico observado`, and `Semana estacional`. It must not call a
+The default render uses Spanish plot text; the localized English render uses
+the controlled English prose described above. Contract field names remain
+technical. The Spanish render uses `Conteos publicados`, `Tasa de conteos
+publicados por 100.000`, `Pico observado`, and `Semana estacional`; the
+English render uses their approved localized equivalents. It must not call a
 published count rate incidence, risk, a unique-person measure, onset,
 transmission, propagation, or duration.
 

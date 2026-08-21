@@ -73,6 +73,11 @@ artifacts:
   province_count_rate_rank_shift_2024_figure: "figures/province_count_rate_rank_shift_2024.png"
   region_population_adjusted_burden_2024_figure: "figures/region_population_adjusted_burden_2024.png"
 
+  season_national_temporal_profile_en_figure: "figures/season_national_temporal_profile_en.png"
+  season_regional_observed_timing_en_figure: "figures/season_regional_observed_timing_en.png"
+  province_count_rate_rank_shift_2024_en_figure: "figures/province_count_rate_rank_shift_2024_en.png"
+  region_population_adjusted_burden_2024_en_figure: "figures/region_population_adjusted_burden_2024_en.png"
+
   multiyear_dengue_scopes: "data/processed/multiyear_dengue_scopes.csv"
 
   epidemiological_season_rows: "data/processed/dengue_season_2024_2025_rows.csv"
@@ -273,6 +278,8 @@ visualization:
   png_resolution_dpi: 150
 
 epidemiological_portfolio_visualization:
+  default_language: "es"
+  supported_languages: ["es", "en"]
   calendar_year_scope_id: "dengue_2024"
   calendar_year: 2024
   rate_denominator_scenario: "contemporary"

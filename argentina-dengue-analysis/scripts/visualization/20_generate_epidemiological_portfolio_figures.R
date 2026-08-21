@@ -69,8 +69,19 @@ require_unique_key <- function(table, columns, label) {
   if (anyDuplicated(table[columns])) abort_c20(sprintf("Duplicate key in %s.", label))
 }
 
-#' Format values for Spanish-language figure labels.
-format_number <- function(values, digits = 0L) format(round(values, digits), big.mark = ".", decimal.mark = ",", trim = TRUE, scientific = FALSE, nsmall = digits)
+#' Format values for localized figure labels.
+format_number <- function(values, digits = 0L, language = "es") {
+  separators <- if (identical(language, "en")) list(big = ",", decimal = ".") else list(big = ".", decimal = ",")
+  format(round(values, digits), big.mark = separators$big, decimal.mark = separators$decimal, trim = TRUE, scientific = FALSE, nsmall = digits)
+}
+
+#' Return visible text for one supported C.20 localization.
+localized_strings <- function(language) {
+  if (identical(language, "en")) return(list(
+    season_title = "Published burden by season week", season_scope = "Season", published_counts = "published counts", mapping_completeness = "geographic mapping completeness", season_week = "Season week", observed_peak = "Observed peak", weighted_center = "Weighted center", weighted_median = "Weighted median", weeks = "weeks", regional_title = "Observed regional timing of published burden", tied_subtitle = "tied peaks are shown without selecting an arbitrary week", peak_tie = "Observed peaks (tie)", observed_weeks = "observed weeks", provinces_at_peak = "provinces at peak", tied_peak = "tied peak", regional_caption = "Observed region weeks only; missing region-week rows are not treated as zero.\nTerritorial numerators do not redistribute nonassignable geography.", rank_title = "Population adjustment changes the territorial ordering", calendar_year = "Calendar year", denominator_scenario = "denominator scenario", count_rank = "Published count rank", rate_rank = "Published-count rate per 100,000 rank", rank_axis = "Rank (1 = highest value)", rate_caption = "Published-count rate per 100,000; it is not incidence, risk, or unique persons.\nTerritorial numerators exclude unknown/nonassignable geography; no redistribution was applied.", region_title = "Published burden and population-adjusted rate by BEN region", counts = "Published counts", rate = "Published-count rate\nper 100,000", region_caption = "Published-count rate per 100,000; it is not incidence. Territorial numerators include only geographically mapped published counts;\nunknown/nonassignable geography was not redistributed.", national_caption = "National totals retain unknown/nonassignable geography. Geographic mapping completeness measures geographic assignment, not surveillance completeness."))
+  list(
+    season_title = "Carga publicada por semana estacional", season_scope = "Temporada", published_counts = "conteos publicados", mapping_completeness = "completitud de asignación geográfica", season_week = "Semana estacional", observed_peak = "Pico observado", weighted_center = "Centro ponderado", weighted_median = "Mediana ponderada", weeks = "semanas", regional_title = "Timing regional observado de la carga publicada", tied_subtitle = "los empates se muestran sin seleccionar una semana arbitraria", peak_tie = "Picos observados (empate)", observed_weeks = "semanas observadas", provinces_at_peak = "provincias en pico", tied_peak = "pico con empate", regional_caption = "Solo semanas regionales observadas: las filas regional-semana ausentes no se tratan como cero.\nLos conteos territoriales no redistribuyen geografía no asignable.", rank_title = "El ajuste por población cambia el orden territorial", calendar_year = "Año calendario", denominator_scenario = "escenario de denominador", count_rank = "Rango por\nconteos publicados", rate_rank = "Rango por tasa de conteos\npublicados por 100.000", rank_axis = "Rango (1 = mayor valor)", rate_caption = "Tasa de conteos publicados por 100.000; no es incidencia, riesgo ni personas únicas.\nLos numeradores territoriales excluyen geografía unknown/nonassignable; no se redistribuyó.", region_title = "Carga publicada y tasa poblacional por región BEN", counts = "Conteos publicados", rate = "Tasa de conteos publicados\npor 100.000", region_caption = "Tasa de conteos publicados por 100.000; no es incidencia. Los numeradores territoriales incluyen solo geografía mapeada;\nla geografía unknown/nonassignable no se redistribuyó.", national_caption = "El total nacional conserva geografía unknown/nonassignable. La completitud territorial mide asignación geográfica, no completitud de vigilancia.")
+}
 
 #' Construct the C.20 visual theme.
 portfolio_theme <- function() {
@@ -91,17 +102,20 @@ portfolio_theme <- function() {
 }
 
 #' Return the controlled C.20 configuration and output paths.
-visualization_settings <- function(config) {
+visualization_settings <- function(config, language) {
   figures_directory <- required_string(config, "directories", "figures")
-  output_keys <- c("season_national_temporal_profile_figure", "season_regional_observed_timing_figure", "province_count_rate_rank_shift_2024_figure", "region_population_adjusted_burden_2024_figure")
-  outputs <- purrr::set_names(purrr::map_chr(output_keys, ~ required_string(config, "artifacts", .x)), sub("_figure$", "", output_keys))
+  figure_ids <- names(figure_dimensions)
+  output_keys <- paste0(figure_ids, if (identical(language, "en")) "_en_figure" else "_figure")
+  outputs <- purrr::set_names(purrr::map_chr(output_keys, ~ required_string(config, "artifacts", .x)), figure_ids)
   purrr::iwalk(outputs, ~ validate_output_path(.x, figures_directory, .y))
   if (anyDuplicated(unname(outputs))) abort_c20("C.20 figure outputs must be distinct.")
   policy <- config$epidemiological_portfolio_visualization
   if (is.null(policy) || !is.list(policy)) abort_c20("Missing epidemiological_portfolio_visualization configuration.")
+  if (!language %in% policy$supported_languages) abort_c20(sprintf("Unsupported C.20 language: %s", language))
   if (is.null(policy$calendar_year) || length(policy$calendar_year) != 1L || policy$calendar_year != floor(policy$calendar_year)) abort_c20("Invalid C.20 calendar year.")
   list(
     figures_directory = figures_directory,
+    language = language,
     outputs = outputs,
     dpi = as.integer(config$visualization$png_resolution_dpi),
     season_scope_id = config$epidemiological_season$scope_id,
@@ -207,7 +221,8 @@ validate_rank_expectations <- function(inputs, settings) {
 build_season_national_plot <- function(inputs, settings) {
   weekly <- inputs$weekly
   descriptor <- inputs$national_temporal
-  windows <- dplyr::mutate(inputs$windows, track = -max(weekly$published_case_count) * c(0.04, 0.08, 0.12), label = sprintf("%s %%: SE%s–SE%s (%s semanas)", format_number(.data$target_share * 100), .data$window_start_season_week_index, .data$window_end_season_week_index, .data$window_length_weeks))
+  text <- localized_strings(settings$language)
+  windows <- dplyr::mutate(inputs$windows, track = -max(weekly$published_case_count) * c(0.04, 0.08, 0.12), label = sprintf("%s %%: SE%s–SE%s (%s %s)", format_number(.data$target_share * 100, language = settings$language), .data$window_start_season_week_index, .data$window_end_season_week_index, .data$window_length_weeks, text$weeks))
   labels <- weekly |> dplyr::filter(.data$season_week_index %in% c(1L, 9L, 17L, 22L, 23L, 31L, 39L, 47L, 52L)) |> dplyr::transmute(season_week_index, label = sprintf("%s-W%02d", .data$source_year, as.integer(.data$source_week)))
   peak <- dplyr::filter(weekly, .data$season_week_index == descriptor$peak_count_season_week_index)
   ggplot2::ggplot(weekly, ggplot2::aes(x = .data$season_week_index, y = .data$published_case_count)) +
@@ -216,67 +231,70 @@ build_season_national_plot <- function(inputs, settings) {
     ggplot2::geom_vline(xintercept = descriptor$published_count_weighted_season_week, linetype = "dashed", linewidth = 0.9, colour = "#6A3D9A") +
     ggplot2::geom_vline(xintercept = descriptor$published_count_weighted_median_season_week, linetype = "dotted", linewidth = 1.1, colour = "#2E6F40") +
     ggplot2::geom_point(data = peak, size = 4.2, shape = 21, fill = "#B13F2D", colour = "#B13F2D") +
-    ggplot2::geom_label(data = peak, ggplot2::aes(label = sprintf("Pico observado: SE%s\n%s conteos publicados", .data$season_week_index, format_number(.data$published_case_count))), fill = "white", colour = "#173042", size = 4.5, vjust = -0.55, show.legend = FALSE) +
-    ggplot2::annotate("label", x = descriptor$published_count_weighted_season_week - 0.4, y = max(weekly$published_case_count) * 0.78, label = sprintf("Centro ponderado\nSE %.2f", descriptor$published_count_weighted_season_week), colour = "#6A3D9A", fill = "white", size = 3.9, hjust = 1) +
-    ggplot2::annotate("label", x = descriptor$published_count_weighted_median_season_week + 0.4, y = max(weekly$published_case_count) * 0.63, label = sprintf("Mediana ponderada\nSE %s", descriptor$published_count_weighted_median_season_week), colour = "#2E6F40", fill = "white", size = 3.9, hjust = 0) +
+    ggplot2::geom_label(data = peak, ggplot2::aes(label = sprintf("%s: SE%s\n%s %s", text$observed_peak, .data$season_week_index, format_number(.data$published_case_count, language = settings$language), text$published_counts)), fill = "white", colour = "#173042", size = 4.5, vjust = -0.55, show.legend = FALSE) +
+    ggplot2::annotate("label", x = descriptor$published_count_weighted_season_week - 0.4, y = max(weekly$published_case_count) * 0.78, label = sprintf("%s\nSE %s", text$weighted_center, format_number(descriptor$published_count_weighted_season_week, 2, settings$language)), colour = "#6A3D9A", fill = "white", size = 3.9, hjust = 1) +
+    ggplot2::annotate("label", x = descriptor$published_count_weighted_median_season_week + 0.4, y = max(weekly$published_case_count) * 0.63, label = sprintf("%s\nSE %s", text$weighted_median, descriptor$published_count_weighted_median_season_week), colour = "#2E6F40", fill = "white", size = 3.9, hjust = 0) +
     ggplot2::geom_segment(data = windows, ggplot2::aes(x = .data$window_start_season_week_index, xend = .data$window_end_season_week_index, y = .data$track, yend = .data$track), inherit.aes = FALSE, linewidth = 2.2, colour = "#405364") +
     ggplot2::geom_text(data = windows, ggplot2::aes(x = 52.4, y = .data$track, label = .data$label), inherit.aes = FALSE, hjust = 0, size = 3.7, colour = "#405364") +
     ggplot2::scale_x_continuous(breaks = labels$season_week_index, labels = labels$label, limits = c(1, 67), guide = ggplot2::guide_axis(n.dodge = 2)) +
-    ggplot2::scale_y_continuous(labels = format_number, limits = c(-0.16 * max(weekly$published_case_count), NA), expand = ggplot2::expansion(mult = c(0, 0.18))) +
-    ggplot2::labs(title = "Carga publicada por semana estacional", subtitle = sprintf("Temporada %s · %s conteos publicados · completitud de asignación geográfica: %s %%", settings$season_label, format_number(inputs$season_summary$season_published_case_count), format_number(100 * inputs$season_summary$season_geographic_mapping_completeness, 1)), x = "Semana estacional", y = "Conteos publicados", caption = "El total nacional conserva geografía unknown/nonassignable. La completitud territorial mide asignación geográfica, no completitud de vigilancia.") +
+    ggplot2::scale_y_continuous(labels = function(values) format_number(values, language = settings$language), limits = c(-0.16 * max(weekly$published_case_count), NA), expand = ggplot2::expansion(mult = c(0, 0.18))) +
+    ggplot2::labs(title = text$season_title, subtitle = sprintf("%s %s · %s %s · %s: %s %%", text$season_scope, settings$season_label, format_number(inputs$season_summary$season_published_case_count, language = settings$language), text$published_counts, text$mapping_completeness, format_number(100 * inputs$season_summary$season_geographic_mapping_completeness, 1, settings$language)), x = text$season_week, y = text$published_counts, caption = text$national_caption) +
     portfolio_theme()
 }
 
 #' Expand contractually tied peak indices without selecting an arbitrary week.
-expand_peak_indices <- function(regions) {
+expand_peak_indices <- function(regions, text) {
   purrr::map_dfr(seq_len(nrow(regions)), function(index) {
     values <- as.integer(strsplit(regions$peak_count_tied_season_week_indices[[index]], "\\|", fixed = FALSE)[[1]])
-    tibble::tibble(epidemiological_region = regions$epidemiological_region[[index]], season_week_index = values, descriptor = if (length(values) == 1L) "Pico observado" else "Picos observados (empate)")
+    tibble::tibble(epidemiological_region = regions$epidemiological_region[[index]], season_week_index = values, descriptor = if (length(values) == 1L) text$observed_peak else text$peak_tie)
   })
 }
 
 #' Build the observed regional timing figure.
 build_season_regional_plot <- function(inputs, settings) {
-  regions <- inputs$regional_temporal |> dplyr::mutate(epidemiological_region = factor(.data$epidemiological_region, levels = rev(settings$ben_region_order)), coverage = ifelse(is.na(.data$peak_region_observed_province_count), sprintf("%s semanas observadas · pico con empate", .data$regional_observed_week_count), sprintf("%s semanas observadas · %s/%s provincias en pico", .data$regional_observed_week_count, .data$peak_region_observed_province_count, .data$peak_region_total_province_count)))
-  peaks <- expand_peak_indices(regions) |> dplyr::mutate(epidemiological_region = factor(.data$epidemiological_region, levels = levels(regions$epidemiological_region)))
-  other <- dplyr::bind_rows(dplyr::transmute(regions, epidemiological_region, season_week_index = .data$published_count_weighted_median_season_week, descriptor = "Mediana ponderada"), dplyr::transmute(regions, epidemiological_region, season_week_index = .data$published_count_weighted_season_week, descriptor = "Centro ponderado"))
+  text <- localized_strings(settings$language)
+  regions <- inputs$regional_temporal |> dplyr::mutate(epidemiological_region = factor(.data$epidemiological_region, levels = rev(settings$ben_region_order)), coverage = ifelse(is.na(.data$peak_region_observed_province_count), sprintf("%s %s · %s", .data$regional_observed_week_count, text$observed_weeks, text$tied_peak), sprintf("%s %s · %s/%s %s", .data$regional_observed_week_count, text$observed_weeks, .data$peak_region_observed_province_count, .data$peak_region_total_province_count, text$provinces_at_peak)))
+  peaks <- expand_peak_indices(regions, text) |> dplyr::mutate(epidemiological_region = factor(.data$epidemiological_region, levels = levels(regions$epidemiological_region)))
+  other <- dplyr::bind_rows(dplyr::transmute(regions, epidemiological_region, season_week_index = .data$published_count_weighted_median_season_week, descriptor = text$weighted_median), dplyr::transmute(regions, epidemiological_region, season_week_index = .data$published_count_weighted_season_week, descriptor = text$weighted_center))
   ggplot2::ggplot() +
     ggplot2::geom_point(data = peaks, ggplot2::aes(x = .data$season_week_index, y = .data$epidemiological_region, shape = .data$descriptor), size = 4.2, colour = "#B13F2D", fill = "white") +
     ggplot2::geom_point(data = other, ggplot2::aes(x = .data$season_week_index, y = .data$epidemiological_region, shape = .data$descriptor), size = 3.6, colour = "#1F5A7A") +
     ggplot2::geom_text(data = regions, ggplot2::aes(x = 55, y = .data$epidemiological_region, label = .data$coverage), hjust = 0, size = 4, colour = "#405364") +
-    ggplot2::scale_shape_manual(values = c("Pico observado" = 21, "Picos observados (empate)" = 21, "Mediana ponderada" = 24, "Centro ponderado" = 23), name = NULL) +
+    ggplot2::scale_shape_manual(values = stats::setNames(c(21, 21, 24, 23), c(text$observed_peak, text$peak_tie, text$weighted_median, text$weighted_center)), name = NULL) +
     ggplot2::scale_x_continuous(breaks = seq(1, 52, by = 4), limits = c(1, 70)) +
-    ggplot2::labs(title = "Timing regional observado de la carga publicada", subtitle = sprintf("Temporada %s · los empates se muestran sin seleccionar una semana arbitraria", settings$season_label), x = "Semana estacional", y = NULL, caption = "Solo semanas regionales observadas: las filas regional-semana ausentes no se tratan como cero.\nLos conteos territoriales no redistribuyen geografía no asignable.") +
+    ggplot2::labs(title = text$regional_title, subtitle = sprintf("%s %s · %s", text$season_scope, settings$season_label, text$tied_subtitle), x = text$season_week, y = NULL, caption = text$regional_caption) +
     portfolio_theme() + ggplot2::theme(panel.grid.major.y = ggplot2::element_line(colour = "#D9E1E6", linewidth = 0.35), legend.position = "bottom")
 }
 
 #' Build the provincial count-to-rate rank-shift figure.
 build_province_rank_plot <- function(ranked, settings) {
+  text <- localized_strings(settings$language)
   highlighted <- dplyr::filter(ranked, .data$reference_province_id %in% purrr::map_chr(settings$featured_provinces, "reference_province_id"))
   positions <- dplyr::bind_rows(dplyr::transmute(ranked, reference_province_id, reference_province_name, axis = "Rango por conteos publicados", x = 1, rank = .data$count_rank), dplyr::transmute(ranked, reference_province_id, reference_province_name, axis = "Rango por tasa por 100.000", x = 2, rank = .data$rate_rank))
   ggplot2::ggplot(positions, ggplot2::aes(x = .data$x, y = .data$rank, group = .data$reference_province_id)) +
     ggplot2::geom_line(colour = "#B8C4CC", linewidth = 0.7) + ggplot2::geom_point(shape = 21, fill = "white", colour = "#7A7A7A", size = 2.5) +
     ggplot2::geom_line(data = dplyr::filter(positions, .data$reference_province_id %in% highlighted$reference_province_id), colour = "#B13F2D", linewidth = 1.25) +
     ggplot2::geom_point(data = dplyr::filter(positions, .data$reference_province_id %in% highlighted$reference_province_id), shape = 21, fill = "#B13F2D", colour = "#B13F2D", size = 3.6) +
-    ggplot2::geom_text(data = highlighted, ggplot2::aes(x = 0.92, y = .data$count_rank, label = sprintf("%s · %s", .data$reference_province_name, format_number(.data$published_case_count))), inherit.aes = FALSE, hjust = 1, size = 3.8, colour = "#173042") +
-    ggplot2::geom_text(data = highlighted, ggplot2::aes(x = 2.08, y = .data$rate_rank, label = sprintf("%s · %s", .data$reference_province_name, format_number(.data$published_count_rate_100k, 1))), inherit.aes = FALSE, hjust = 0, size = 3.8, colour = "#173042") +
-    ggplot2::scale_x_continuous(breaks = c(1, 2), labels = c("Rango por\nconteos publicados", "Rango por tasa de conteos\npublicados por 100.000"), limits = c(0.35, 2.75)) +
+    ggplot2::geom_text(data = highlighted, ggplot2::aes(x = 0.92, y = .data$count_rank, label = sprintf("%s · %s", .data$reference_province_name, format_number(.data$published_case_count, language = settings$language))), inherit.aes = FALSE, hjust = 1, size = 3.8, colour = "#173042") +
+    ggplot2::geom_text(data = highlighted, ggplot2::aes(x = 2.08, y = .data$rate_rank, label = sprintf("%s · %s", .data$reference_province_name, format_number(.data$published_count_rate_100k, 1, settings$language))), inherit.aes = FALSE, hjust = 0, size = 3.8, colour = "#173042") +
+    ggplot2::scale_x_continuous(breaks = c(1, 2), labels = c(text$count_rank, text$rate_rank), limits = c(0.35, 2.75)) +
     ggplot2::scale_y_reverse(breaks = seq_len(nrow(ranked)), limits = c(nrow(ranked) + 0.5, 0.5)) +
-    ggplot2::labs(title = "El ajuste por población cambia el orden territorial", subtitle = sprintf("Año calendario %s · escenario de denominador %s", settings$calendar_year, settings$scenario), x = NULL, y = "Rango (1 = mayor valor)", caption = "Tasa de conteos publicados por 100.000; no es incidencia, riesgo ni personas únicas.\nLos numeradores territoriales excluyen geografía unknown/nonassignable; no se redistribuyó.") +
+    ggplot2::labs(title = text$rank_title, subtitle = sprintf("%s %s · %s %s", text$calendar_year, settings$calendar_year, text$denominator_scenario, settings$scenario), x = NULL, y = text$rank_axis, caption = text$rate_caption) +
     portfolio_theme() + ggplot2::theme(panel.grid.major.x = ggplot2::element_blank())
 }
 
 #' Build the regional count-and-rate burden figure.
 build_region_burden_plot <- function(inputs, region_order, settings) {
+  text <- localized_strings(settings$language)
   regions <- inputs$region_rate |> dplyr::mutate(epidemiological_region = factor(.data$epidemiological_region, levels = rev(region_order)))
-  values <- dplyr::bind_rows(dplyr::transmute(regions, epidemiological_region, measure = "Conteos publicados", value = .data$published_case_count, label = format_number(.data$published_case_count)), dplyr::transmute(regions, epidemiological_region, measure = "Tasa de conteos publicados\npor 100.000", value = .data$published_count_rate_100k, label = format_number(.data$published_count_rate_100k, 1)))
+  values <- dplyr::bind_rows(dplyr::transmute(regions, epidemiological_region, measure = text$counts, value = .data$published_case_count, label = format_number(.data$published_case_count, language = settings$language)), dplyr::transmute(regions, epidemiological_region, measure = text$rate, value = .data$published_count_rate_100k, label = format_number(.data$published_count_rate_100k, 1, settings$language)))
   ggplot2::ggplot(values, ggplot2::aes(x = .data$value, y = .data$epidemiological_region)) +
     ggplot2::geom_segment(ggplot2::aes(x = 0, xend = .data$value, yend = .data$epidemiological_region), linewidth = 1.1, colour = "#B8C4CC") +
     ggplot2::geom_point(shape = 21, fill = "#1F5A7A", colour = "#1F5A7A", size = 4) +
     ggplot2::geom_text(ggplot2::aes(label = .data$label), hjust = -0.2, size = 4, colour = "#173042") +
     ggplot2::facet_wrap(ggplot2::vars(.data$measure), scales = "free_x", nrow = 1L) +
-    ggplot2::scale_x_continuous(labels = format_number, expand = ggplot2::expansion(mult = c(0, 0.16))) +
-    ggplot2::labs(title = "Carga publicada y tasa poblacional por región BEN", subtitle = sprintf("Año calendario %s · escenario de denominador %s", settings$calendar_year, settings$scenario), x = NULL, y = NULL, caption = "Tasa de conteos publicados por 100.000; no es incidencia. Los numeradores territoriales incluyen solo geografía mapeada;\nla geografía unknown/nonassignable no se redistribuyó.") +
+    ggplot2::scale_x_continuous(labels = function(values) format_number(values, language = settings$language), expand = ggplot2::expansion(mult = c(0, 0.16))) +
+    ggplot2::labs(title = text$region_title, subtitle = sprintf("%s %s · %s %s", text$calendar_year, settings$calendar_year, text$denominator_scenario, settings$scenario), x = NULL, y = NULL, caption = text$region_caption) +
     portfolio_theme() + ggplot2::theme(panel.grid.major.y = ggplot2::element_blank())
 }
 
@@ -313,7 +331,10 @@ publish_figure_set <- function(temporary_paths, output_paths) {
 #' Run C.20 from the project root.
 main <- function() {
   if (!requireNamespace("ggplot2", quietly = TRUE)) abort_c20("Required direct dependency ggplot2 is not available.")
-  settings <- visualization_settings(read_project_config())
+  config <- read_project_config()
+  argument <- commandArgs(FALSE)[startsWith(commandArgs(FALSE), "--language=")]
+  language <- if (length(argument)) sub("^--language=", "", argument[[1]]) else config$epidemiological_portfolio_visualization$default_language
+  settings <- visualization_settings(config, language)
   inputs <- read_and_validate_inputs(settings)
   ranks <- validate_rank_expectations(inputs, settings)
   plots <- list(
@@ -326,7 +347,7 @@ main <- function() {
   on.exit(unlink(temporary_paths), add = TRUE)
   purrr::iwalk(plots, function(plot, name) { render_png(plot, temporary_paths[[name]], figure_dimensions[[name]], settings$dpi); validate_png(temporary_paths[[name]], figure_dimensions[[name]]) })
   publish_figure_set(temporary_paths, settings$outputs)
-  message(sprintf("season_scope=%s | calendar_scope=%s | figures=%s", settings$season_scope_id, settings$calendar_scope_id, length(plots)))
+  message(sprintf("language=%s | season_scope=%s | calendar_scope=%s | figures=%s", settings$language, settings$season_scope_id, settings$calendar_scope_id, length(plots)))
   invisible(TRUE)
 }
 
