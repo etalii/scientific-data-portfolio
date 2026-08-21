@@ -186,6 +186,11 @@ C.17 is a row-preserving, configured source-week selection from C.11 for the
 SE31/2024--SE30/2025 season window. It validates exact tuple coverage and
 preserves annual-scope lineage, but does not calculate seasonal rates.
 
+C.20 is an additive presentation stage. It produces four versioned PNGs from
+certified C.16, C.18, and C.19 artifacts, keeping season and calendar-year
+scopes explicitly separate. It does not read raw data, rebuild aggregates,
+calculate rates, model, or generate reports or dashboards.
+
 ---
 
 ## Coding standards

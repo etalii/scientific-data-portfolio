@@ -68,6 +68,11 @@ artifacts:
 
   dengue_2024_age_group_composition_figure: "figures/dengue_2024_age_group_composition.png"
 
+  season_national_temporal_profile_figure: "figures/season_national_temporal_profile.png"
+  season_regional_observed_timing_figure: "figures/season_regional_observed_timing.png"
+  province_count_rate_rank_shift_2024_figure: "figures/province_count_rate_rank_shift_2024.png"
+  region_population_adjusted_burden_2024_figure: "figures/region_population_adjusted_burden_2024.png"
+
   multiyear_dengue_scopes: "data/processed/multiyear_dengue_scopes.csv"
 
   epidemiological_season_rows: "data/processed/dengue_season_2024_2025_rows.csv"
@@ -266,3 +271,25 @@ epidemiological_season:
 
 visualization:
   png_resolution_dpi: 150
+
+epidemiological_portfolio_visualization:
+  calendar_year_scope_id: "dengue_2024"
+  calendar_year: 2024
+  rate_denominator_scenario: "contemporary"
+  featured_provinces:
+    - reference_province_id: "06"
+      count_rank: 1
+      rate_rank: 16
+    - reference_province_id: "90"
+      count_rank: 3
+      rate_rank: 1
+    - reference_province_id: "46"
+      count_rank: 12
+      rate_rank: 2
+    - reference_province_id: "10"
+      count_rank: 13
+      rate_rank: 4
+  regional_rank_expectations:
+    highest_published_count: "Centro"
+    highest_published_count_rate: "NOA"
+    second_highest_published_count_rate: "NEA"

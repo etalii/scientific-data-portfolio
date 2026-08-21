@@ -260,6 +260,13 @@ window. It proves only tuple coverage and structural continuity for that
 window; it does not calculate seasonal rates or select a seasonal denominator.
 Its contract is `docs/epidemiological_season_scope_contract.md`.
 
+Epidemiological portfolio visualization (C.20) consumes only certified C.16,
+C.18, and C.19 indicators and descriptors to create four versioned PNG
+deliverables. It keeps the SE31/2024--SE30/2025 season figures distinct from
+the calendar-year 2024 rate figures, without recalculating indicators or
+reading raw data. Its contract is
+`docs/epidemiological_portfolio_visualization_contract.md`.
+
 ---
 
 # Data management
@@ -284,10 +291,11 @@ data/processed/
 ```
 
 Regenerable intermediate data and metadata snapshots are ignored by Git. The
-four final C.10 portfolio figures in `figures/` are a deliberate exception:
-they are versioned deliverables and must be reproducible from their versioned
-producer, configuration, and C.9 inputs. Exploratory graphics and controlled
-temporary graphics are not deliverables and must not be committed.
+four final C.10 figures and four C.20 epidemiological portfolio figures in
+`figures/` are deliberate exceptions: they are versioned deliverables and must
+be reproducible from their versioned producers, configuration, and certified
+inputs. Exploratory graphics and controlled temporary graphics are not
+deliverables and must not be committed.
 
 Logs documenting downloads and validation are stored in:
 
