@@ -82,6 +82,10 @@ artifacts:
   season_region_summary: "data/processed/season_region_summary.csv"
   season_weekly_region: "data/processed/season_weekly_region.csv"
 
+  season_temporal_national_summary: "data/processed/season_temporal_national_summary.csv"
+  season_temporal_region_summary: "data/processed/season_temporal_region_summary.csv"
+  season_temporal_national_concentration_windows: "data/processed/season_temporal_national_concentration_windows.csv"
+
   multiyear_dengue_weekly_national: "data/processed/multiyear_dengue_weekly_national.csv"
 
   multiyear_dengue_province_summary: "data/processed/multiyear_dengue_province_summary.csv"
