@@ -51,6 +51,7 @@ outputs/population_staging/*
 # Output files
 *.html
 *.pdf
+!reports/argentina_dengue_portfolio.html
 
 # Temporary files
 *.tmp

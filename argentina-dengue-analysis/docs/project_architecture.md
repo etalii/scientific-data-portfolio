@@ -267,6 +267,12 @@ the calendar-year 2024 rate figures, without recalculating indicators or
 reading raw data. Its contract is
 `docs/epidemiological_portfolio_visualization_contract.md`.
 
+The portfolio report is a separate Quarto consumer of certified summary and
+descriptor artifacts plus the versioned English C.20 figures. It never runs
+pipeline scripts, reads raw data, regenerates figures, or recalculates
+indicators. Its stable HTML deliverable is
+`reports/argentina_dengue_portfolio.html`.
+
 ---
 
 # Data management
@@ -291,7 +297,8 @@ data/processed/
 ```
 
 Regenerable intermediate data and metadata snapshots are ignored by Git. The
-four final C.10 figures and four C.20 epidemiological portfolio figures in
+four final C.10 figures and the four C.20 epidemiological figure
+specifications, including their approved English localized renderings, in
 `figures/` are deliberate exceptions: they are versioned deliverables and must
 be reproducible from their versioned producers, configuration, and certified
 inputs. Exploratory graphics and controlled temporary graphics are not

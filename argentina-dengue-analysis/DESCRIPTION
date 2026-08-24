@@ -34,6 +34,8 @@ Imports:
     openssl,
     readxl,
     tibble
+Suggests:
+    knitr
 URL:
     https://github.com/andlefa/scientific-data-portfolio
 BugReports:

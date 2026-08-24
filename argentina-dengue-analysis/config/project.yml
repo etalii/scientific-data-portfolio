@@ -26,6 +26,8 @@ directories:
 
   figures: "figures"
 
+  reports: "reports"
+
   metadata: "data/metadata"
 
   download_staging: "outputs/download_staging"
@@ -77,6 +79,8 @@ artifacts:
   season_regional_observed_timing_en_figure: "figures/season_regional_observed_timing_en.png"
   province_count_rate_rank_shift_2024_en_figure: "figures/province_count_rate_rank_shift_2024_en.png"
   region_population_adjusted_burden_2024_en_figure: "figures/region_population_adjusted_burden_2024_en.png"
+
+  argentina_dengue_portfolio_report_html: "reports/argentina_dengue_portfolio.html"
 
   multiyear_dengue_scopes: "data/processed/multiyear_dengue_scopes.csv"
 
