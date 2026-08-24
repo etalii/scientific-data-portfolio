@@ -7,10 +7,7 @@ and explicit analytical-scope rules can produce transparent descriptive
 evidence—without overstating incidence, individual risk, or surveillance
 completeness.
 
-> **Read the full portfolio report →**
-> [Rendered HTML report](reports/argentina_dengue_portfolio.html)
->
-> A stable GitHub Pages URL will be added after the first static deployment.
+> **[Read the full portfolio report →](https://etalii.github.io/scientific-data-portfolio/argentina-dengue-analysis/)**
 
 ## Two analytical scopes
 
