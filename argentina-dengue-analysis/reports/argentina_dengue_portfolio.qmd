@@ -204,7 +204,7 @@ The surveillance artifacts originate in official public releases published throu
 
 ## Resource selection and structural preparation
 
-Immutable raw inputs, SHA-256 provenance, versioned contracts, validation, and deterministic canonical resource selection establish the certified analytical lineage. Structural preparation preserves source-row provenance rather than silently resolving semantic or quality uncertainty. The relevant contract records are available in the versioned [project documentation](../docs/project_architecture.md).
+Immutable raw inputs, SHA-256 provenance, versioned contracts, validation, and deterministic canonical resource selection establish the certified analytical lineage. Structural preparation preserves source-row provenance rather than silently resolving semantic or quality uncertainty. The relevant contract records are available in the versioned [project documentation](https://github.com/etalii/scientific-data-portfolio/blob/main/argentina-dengue-analysis/docs/project_architecture.md).
 
 ## Analytical scopes and geographic handling
 

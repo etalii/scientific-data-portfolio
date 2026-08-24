@@ -1,0 +1,56 @@
+name: Deploy Argentina Dengue portfolio report
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - argentina-dengue-analysis/reports/argentina_dengue_portfolio.html
+      - .github/workflows/deploy_argentina_dengue_report.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Prepare certified static artifact
+        run: |
+          mkdir -p _site/argentina-dengue-analysis
+          printf '%s\n' \
+            '<!doctype html>' \
+            '<html lang="en">' \
+            '<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Scientific Data Portfolio</title></head>' \
+            '<body><main><h1>Scientific Data Portfolio</h1><p>Reproducible scientific data analysis projects.</p><p><a href="./argentina-dengue-analysis/">Argentina Dengue Surveillance</a></p></main></body>' \
+            '</html>' > _site/index.html
+          cp argentina-dengue-analysis/reports/argentina_dengue_portfolio.html \
+            _site/argentina-dengue-analysis/index.html
+          sha256sum argentina-dengue-analysis/reports/argentina_dengue_portfolio.html \
+            _site/argentina-dengue-analysis/index.html
+          cmp -s argentina-dengue-analysis/reports/argentina_dengue_portfolio.html \
+            _site/argentina-dengue-analysis/index.html
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
