@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - argentina-dengue-analysis/reports/argentina_dengue_portfolio.html
+      - argentina-dengue-analysis/articles/dengue_population_ecology_perspective.html
       - .github/workflows/deploy_argentina_dengue_report.yml
   workflow_dispatch:
 
@@ -29,7 +30,7 @@ jobs:
 
       - name: Prepare certified static artifact
         run: |
-          mkdir -p _site/argentina-dengue-analysis
+          mkdir -p _site/argentina-dengue-analysis/ecological-perspective
           printf '%s\n' \
             '<!doctype html>' \
             '<html lang="en">' \
@@ -38,10 +39,16 @@ jobs:
             '</html>' > _site/index.html
           cp argentina-dengue-analysis/reports/argentina_dengue_portfolio.html \
             _site/argentina-dengue-analysis/index.html
+          cp argentina-dengue-analysis/articles/dengue_population_ecology_perspective.html \
+            _site/argentina-dengue-analysis/ecological-perspective/index.html
           sha256sum argentina-dengue-analysis/reports/argentina_dengue_portfolio.html \
             _site/argentina-dengue-analysis/index.html
           cmp -s argentina-dengue-analysis/reports/argentina_dengue_portfolio.html \
             _site/argentina-dengue-analysis/index.html
+          sha256sum argentina-dengue-analysis/articles/dengue_population_ecology_perspective.html \
+            _site/argentina-dengue-analysis/ecological-perspective/index.html
+          cmp -s argentina-dengue-analysis/articles/dengue_population_ecology_perspective.html \
+            _site/argentina-dengue-analysis/ecological-perspective/index.html
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5

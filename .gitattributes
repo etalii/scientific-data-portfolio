@@ -1,0 +1,3 @@
+# Quarto embeds third-party runtime code whose upstream whitespace is immutable
+# within the approved self-contained publication artifact.
+argentina-dengue-analysis/articles/dengue_population_ecology_perspective.html -whitespace

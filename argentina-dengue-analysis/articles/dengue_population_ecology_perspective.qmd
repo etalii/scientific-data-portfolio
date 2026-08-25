@@ -1,0 +1,559 @@
+---
+title: "Seasonal pulses and spatial heterogeneity of published dengue counts in Argentina: a population-ecology perspective"
+subtitle: "A hypothesis-driven ecological interpretation of reproducible surveillance patterns"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    anchor-sections: true
+    embed-resources: true
+    link-citations: true
+bibliography: references.bib
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+## Abstract
+
+Dengue arises from coupled interactions among mosquitoes, viruses, human hosts,
+environments, and systems of observation. This hypothesis-driven ecological
+perspective uses a certified reproducible descriptive analysis of official
+Argentine surveillance data as its empirical basis. It is not a new
+epidemiological study, causal analysis, climate-attribution study, transmission
+model, or incidence study. In SE31/2024--SE30/2025, the analysis retained
+17,844 published counts. The observed national maximum was at season week 36,
+the weighted temporal center was 35.76 weeks, and the shortest windows
+containing 50%, 80%, and 90% of published counts lasted 5, 10, and 12 weeks.
+Regional timing differed, and NEA had a tied rather than unique peak. In
+calendar year 2024, population adjustment reordered provinces: Buenos Aires
+was first by published count but sixteenth by published-count rate per 100,000,
+while Tucumán moved from third to first.
+
+These patterns are consistent with, but do not demonstrate, a seasonally forced
+vector--virus--host system. The proposed framework separates a latent biological
+process--linking climate and habitat, mosquito population dynamics,
+vector--virus biology, and human hosts--from the observation process through
+which transmission becomes healthcare seeking, detection, notification,
+classification, geographic assignment, and a published dataset. It explains why
+population size, habitat, mobility, immunity, serotypes, and surveillance can
+all shape observed heterogeneity, offers five falsifiable predictions, and
+specifies independent data required to test them. Published counts remain
+neither unique people, incidence, individual risk, nor direct measurements of
+transmission.
+
+**Keywords:** Dengue; *Aedes aegypti*; population ecology; vector ecology;
+seasonal dynamics; surveillance; Argentina; spatial heterogeneity.
+
+## Resumen en español {.unnumbered}
+
+Este artículo presenta una interpretación ecológica orientada por hipótesis de
+patrones descriptivos certificados de vigilancia de dengue en Argentina. No es
+un nuevo estudio epidemiológico ni una demostración causal. Para la temporada
+SE31/2024--SE30/2025, el análisis reproducible de datos oficiales publicados
+retuvo 17.844 conteos publicados; el máximo nacional observado fue la semana
+estacional 36 y la concentración temporal fue marcada. Los descriptores
+regionales fueron heterogéneos; en NEA el máximo fue un empate y no una semana
+única. Para el año calendario 2024, el ajuste por población reordenó los
+territorios: Buenos Aires pasó del primer lugar por conteo publicado al
+decimosexto por tasa de conteos publicados por 100.000, mientras Tucumán pasó
+del tercero al primero.
+
+La hipótesis considera un sistema estacional vector--virus--huésped. Distingue
+el proceso biológico latente --hábitat, dinámica de *Aedes aegypti*, biología
+vector--virus y población humana-- del proceso de observación mediante el cual
+la transmisión puede llegar a atención sanitaria, detección, notificación,
+clasificación, asignación geográfica y datos publicados. La contribución es
+conceptual: los patrones son compatibles con mecanismos ecológicos, pero no los
+demuestran. Se proponen predicciones falsables y la evidencia independiente que
+sería necesaria para evaluarlas. Los conteos publicados no son personas únicas,
+incidencia ni riesgo individual.
+
+# Introduction
+
+Dengue is a coupled vector--virus--host--environment system, not simply a time
+series of reported disease. Temperature and its daily variation can affect
+mosquito development, survival, reproduction, infection, and extrinsic
+incubation, often nonlinearly [@mordecai2019; @lambrechts2011;
+@carrington2013life]. Habitat and urban form determine where mosquitoes can
+persist; human population distribution and daily movement shape vector--host
+contact; and immunity and circulating serotypes alter the susceptible host
+population.
+
+Argentina is informative because it spans heterogeneous climatic and ecological
+environments. Field work in Buenos Aires, Córdoba, the Northwest, and the
+Northeast documents seasonal and spatial variation in *Aedes aegypti* abundance
+or oviposition, and the importance of temperature, weather, microhabitat, and
+urban conditions [@vezzani2004; @demajo2013; @benitez2021; @estallo2015;
+@gimenez2020; @vezzani2005; @montini2021]. Evidence of long-term vector dynamics and range expansion makes
+ecological interpretation relevant, but does not make climate sufficient to
+explain a particular surveillance pattern [@fischer2017; @rubio2020].
+
+This article interprets the completed *Argentina Dengue Surveillance* project,
+a reproducible contract-first descriptive analysis of official public releases.
+Its certified report is available [online](https://etalii.github.io/scientific-data-portfolio/argentina-dengue-analysis/).
+The project distinguishes absolute published counts from published-count rates
+per 100,000. Population size can contribute to an absolute numerator, while
+population adjustment can reveal that population size alone does not summarize
+territorial heterogeneity. It does not turn reported counts into incidence,
+individual risk, infection probability, or a direct measurement of transmission
+intensity.
+
+Our objective is to formulate an ecological hypothesis that organizes the
+certified descriptive patterns, identifies competing explanations, and
+specifies independent evidence needed to test them. We do not claim that the
+surveillance analysis tests the hypothesis.
+
+# Empirical basis and analytical boundaries
+
+The project consumes official Argentine surveillance releases and, for
+calendar-year geographic displays, official INDEC population denominators. It
+produces a reproducible description of published counts, published-count rates
+per 100,000, documented geographic assignment, and observed temporal
+descriptors. It does not identify people, deduplicate epidemiological cases, or
+estimate latent infections.
+
+Two scopes are intentionally non-interchangeable. The seasonal scope,
+SE31/2024--SE30/2025, contains 17,844 published counts. Its observed national
+maximum is season week 36; its weighted temporal center is 35.76356 and its
+weighted median is week 36. The shortest contiguous observed windows reaching
+50%, 80%, and 90% of the total are 5, 10, and 12 weeks. It retains 678
+published counts with unknown or nonassignable geography, and geographic mapping
+completeness is 96.2%. This describes assignment within scope, not surveillance
+completeness.
+
+The geographic comparison uses calendar year 2024 and a contemporary
+denominator scenario. Its territorial numerators include only geographically
+mapped published counts; 27,220 national published counts lack provincial
+geography and are not redistributed. A published-count rate per 100,000 is not
+incidence, an attack rate, individual risk, or a complete territorial numerator.
+No cumulative cross-year seasonal rate is reported.
+
+The data do not support claims about unique people, transmission chains,
+epidemic propagation, causal effects, or unobserved regional zeros. Missing
+region-week rows remain missing rather than zero-filled. They also do not
+support direct epidemiological comparison of annual totals for 2018, 2022,
+2024, and 2025, or age-specific rates. These observations are the endpoint of a
+surveillance process, not direct measurements of the biological system that
+generated infections.
+
+# Ecological hypothesis and testable predictions
+
+## Central hypothesis
+
+The temporal concentration and geographic heterogeneity of published dengue
+counts in Argentina are consistent with a seasonally forced vector--virus--host
+system. In this hypothesis, local transmission potential can increase when
+*Aedes aegypti* population dynamics and temperature-dependent vector--virus
+processes encounter favourable seasonal conditions within particular human and
+urban settings. Human population size contributes importantly to absolute
+published counts. Habitat, human--vector contact, mobility, viral introduction,
+host susceptibility, serotype circulation, and the observation process can all
+modify population-adjusted published patterns.
+
+This is a hypothesis about a latent system. The certified findings are
+compatible with it, but do not identify its parameters or demonstrate a
+mechanism. Climate, mosquito abundance, mobility, immunity, serotypes, and
+healthcare use were not measured in the analysis and must not be inferred from
+the reported patterns.
+
+## Falsifiable predictions
+
+The following predictions are deliberately framed so that independent evidence
+could weaken as well as support the ecological hypothesis.
+
+1. **Seasonal vector suitability.** If seasonal vector ecology is important,
+   measured adult or immature mosquito abundance, or a pre-specified
+   climate-derived suitability measure, should systematically precede or overlap
+   the surveillance rise with biologically plausible lags. Weekly mosquito
+   surveillance and weather data, linked at compatible places and times, are
+   required. Repeated strong surveillance peaks during periods of low measured
+   vector suitability would weaken this component of the hypothesis.
+2. **Population size and territorial reordering.** If population size explains
+   only part of the spatial pattern, absolute published counts should relate
+   strongly to population size while population-adjusted published patterns
+   retain structured heterogeneity associated with independently measured
+   ecological or contact conditions. Comparable population, habitat,
+   entomological, and mobility data are required. If adjusted patterns show no
+   reproducible heterogeneity once measurement quality is assessed, this
+   prediction would be weakened.
+3. **Regional seasonal heterogeneity.** If differing local seasonal conditions
+   matter, regional timing should covary with independently measured thermal
+   regimes, habitat, or vector phenology rather than simply reflecting a common
+   schedule. Harmonized region-week entomological and environmental series are
+   required. Stable identical timing across ecologically contrasting regions,
+   after comparable observation, would weaken this prediction.
+4. **Introductions and connectivity.** If mobility and viral introduction are
+   important, changes in local surveillance patterns should align with
+   independently documented travel, importation, or viral-lineage evidence in
+   receptive vector populations. Travel histories, mobility measures, and
+   genomic surveillance are required. Strong local pulses repeatedly occurring
+   without compatible introduction or connectivity evidence would weaken this
+   explanation.
+5. **Host susceptibility and serotypes.** If susceptible fraction and serotype
+   circulation modify epidemic magnitude, otherwise similar vector and habitat
+   settings should differ in their published patterns in ways that correspond to
+   independent seroprevalence and virological data. Longitudinal serological and
+   serotype surveillance are required. Consistent magnitude despite sharply
+   different measured susceptibility or serotype conditions would weaken this
+   component.
+
+These predictions are not tested here. They also are not mutually exclusive:
+support for one would not eliminate the need to evaluate the others or the
+observation process.
+
+# Two-process conceptual framework
+
+The central conceptual contribution is to separate what is biologically latent
+from what is observed administratively. The observed surveillance signal is the
+joint product of an underlying biological system and an observation process.
+The first process concerns conditions under which infections may occur; the
+second concerns how some resulting events become published records.
+
+```{mermaid}
+flowchart TB
+  subgraph latent[Latent biological process]
+    C[Climate and habitat] --> M[Aedes aegypti population dynamics]
+    M --> V[Vector-virus processes]
+    V --> H[Human host population]
+    H --> T[Transmission]
+    U[Urban habitat] --> M
+    U --> H
+    X[Human mobility] --> H
+    X --> T
+    I[Host immunity] --> H
+    S[Serotype circulation] --> H
+    S --> V
+  end
+  subgraph observation[Observation process]
+    T --> D[Healthcare seeking and detection]
+    D --> N[Notification]
+    N --> CL[Classification]
+    CL --> G[Geographic assignment]
+    G --> P[Published surveillance dataset]
+  end
+```
+
+**Figure 1. Conceptual framework.** The upper process represents hypothesized
+biological relationships; the lower process represents the pathway through
+which transmission may become a published surveillance record. This is not an
+estimated causal model.
+
+The latent process includes mosquito recruitment, immature development, adult
+survival, oviposition, biting, infection, extrinsic incubation, and survival to
+infectiousness. It also includes the size and structure of human populations,
+their contact with vectors, mobility, immunity, and circulating serotypes.
+The observation process includes healthcare contact, detection, notification,
+classification, and geographic assignment. The certified project directly
+analyzes the endpoint of the second process, not the latent biological process
+itself.
+
+This distinction is useful as a cautious *ecology of observation*: the ability
+to infer biological dynamics depends on how biological events pass through
+healthcare contact and institutional recording. It does not presume the
+magnitude or direction of any under-ascertainment in this dataset. Rather, it
+requires that differences among published signals be interpreted as potentially
+shaped by both systems until appropriate independent evidence is available.
+
+# Biological interpretation of certified patterns
+
+## Seasonal concentration
+
+The certified season has a concentrated national published-count profile: half
+of its total falls within the shortest five-week observed window, 80% within ten
+weeks, and 90% within twelve weeks. Its observed maximum and weighted median
+both occur at season week 36, while its weighted temporal center is
+approximately 35.76. A concentrated pulse is biologically compatible with a
+seasonally forced vector--host system: recruitment and development of immature
+mosquitoes, seasonal adult survival, oviposition, biting, and
+temperature-dependent vector--virus processes can overlap with changing human
+exposure during a limited interval. Seasonal patterns of *Ae. aegypti*
+abundance and oviposition in Argentina make that interpretation biologically
+plausible [@vezzani2004; @fischer2017; @estallo2015].
+
+Compatibility is not attribution. The curve contains published counts, not
+temperature, rainfall, entomological abundance, infection onset, human movement,
+or viral-introduction data. It cannot establish that temperature, mosquito
+abundance, or rainfall caused the week-36 maximum; infer a lag; or estimate
+vectorial capacity. The concentration windows summarize observations in the
+configured scope. They do not define true epidemic duration or the duration of
+latent transmission.
+
+![National seasonal profile of published counts for SE31/2024--SE30/2025. It
+retains unknown or nonassignable geography, identifies the observed peak at
+SE36, and displays certified concentration descriptors.](../figures/season_national_temporal_profile_en.png){#fig-season-national}
+
+**Figure 2.** National published-count profile in the configured season. It
+describes published observations, not complete surveillance or latent
+transmission.
+
+## Regional observed timing
+
+Regional descriptors differ across observed region weeks. Centro's unique peak
+is at season week 36, Cuyo's at 32, NOA's at 33, and Sur's at 34; NEA has a tie
+at weeks 17 and 38. That tie prevents selection of an arbitrary single NEA
+peak. Observed regional-week coverage also varies from 18 weeks in Sur to 52 in
+NEA.
+
+The heterogeneity is compatible with regional variation in thermal regimes,
+urban habitat, vector population dynamics, mobility, introductions, and host
+susceptibility. Each is a hypothesis, not an interpretation established by the
+figure. In particular, the descriptors do not show geographic propagation or
+identify a route between regions. Missing region-week rows are not zero-filled,
+so the absence of a row cannot be read as absence of dengue, transmission, or
+reporting.
+
+![Observed regional timing descriptors for published counts in
+SE31/2024--SE30/2025. NEA has a tied observed peak, and missing region-week
+rows are not treated as zero.](../figures/season_regional_observed_timing_en.png){#fig-season-region}
+
+**Figure 3.** Regional observed timing descriptors, using observed region weeks
+only and preserving the NEA peak tie.
+
+## Absolute counts and population-adjusted patterns
+
+In calendar-year 2024, Buenos Aires ranks first by published count and
+sixteenth by published-count rate per 100,000. Tucumán moves from third to
+first, La Rioja from twelfth to second, and Catamarca from thirteenth to fourth.
+These rank shifts show that population size and population-adjusted published
+counts answer different descriptive questions. A large population can
+contribute to a large numerator. A smaller population can yield a higher
+published-count rate without establishing greater individual risk or a higher
+true transmission level.
+
+The result is compatible with heterogeneous ecological and social conditions,
+but it does not measure ecological suitability. Urban habitat, human--vector
+contact, vector abundance, mobility or introductions, immunity, serotypes, and
+reporting may all contribute to the ordering after population adjustment. The
+strongest inference is therefore descriptive: population size alone does not
+summarize territorial published patterns. The rank shifts do not identify which
+process is responsible, and provincial numerators exclude unknown or
+nonassignable geography.
+
+![Provincial rank shifts between published count and published-count rate per
+100,000 in calendar year 2024. Territorial numerators exclude unknown or
+nonassignable geography and the rate is not incidence or individual risk.](../figures/province_count_rate_rank_shift_2024_en.png){#fig-province-ranks}
+
+**Figure 4.** Population adjustment changes provincial ordering in calendar year
+2024 under the contemporary denominator scenario.
+
+## Regional contrast
+
+Centro has the largest geographically mapped regional published count, whereas
+NOA has the largest regional published-count rate per 100,000. This parallel
+with the provincial rank shifts is consistent with the premise that population
+structure and ecological heterogeneity can contribute differently to absolute
+and population-adjusted patterns. It does not establish a regional ecological
+gradient: territorial numerators exclude unknown or nonassignable geography,
+and neither regional rate measures incidence nor attributes a biological
+mechanism.
+
+# Discussion
+
+## Seasonal forcing and mosquito population ecology
+
+*Aedes aegypti* populations are not static. Recruitment depends on eggs entering
+available breeding sites; immature development and mortality depend on local
+temperature and water conditions; adults must survive, obtain blood meals, and
+oviposit to sustain future cohorts. Container availability, water storage,
+rainfall, household practices, and built environments can alter this sequence
+locally. Seasonal population growth or decline consequently reflects a chain of
+life-history processes rather than a single environmental variable. In Buenos
+Aires, vector activity and infestation vary substantially across the year
+[@vezzani2004], while microclimatic heterogeneity can create short-distance
+differences [@demajo2013]. In Orán and Córdoba, oviposition has been associated
+with weather and environmental variables with context-specific lags
+[@estallo2015; @benitez2021].
+
+This biology matters because adult abundance can affect the opportunity for
+human--vector contact, but abundance alone is not a sufficient measure of
+transmission potential. A large mosquito population may coexist with limited
+viral introduction, lower vector infection, reduced survival through the
+extrinsic incubation interval, a small susceptible fraction, or a surveillance
+signal that does not mirror all infections. Conversely, a modest abundance at a
+critical time may still contribute to observed transmission when other
+conditions align. The manuscript therefore treats mosquito population dynamics
+as one component of a coupled system, not as a direct proxy for published
+counts.
+
+Precipitation is especially unsuitable for a universal account: its effects can
+depend on container types, water management, rainfall intensity, and locality.
+The appropriate language is “consistent with,” “may modify,” and “requires
+direct measurement,” rather than climate determinism. Argentine national-scale
+work likewise frames climate alongside demographic and regional processes rather
+than as a solitary determinant [@carbajo2018; @lopez2023].
+
+## From mosquito abundance to transmission potential
+
+Vectorial capacity is a useful conceptual bridge between mosquito population
+dynamics and transmission, not an estimated quantity in this project. It
+depends on more than abundance: biting and contact, survival, infection and
+vector competence, the duration of extrinsic incubation, and survival long
+enough to become infectious all matter. Temperature can affect several of these
+traits nonlinearly, and the trait that limits transmission can differ across
+thermal conditions [@mordecai2019]. Daily thermal fluctuation can alter mosquito
+survival and competence, so mean temperature alone can obscure relevant
+biological variation [@lambrechts2011; @carrington2013life;
+@carrington2013extreme].
+
+The certified surveillance profile cannot distinguish a pulse produced by
+seasonal mosquito demography from one shaped principally by introductions, host
+susceptibility, or observation. A future evaluation would need linked
+meteorological series, measures of immature and adult vectors, virus detection
+or competence evidence, and an explicitly specified observation model. Such a
+design could ask whether changes in vector-related conditions consistently
+precede the published signal, rather than retrospectively assigning the observed
+peak to a single driver.
+
+## Human populations as ecological components
+
+Human populations are more than denominators. Their size can affect absolute
+published counts, but the susceptible fraction, previous exposure,
+serotype-specific immunity, movement, daily activity, housing, and patterns of
+human--vector contact can modify epidemic magnitude under superficially similar
+environmental conditions. A receptive vector population does not by itself imply
+the same opportunity for viral introduction, amplification, or observation in
+every place.
+
+Argentine serological studies demonstrate that antibody prevalence and serotype
+information can be measured independently and can vary geographically
+[@flichman2022; @macchia2025; @biscayart2025]. These studies do not identify the
+immunity or serotype histories of the people represented in the certified
+artifacts. No individual serostatus, serotype, genomic lineage, or
+prior-infection history is present here. Host immunity and serotypes therefore
+remain alternative explanations and future measurement targets, not
+retrospective explanations for the reported peak or rank shifts.
+
+## Spatial heterogeneity, habitat, and contact
+
+The provincial and regional rank shifts make a narrow but important point:
+population size does not exhaust the information in territorial published
+counts. Urban form, housing, water storage, container habitat, socioeconomic
+conditions, and human--vector contact can create local contrasts in mosquito
+habitat and exposure. In Buenos Aires, travel, housing, and socioeconomic
+conditions were relevant to heterogeneous local dengue transmission during the
+2016 event [@gurevitz2021]. Northern Argentine studies also document spatially
+structured and temporally unstable mosquito habitat patterns [@garelli2013;
+@espinosa2016].
+
+This evidence supports a plausible mechanism at its own geographic and
+measurement scales. It does not translate a high published-count rate into
+suitability, nor does it establish that La Rioja, Catamarca, Tucumán, or NOA
+had any particular ecological condition in the certified scope. Instead, the
+rank shifts motivate the testable expectation that appropriately measured
+ecological and social conditions could account for variation beyond population
+size. That expectation requires compatible-scale data and explicit treatment of
+the observation process.
+
+## Mobility and viral introductions
+
+Human movement can couple territories by moving infected people between places
+with different vector and host conditions. Travel was part of the Buenos Aires
+analysis [@gurevitz2021], and mobility is a recognized explanatory mechanism in
+dengue research and infectious-disease synthesis [@stoddard2013; @lessani2024].
+An introduction into a receptive vector and host setting could help generate a
+local pulse even when local environmental suitability is similar to that of a
+place without a documented introduction.
+
+A metapopulation analogy is useful conceptually, but the regional timing figure
+does not document routes of spread. Mobility and importation compete with a
+purely local ecological explanation and can also operate alongside it. Travel
+histories, commuting or mobility measures, virus genomes, and data on likely
+introduction events would be needed to distinguish these pathways. The
+descriptive timing differences should not be described as geographic
+propagation.
+
+## Competing explanations
+
+The ecological hypothesis must be evaluated against explanations that can
+produce part of the same certified patterns. First, a demographic explanation
+expects population size to contribute strongly to absolute counts; the
+population-adjusted rank shifts show only that it is not the entire descriptive
+story. Population data paired with like-for-like territorial numerators would
+clarify its contribution. Second, mobility and viral introductions can shape the
+timing and magnitude of local events; travel, genomic, and importation evidence
+would help distinguish this from locally generated variation. Third, urban
+habitat, housing, water-storage practices, and socioeconomic heterogeneity can
+alter breeding opportunities and contact; fine-scale entomological and social
+measurements would be needed to assess that mechanism.
+
+Fourth, immunity, susceptible fraction, and serotype circulation can modify the
+human host component even under similar vector conditions; serial
+seroprevalence and virological surveillance would be needed to evaluate this
+possibility. Fifth, the surveillance and reporting process can modify which
+biological events become published records. These processes are not mutually
+exclusive. No observed rank, peak, or concentration window is uniquely
+diagnostic of one of them.
+
+## Surveillance as an observation process
+
+Surveillance is not merely a caveat; it conditions inference. Reporting delays,
+healthcare seeking, detection, laboratory capacity, definitions,
+classification, notification, geographic assignment, and publication can each
+shape the endpoint that is observed. Dengue surveillance literature documents
+variation in ascertainment and operational performance [@runge2014;
+@susong2026]. Argentine and regional guidance establish detection,
+notification, and classification as distinct institutional stages
+[@argentina2025; @paho2023]. Regional systematic-review evidence likewise
+emphasizes heterogeneity in dengue surveillance and interpretation
+[@torres2017].
+
+The certified project preserves unknown geography, does not complete missing
+regional weeks, and retains source duplicate/conflict evidence rather than
+silently resolving it. It lacks individual identifiers and analyzes published
+counts rather than known unique cases. These properties make the two-process
+framework practically important: a published surveillance pattern can differ
+from a biological transmission pattern because the observation process has its
+own structure. This does not mean every difference is surveillance bias or
+reporting artefact, and it does not estimate under-ascertainment. It means that
+biological interpretation must remain conditional on evidence about both
+processes.
+
+## Why annual snapshots do not establish ecological trends
+
+This article does not infer climate-change trends, vector adaptation, increasing
+transmission, or epidemic growth from the 2018, 2022, 2024, and 2025 annual
+snapshots. The certified project considers direct annual/interannual comparison
+unsupported because coverage, schemas, semantic evidence, and observation
+conditions differ. External literature may motivate hypotheses about climatic
+suitability or range dynamics [@fischer2017; @lopez2023], but cannot convert
+these four snapshots into a within-project trend analysis.
+
+## What evidence would test the hypothesis
+
+The five predictions define the minimum evidence needed for a future evaluation.
+Weekly meteorological series and repeated immature and adult mosquito measures
+would be needed to assess temporal suitability and population dynamics.
+Comparable habitat, land-cover, housing, water-storage, contact, and population
+data would be needed to evaluate spatial heterogeneity. Travel, commuting,
+importation, and viral genomic data would be needed to assess connectivity and
+introductions. Seroprevalence, serotype, and longitudinal immunity data would be
+needed to assess the host component. Finally, any inferential design needs an
+observation component covering healthcare contact, detection, notification,
+classification, and geographic assignment.
+
+These additions would enable pre-specified tests that can fail as well as
+succeed. They would not eliminate uncertainty automatically, but they would
+separate an ecological explanation from demographic, mobility, immunity, and
+surveillance alternatives more rigorously than descriptive surveillance patterns
+alone can do.
+
+# Conclusions
+
+The certified analysis identifies a concentrated seasonal pulse of published
+counts and substantial spatial heterogeneity in the relationship between
+absolute and population-adjusted published counts. These patterns are
+biologically consistent with a seasonally forced vector--virus--host system,
+but they do not resolve the mechanisms that generated them. Population size is
+consequential for absolute counts, yet rank shifts show why it is not the sole
+descriptive component of territorial heterogeneity.
+
+The central conclusion is deliberately limited: a published surveillance
+dataset is the endpoint of an observation process, not a direct view of latent
+transmission. Treating the observed signal as the joint product of biological
+and observation processes preserves the value of reproducible descriptive
+evidence while avoiding causal claims it cannot support. Independent
+entomological, environmental, mobility, virological, serological, and
+surveillance-process data are required to test the hypothesis.
