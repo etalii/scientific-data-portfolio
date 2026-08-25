@@ -20,4 +20,5 @@ adds one inline conceptual Mermaid diagram. Render from the project root with:
 quarto render articles/dengue_population_ecology_perspective.qmd
 ```
 
-The rendered manuscript is not yet published publicly.
+The rendered manuscript is publicly available at the
+[ecological perspective](https://etalii.github.io/scientific-data-portfolio/argentina-dengue-analysis/ecological-perspective/).

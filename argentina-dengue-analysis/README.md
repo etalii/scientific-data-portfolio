@@ -16,8 +16,7 @@ surveillance patterns, linking seasonal and spatial results to *Aedes aegypti*
 ecology, DENV transmission biology, human population processes, and
 surveillance limitations.
 
-The public companion-article link will be added after its Pages deployment is
-verified.
+> **[Companion ecological perspective →](https://etalii.github.io/scientific-data-portfolio/argentina-dengue-analysis/ecological-perspective/)**
 
 ## Two analytical scopes
 
