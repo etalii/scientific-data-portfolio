@@ -1,0 +1,783 @@
+{
+  "schema_version": "0.1.0",
+  "adapter": {
+    "project_id": "synthetic",
+    "scope_schema_ref": {
+      "path": "assets/scope.schema.json",
+      "sha256": "0a99d3882109d97157a30d0bea6d8a586f4428ce977b8e8139ca0cf39f43ff43",
+      "locator": "whole file",
+      "availability": "verified_local"
+    },
+    "required_review_dimensions": [
+      "narrative",
+      "reproducibility",
+      "scientific",
+      "visual"
+    ]
+  },
+  "candidate_refs": [
+    {
+      "project_id": "synthetic",
+      "artifact_id": "claim",
+      "revision": 1
+    },
+    {
+      "project_id": "synthetic",
+      "artifact_id": "contract",
+      "revision": 1
+    },
+    {
+      "project_id": "synthetic",
+      "artifact_id": "delivery",
+      "revision": 1
+    },
+    {
+      "project_id": "synthetic",
+      "artifact_id": "evidence",
+      "revision": 1
+    },
+    {
+      "project_id": "synthetic",
+      "artifact_id": "execution",
+      "revision": 1
+    },
+    {
+      "project_id": "synthetic",
+      "artifact_id": "metric",
+      "revision": 1
+    },
+    {
+      "project_id": "synthetic",
+      "artifact_id": "narrative",
+      "revision": 1
+    },
+    {
+      "project_id": "synthetic",
+      "artifact_id": "plan",
+      "revision": 1
+    },
+    {
+      "project_id": "synthetic",
+      "artifact_id": "question",
+      "revision": 1
+    },
+    {
+      "project_id": "synthetic",
+      "artifact_id": "review",
+      "revision": 1
+    },
+    {
+      "project_id": "synthetic",
+      "artifact_id": "unrelated",
+      "revision": 1
+    },
+    {
+      "project_id": "synthetic",
+      "artifact_id": "visual",
+      "revision": 1
+    }
+  ],
+  "records": [
+    {
+      "schema_version": "0.1.0",
+      "project_id": "synthetic",
+      "study_id": "rates",
+      "artifact_id": "claim",
+      "revision": 1,
+      "kind": "claim",
+      "owner": "analyst",
+      "created_at": "2026-01-03T00:00:00Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Synthetic fixture; no real scientific certification."
+      ],
+      "payload": {
+        "question_ref": {
+          "project_id": "synthetic",
+          "artifact_id": "question",
+          "revision": 1
+        },
+        "claim_text": "Group b has the higher observed rate.",
+        "claim_type": "descriptive",
+        "supporting_evidence_refs": [
+          {
+            "project_id": "synthetic",
+            "artifact_id": "evidence",
+            "revision": 1
+          }
+        ],
+        "contradicting_evidence_refs": [],
+        "metric_refs": [
+          {
+            "project_id": "synthetic",
+            "artifact_id": "metric",
+            "revision": 1
+          }
+        ],
+        "scope": {
+          "period": "2024",
+          "population": "synthetic"
+        },
+        "caveats": [
+          "Descriptive only."
+        ],
+        "disposition": "supported"
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "synthetic",
+      "study_id": "rates",
+      "artifact_id": "contract",
+      "revision": 1,
+      "kind": "data_contract_ref",
+      "owner": "analyst",
+      "created_at": "2026-01-03T00:00:00Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Synthetic fixture; no real scientific certification."
+      ],
+      "payload": {
+        "contract_id": "synthetic_rate",
+        "contract_version": "1.0.0",
+        "document_ref": {
+          "path": "assets/contract.txt",
+          "sha256": "ff3d026b94acaaf454c45f0f69f94904600374a0e405ef93a7c7709ed0d221a4",
+          "locator": "whole file",
+          "availability": "verified_local"
+        },
+        "producer_ref": {
+          "path": "assets/analysis.R",
+          "sha256": "a7306c69f3d4e899822b83f1c6b629efcf98f342ee55449e90837d6bb26d21c6",
+          "locator": "whole file",
+          "availability": "verified_local"
+        },
+        "consumer_roles": [
+          "analyst"
+        ]
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "synthetic",
+      "study_id": "rates",
+      "artifact_id": "delivery",
+      "revision": 1,
+      "kind": "delivery",
+      "owner": "analyst",
+      "created_at": "2026-01-03T00:00:00Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Synthetic fixture; no real scientific certification."
+      ],
+      "payload": {
+        "question_ref": {
+          "project_id": "synthetic",
+          "artifact_id": "question",
+          "revision": 1
+        },
+        "deliverable_refs": [
+          {
+            "path": "assets/story.html",
+            "sha256": "0833fb23367aa361edfc1cab02919d5f80d4e3a1c8212be885c02a1c36e48a21",
+            "locator": "whole file",
+            "availability": "verified_local"
+          }
+        ],
+        "spec_refs": [
+          {
+            "project_id": "synthetic",
+            "artifact_id": "narrative",
+            "revision": 1
+          },
+          {
+            "project_id": "synthetic",
+            "artifact_id": "visual",
+            "revision": 1
+          }
+        ],
+        "claim_location_map": [
+          {
+            "claim_ref": {
+              "project_id": "synthetic",
+              "artifact_id": "claim",
+              "revision": 1
+            },
+            "artifact_ref": {
+              "path": "assets/story.html",
+              "sha256": "0833fb23367aa361edfc1cab02919d5f80d4e3a1c8212be885c02a1c36e48a21",
+              "locator": "whole file",
+              "availability": "verified_local"
+            },
+            "location": "#claim"
+          }
+        ],
+        "review_refs": [
+          {
+            "project_id": "synthetic",
+            "artifact_id": "review",
+            "revision": 1
+          }
+        ],
+        "dependency_snapshot": [
+          {
+            "project_id": "synthetic",
+            "artifact_id": "claim",
+            "revision": 1
+          },
+          {
+            "project_id": "synthetic",
+            "artifact_id": "contract",
+            "revision": 1
+          },
+          {
+            "project_id": "synthetic",
+            "artifact_id": "evidence",
+            "revision": 1
+          },
+          {
+            "project_id": "synthetic",
+            "artifact_id": "execution",
+            "revision": 1
+          },
+          {
+            "project_id": "synthetic",
+            "artifact_id": "metric",
+            "revision": 1
+          },
+          {
+            "project_id": "synthetic",
+            "artifact_id": "narrative",
+            "revision": 1
+          },
+          {
+            "project_id": "synthetic",
+            "artifact_id": "plan",
+            "revision": 1
+          },
+          {
+            "project_id": "synthetic",
+            "artifact_id": "question",
+            "revision": 1
+          },
+          {
+            "project_id": "synthetic",
+            "artifact_id": "review",
+            "revision": 1
+          },
+          {
+            "project_id": "synthetic",
+            "artifact_id": "visual",
+            "revision": 1
+          }
+        ],
+        "reproduction_instructions": "Synthetic fixtures only; no actual run claimed.",
+        "known_gaps": [
+          "Not a real study."
+        ],
+        "delivery_disposition": "answer"
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "synthetic",
+      "study_id": "rates",
+      "artifact_id": "evidence",
+      "revision": 1,
+      "kind": "evidence",
+      "owner": "analyst",
+      "created_at": "2026-01-03T00:00:00Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Synthetic fixture; no real scientific certification."
+      ],
+      "payload": {
+        "evidence_type": "computational",
+        "source_refs": [
+          {
+            "path": "assets/result.csv",
+            "sha256": "24509adcc3bc34f452ca180da632d4f39fe42bee35c816dd706cfd73d165b33c",
+            "locator": "group=b",
+            "availability": "verified_local"
+          }
+        ],
+        "execution_refs": [
+          {
+            "project_id": "synthetic",
+            "artifact_id": "execution",
+            "revision": 1
+          }
+        ],
+        "result_locator": "group=b",
+        "scope": {
+          "period": "2024",
+          "population": "synthetic"
+        },
+        "finding": "0.12 exceeds 0.08.",
+        "uncertainty": "Synthetic exact counts.",
+        "validation_refs": [
+          {
+            "path": "assets/checks.txt",
+            "sha256": "0dc4e91256b965ea13b2df7ea99e30c659545abe3c07c72f3a8c89398db67609",
+            "locator": "whole file",
+            "availability": "verified_local"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "synthetic",
+      "study_id": "rates",
+      "artifact_id": "execution",
+      "revision": 1,
+      "kind": "execution",
+      "owner": "analyst",
+      "created_at": "2026-01-03T00:00:00Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Synthetic fixture; no real scientific certification."
+      ],
+      "payload": {
+        "plan_ref": {
+          "project_id": "synthetic",
+          "artifact_id": "plan",
+          "revision": 1
+        },
+        "command": [
+          "Rscript",
+          "analysis.R"
+        ],
+        "working_directory": "assets",
+        "code_refs": [
+          {
+            "path": "assets/analysis.R",
+            "sha256": "a7306c69f3d4e899822b83f1c6b629efcf98f342ee55449e90837d6bb26d21c6",
+            "locator": "whole file",
+            "availability": "verified_local"
+          }
+        ],
+        "config_refs": [
+          {
+            "path": "assets/config.json",
+            "sha256": "060375d9b4b991bf185104d259ea0558514a30b5bb08f357b0063811b7f07ae8",
+            "locator": "whole file",
+            "availability": "verified_local"
+          }
+        ],
+        "environment_ref": {
+          "path": "assets/environment.txt",
+          "sha256": "977bc50a1c495633692e4c48067b0dd3860b831ab07aa9d52c674838bd1ea189",
+          "locator": "whole file",
+          "availability": "verified_local"
+        },
+        "input_refs": [
+          {
+            "path": "assets/observations.csv",
+            "sha256": "84fc8008fc3e8d26fbd06f29f3dc2bb08836def743a02092835e8d2884bfa8ac",
+            "locator": "whole file",
+            "availability": "verified_local"
+          }
+        ],
+        "output_refs": [
+          {
+            "path": "assets/result.csv",
+            "sha256": "24509adcc3bc34f452ca180da632d4f39fe42bee35c816dd706cfd73d165b33c",
+            "locator": "whole file",
+            "availability": "verified_local"
+          }
+        ],
+        "started_at": "2026-01-02T00:00:00Z",
+        "finished_at": "2026-01-02T00:01:00Z",
+        "exit_code": 0,
+        "validation_refs": [
+          {
+            "path": "assets/checks.txt",
+            "sha256": "0dc4e91256b965ea13b2df7ea99e30c659545abe3c07c72f3a8c89398db67609",
+            "locator": "whole file",
+            "availability": "verified_local"
+          }
+        ],
+        "reproduction_status": "passed"
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "synthetic",
+      "study_id": "rates",
+      "artifact_id": "metric",
+      "revision": 1,
+      "kind": "metric",
+      "owner": "analyst",
+      "created_at": "2026-01-03T00:00:00Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Synthetic fixture; no real scientific certification."
+      ],
+      "payload": {
+        "contract_ref": {
+          "project_id": "synthetic",
+          "artifact_id": "contract",
+          "revision": 1
+        },
+        "definition_locator": "Rate definition",
+        "grain": "group",
+        "unit": "count per population unit",
+        "dimensions": [
+          "group"
+        ],
+        "population_or_domain": "synthetic",
+        "time_basis": "2024",
+        "spatial_basis": {
+          "applicable": false,
+          "description": "No geography."
+        },
+        "scope": {
+          "period": "2024",
+          "population": "synthetic"
+        },
+        "metric_type": "rate",
+        "denominator": {
+          "applicable": true,
+          "reason": "Population adjustment.",
+          "definition_ref": {
+            "path": "assets/contract.txt",
+            "sha256": "ff3d026b94acaaf454c45f0f69f94904600374a0e405ef93a7c7709ed0d221a4",
+            "locator": "whole file",
+            "availability": "verified_local"
+          }
+        },
+        "missingness_policy": {
+          "rule": "Use the governing contract.",
+          "authority_ref": {
+            "path": "assets/contract.txt",
+            "sha256": "ff3d026b94acaaf454c45f0f69f94904600374a0e405ef93a7c7709ed0d221a4",
+            "locator": "whole file",
+            "availability": "verified_local"
+          }
+        },
+        "aggregation_policy": {
+          "rule": "Use the governing contract.",
+          "authority_ref": {
+            "path": "assets/contract.txt",
+            "sha256": "ff3d026b94acaaf454c45f0f69f94904600374a0e405ef93a7c7709ed0d221a4",
+            "locator": "whole file",
+            "availability": "verified_local"
+          }
+        },
+        "join_policy": {
+          "rule": "Use the governing contract.",
+          "authority_ref": {
+            "path": "assets/contract.txt",
+            "sha256": "ff3d026b94acaaf454c45f0f69f94904600374a0e405ef93a7c7709ed0d221a4",
+            "locator": "whole file",
+            "availability": "verified_local"
+          }
+        },
+        "computation_ref": {
+          "path": "assets/analysis.R",
+          "sha256": "a7306c69f3d4e899822b83f1c6b629efcf98f342ee55449e90837d6bb26d21c6",
+          "locator": "whole file",
+          "availability": "verified_local"
+        },
+        "interpretation_limits": [
+          "Descriptive only."
+        ]
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "synthetic",
+      "study_id": "rates",
+      "artifact_id": "narrative",
+      "revision": 1,
+      "kind": "narrative_spec",
+      "owner": "analyst",
+      "created_at": "2026-01-03T00:00:00Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Synthetic fixture; no real scientific certification."
+      ],
+      "payload": {
+        "audience": "Reviewers",
+        "communication_goal": "Explain rate comparison.",
+        "ordered_sections": [
+          {
+            "section_id": "result",
+            "text": "Group b has the higher observed rate.",
+            "claim_refs": [
+              {
+                "project_id": "synthetic",
+                "artifact_id": "claim",
+                "revision": 1
+              }
+            ],
+            "context_source_refs": []
+          }
+        ],
+        "claim_refs": [
+          {
+            "project_id": "synthetic",
+            "artifact_id": "claim",
+            "revision": 1
+          }
+        ],
+        "context_source_refs": [],
+        "mandatory_caveats": [
+          "Descriptive only."
+        ],
+        "excluded_claims_with_reasons": []
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "synthetic",
+      "study_id": "rates",
+      "artifact_id": "plan",
+      "revision": 1,
+      "kind": "analysis_plan",
+      "owner": "analyst",
+      "created_at": "2026-01-03T00:00:00Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Synthetic fixture; no real scientific certification."
+      ],
+      "payload": {
+        "question_ref": {
+          "project_id": "synthetic",
+          "artifact_id": "question",
+          "revision": 1
+        },
+        "design_type": "descriptive",
+        "methods": [
+          "Compare rates."
+        ],
+        "contract_refs": [
+          {
+            "project_id": "synthetic",
+            "artifact_id": "contract",
+            "revision": 1
+          }
+        ],
+        "metric_refs": [
+          {
+            "project_id": "synthetic",
+            "artifact_id": "metric",
+            "revision": 1
+          }
+        ],
+        "hypothesis_refs": [],
+        "hypothesis_omission_reason": "Descriptive question.",
+        "validation_strategy": "Reconcile exact rates.",
+        "sensitivity_policy": "No inferred population changes.",
+        "stopping_rule": "Report observed comparison."
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "synthetic",
+      "study_id": "rates",
+      "artifact_id": "question",
+      "revision": 1,
+      "kind": "question",
+      "owner": "analyst",
+      "created_at": "2026-01-03T00:00:00Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Synthetic fixture; no real scientific certification."
+      ],
+      "payload": {
+        "question_text": "Which synthetic group has the higher rate?",
+        "intended_use": "Demonstrate traceability.",
+        "audience": "Reviewers",
+        "scope": {
+          "period": "2024",
+          "population": "synthetic"
+        },
+        "non_goals": [
+          "Causal inference"
+        ],
+        "answer_criteria": [
+          "Compare observed rates."
+        ]
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "synthetic",
+      "study_id": "rates",
+      "artifact_id": "review",
+      "revision": 1,
+      "kind": "review",
+      "owner": "analyst",
+      "created_at": "2026-01-03T00:00:00Z",
+      "record_origin": "retrospective",
+      "status": "accepted",
+      "depends_on": [],
+      "limitations": [
+        "Synthetic fixture; no real scientific certification."
+      ],
+      "payload": {
+        "target_refs": [
+          {
+            "project_id": "synthetic",
+            "artifact_id": "claim",
+            "revision": 1
+          },
+          {
+            "project_id": "synthetic",
+            "artifact_id": "narrative",
+            "revision": 1
+          },
+          {
+            "project_id": "synthetic",
+            "artifact_id": "visual",
+            "revision": 1
+          }
+        ],
+        "reviewer": "reviewer",
+        "review_mode": "independent",
+        "review_dimensions": [
+          "narrative",
+          "reproducibility",
+          "scientific",
+          "visual"
+        ],
+        "checks": [
+          {
+            "check_id": "trace",
+            "result": "pass",
+            "evidence_refs": [
+              {
+                "path": "assets/checks.txt",
+                "sha256": "0dc4e91256b965ea13b2df7ea99e30c659545abe3c07c72f3a8c89398db67609",
+                "locator": "whole file",
+                "availability": "verified_local"
+              }
+            ],
+            "note": "Synthetic human-review attestation, not actual certification."
+          }
+        ],
+        "findings": [],
+        "disposition": "pass",
+        "reviewed_at": "2026-01-04T00:00:00Z"
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "synthetic",
+      "study_id": "rates",
+      "artifact_id": "unrelated",
+      "revision": 1,
+      "kind": "question",
+      "owner": "analyst",
+      "created_at": "2026-01-03T00:00:00Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Synthetic fixture; no real scientific certification."
+      ],
+      "payload": {
+        "question_text": "Unrelated question?",
+        "intended_use": "Test bounded invalidation.",
+        "audience": "Reviewers",
+        "scope": {
+          "period": "2024",
+          "population": "synthetic"
+        },
+        "non_goals": [],
+        "answer_criteria": [
+          "Remain unaffected."
+        ]
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "synthetic",
+      "study_id": "rates",
+      "artifact_id": "visual",
+      "revision": 1,
+      "kind": "visualization_spec",
+      "owner": "analyst",
+      "created_at": "2026-01-03T00:00:00Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Synthetic fixture; no real scientific certification."
+      ],
+      "payload": {
+        "claim_refs": [
+          {
+            "project_id": "synthetic",
+            "artifact_id": "claim",
+            "revision": 1
+          }
+        ],
+        "metric_refs": [
+          {
+            "project_id": "synthetic",
+            "artifact_id": "metric",
+            "revision": 1
+          }
+        ],
+        "input_refs": [
+          {
+            "path": "assets/result.csv",
+            "sha256": "24509adcc3bc34f452ca180da632d4f39fe42bee35c816dd706cfd73d165b33c",
+            "locator": "whole file",
+            "availability": "verified_local"
+          }
+        ],
+        "chart_type": "bar",
+        "encodings": [
+          {
+            "channel": "x",
+            "field": "group",
+            "description": "Group identifier."
+          },
+          {
+            "channel": "y",
+            "field": "rate",
+            "description": "Observed rate."
+          }
+        ],
+        "transformations": [],
+        "labels": {
+          "title": "Observed rates",
+          "caption": "Descriptive only.",
+          "alt_text": "a 0.08, b 0.12."
+        },
+        "uncertainty_display": "Exact synthetic values.",
+        "accessibility_criteria": [
+          "Text equivalent."
+        ],
+        "render_targets": [
+          "html"
+        ],
+        "qa_criteria": [
+          "Values match source."
+        ]
+      }
+    }
+  ]
+}

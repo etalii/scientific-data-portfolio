@@ -1,0 +1,1 @@
+Synthetic contract 1.0.0. Rate is count/population. No causal meaning.

@@ -39,6 +39,11 @@ Core interests include:
 
 ## Portfolio roadmap
 
+[DataSpec v0.1](dataspec/README.md) develops a shared framework connecting
+scientific questions, analytical evidence, narrative specifications, and
+visualization review. Typed schemas and a read-only R validator are available
+with synthetic regression tests; project adoption pilots are planned next.
+
 Additional ecological and business-oriented analyses are maintained in this
 repository as the portfolio grows. The dengue project above is the current
 published, certified portfolio case study.

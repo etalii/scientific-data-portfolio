@@ -1,0 +1,28 @@
+{
+  "schema_version": "0.1.0",
+  "project_id": "replace_project",
+  "study_id": "replace_study",
+  "artifact_id": "question",
+  "revision": 1,
+  "kind": "question",
+  "owner": "REPLACE owner",
+  "created_at": "2000-01-01T00:00:00Z",
+  "record_origin": "prospective",
+  "status": "draft",
+  "depends_on": [],
+  "limitations": [
+    "Template only: replace every placeholder and timestamp."
+  ],
+  "payload": {
+    "question_text": "REPLACE question",
+    "intended_use": "REPLACE use",
+    "audience": "REPLACE audience",
+    "scope": {},
+    "non_goals": [
+      "REPLACE exclusions"
+    ],
+    "answer_criteria": [
+      "REPLACE criteria"
+    ]
+  }
+}

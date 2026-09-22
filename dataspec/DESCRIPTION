@@ -1,0 +1,9 @@
+Package: dataspecValidation
+Title: DataSpec Artifact and Traceability Validation
+Version: 0.1.0
+Description: Read-only validation of scientific artifact contracts, provenance,
+    dependency state, and recorded reviews using synthetic regression fixtures.
+Authors@R: person("Andres", "Lemos", role = c("aut", "cre"), email = "andlefa@gmail.com")
+Encoding: UTF-8
+Depends: R (>= 4.1)
+Imports: jsonlite (>= 2.0.0), digest (>= 0.6.39)
