@@ -46,6 +46,13 @@ equality under the declared project scope schema.
 
 ## Next hand-off
 
+Subsequent status: the [dengue pilot](../argentina-dengue-analysis/dataspec/studies/rank_shift_2024/README.md)
+now has a human-accepted qualified delivery: 48 common scenarios, six original
+project scenarios, four closure scenario groups, 21 audit controls and 20 linked
+records pass. The approved fragment preserves unchanged analytical results and
+PNG bytes; no common executable contract changed. The original implementation
+hand-off below records the slice-1 boundary.
+
 The next bounded unit is the retrospective dengue pilot in
 [the adoption plan](adoption_plan.md). Before writing project records, establish
 its actual input availability, exact contract/configuration revisions, baseline

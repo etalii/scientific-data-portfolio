@@ -1,0 +1,111 @@
+{
+  "status": "accepted",
+  "delivery_disposition": "qualified_answer",
+  "applied_at": "2026-09-23T16:30:30Z",
+  "reviewer": "requesting_user",
+  "review_mode": "self",
+  "identity_basis": "Explicit dispositions supplied by the requesting human in human_decision_request.txt; no personal name or independent peer-review identity is inferred.",
+  "review_time_basis": "The generated reviewed_at records when these present dispositions were applied, not an invented original decision or historical review timestamp.",
+  "human_source_sha256": "37569a233e43e83e7ad5008e2c83eb26356e791d5a122cb92c44333d48935ed5",
+  "dispositions": [
+    {
+      "item_id": "H01",
+      "target": "claim_population_adjustment",
+      "dimension": "scientific",
+      "human_disposition": "ACCEPT",
+      "final_status": "accepted",
+      "editorial_revision_required": false,
+      "approved_edit_applied": false
+    },
+    {
+      "item_id": "H02",
+      "target": "claim_province_06",
+      "dimension": "scientific",
+      "human_disposition": "ACCEPT",
+      "final_status": "accepted",
+      "editorial_revision_required": false,
+      "approved_edit_applied": false
+    },
+    {
+      "item_id": "H03",
+      "target": "claim_province_90",
+      "dimension": "scientific",
+      "human_disposition": "ACCEPT",
+      "final_status": "accepted",
+      "editorial_revision_required": false,
+      "approved_edit_applied": false
+    },
+    {
+      "item_id": "H04",
+      "target": "claim_province_46",
+      "dimension": "scientific",
+      "human_disposition": "ACCEPT",
+      "final_status": "accepted",
+      "editorial_revision_required": false,
+      "approved_edit_applied": false
+    },
+    {
+      "item_id": "H05",
+      "target": "claim_province_10",
+      "dimension": "scientific",
+      "human_disposition": "ACCEPT",
+      "final_status": "accepted",
+      "editorial_revision_required": false,
+      "approved_edit_applied": false
+    },
+    {
+      "item_id": "H06",
+      "target": "narrative",
+      "dimension": "narrative",
+      "human_disposition": "ACCEPT WITH EDIT",
+      "final_status": "accepted",
+      "editorial_revision_required": true,
+      "approved_edit_applied": true
+    },
+    {
+      "item_id": "H07",
+      "target": "narrative",
+      "dimension": "reproducibility",
+      "human_disposition": "ACCEPT",
+      "final_status": "accepted",
+      "editorial_revision_required": false,
+      "approved_edit_applied": false
+    },
+    {
+      "item_id": "H08",
+      "target": "visual",
+      "dimension": "visual",
+      "human_disposition": "ACCEPT WITH EDIT",
+      "final_status": "accepted",
+      "editorial_revision_required": true,
+      "approved_edit_applied": true
+    },
+    {
+      "item_id": "H09",
+      "target": "visual",
+      "dimension": "reproducibility",
+      "human_disposition": "ACCEPT",
+      "final_status": "accepted",
+      "editorial_revision_required": false,
+      "approved_edit_applied": false
+    }
+  ],
+  "limitations": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+  "retrospective": true,
+  "preregistration_claimed": false,
+  "whole_report_rerendered": false,
+  "common_scientific_certification": "not_assessed",
+  "original_record_count": 18,
+  "accepted_record_count": 20,
+  "historical_bundle_sha256": "eb90c201406eb24c07cec2a88bc7e845b299d47411f2e877594c435904948391",
+  "original_html_sha256": "12de3aa0d5a912304828e55fe99549b23d409c2cbfe4a6498617ea45f8e2d505",
+  "accepted_fragment_sha256": "07d60803b8854912d979cbb52b180a6982163668d3eed0940a152a1a6984903d",
+  "editorial_byte_change_cause": "New standalone selected-section document; exact approved introduction and alt text, preserved full limitations and document wrapper. Original report/source/PNG bytes unchanged.",
+  "png": {
+    "path": "figures/province_count_rate_rank_shift_2024_en.png",
+    "original_sha256": "a7436545d8e9dc25b8b2efddf3488bef429dbe22de3a57d3aaf436820ad1be3f",
+    "reproduced_sha256": "a7436545d8e9dc25b8b2efddf3488bef429dbe22de3a57d3aaf436820ad1be3f"
+  },
+  "audit_control_count": 21,
+  "validation_valid": true
+}

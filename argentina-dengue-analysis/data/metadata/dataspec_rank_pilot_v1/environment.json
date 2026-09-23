@@ -1,0 +1,18 @@
+{
+  "r_version": "R version 4.1.2 (2021-11-01)",
+  "platform": "x86_64-pc-linux-gnu",
+  "packages": {
+    "yaml": "2.3.12",
+    "jsonlite": "2.0.0",
+    "openssl": "2.4.2",
+    "readr": "2.2.0",
+    "dplyr": "1.2.1",
+    "ggplot2": "4.0.3",
+    "purrr": "1.2.2",
+    "tibble": "3.3.1"
+  },
+  "baseline_git_commit": "2550b91927db1a49e5fbbf6fa0facb092dc74ecb",
+  "audit_script_sha256": "56942594ccf60e5020726b35a88368705cb51875da4e1d9d3cfc38948ec1fc21",
+  "framework_core_sha256": "a7ce17068caea5f89bd92d13cbbcb163dcec44c049922f89cf3dfdb6168bfd5d",
+  "environment_lock_sha256": "37e810f9ddb708dad71fc4c0481ce549acd387264598d60715bf5d038fad90cf"
+}

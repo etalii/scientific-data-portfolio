@@ -1,0 +1,1951 @@
+{
+  "schema_version": "0.1.0",
+  "adapter": {
+    "project_id": "argentina_dengue_analysis",
+    "scope_schema_ref": {
+      "path": "dataspec/studies/rank_shift_2024/scope.schema.json",
+      "sha256": "06fbe833275e26d603815bbfd8ee75e9d15797851ee5cf0a67f865c81ebe7a42",
+      "locator": "Complete project-local scope schema",
+      "availability": "verified_local"
+    },
+    "required_review_dimensions": [
+      "narrative",
+      "reproducibility",
+      "scientific",
+      "visual"
+    ]
+  },
+  "candidate_refs": [
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "claim_population_adjustment",
+      "revision": 2
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "claim_province_06",
+      "revision": 2
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "claim_province_10",
+      "revision": 2
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "claim_province_46",
+      "revision": 2
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "claim_province_90",
+      "revision": 2
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "contract_c16",
+      "revision": 1
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "contract_c20",
+      "revision": 1
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "contract_pilot",
+      "revision": 1
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "delivery",
+      "revision": 2
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "evidence_ranks",
+      "revision": 2
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "execution_audit",
+      "revision": 2
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "metric_count",
+      "revision": 1
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "metric_rate",
+      "revision": 1
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "narrative",
+      "revision": 2
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "plan",
+      "revision": 1
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "question",
+      "revision": 1
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "review_closure_automated",
+      "revision": 1
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "review_delivery",
+      "revision": 1
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "review_human",
+      "revision": 1
+    },
+    {
+      "project_id": "argentina_dengue_analysis",
+      "artifact_id": "visual",
+      "revision": 2
+    }
+  ],
+  "records": [
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "claim_population_adjustment",
+      "revision": 2,
+      "kind": "claim",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-23T16:30:29Z",
+      "record_origin": "retrospective",
+      "status": "accepted",
+      "depends_on": [],
+      "limitations": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+      "payload": {
+        "question_ref": {
+          "project_id": "argentina_dengue_analysis",
+          "artifact_id": "question",
+          "revision": 1
+        },
+        "claim_text": "Population adjustment changes the provincial ordering of published counts in calendar year 2024 under the contemporary scenario.",
+        "claim_type": "descriptive",
+        "supporting_evidence_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "evidence_ranks",
+            "revision": 2
+          }
+        ],
+        "contradicting_evidence_refs": [],
+        "metric_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "metric_count",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "metric_rate",
+            "revision": 1
+          }
+        ],
+        "scope": {
+          "analysis_scope_id": "dengue_2024",
+          "source_year": 2024,
+          "denominator_scenario": "contemporary",
+          "projection_vintage": "indec_census_2022_projection_2022_2040",
+          "population_reference_date": "2024-07-01",
+          "geography": "24 mapped INDEC jurisdictions",
+          "rate_period_basis": "observed_weeks_01_52"
+        },
+        "caveats": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+        "disposition": "qualified"
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "claim_province_06",
+      "revision": 2,
+      "kind": "claim",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-23T16:30:29Z",
+      "record_origin": "retrospective",
+      "status": "accepted",
+      "depends_on": [],
+      "limitations": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+      "payload": {
+        "question_ref": {
+          "project_id": "argentina_dengue_analysis",
+          "artifact_id": "question",
+          "revision": 1
+        },
+        "claim_text": "Buenos Aires: count rank 1 to rate rank 16.",
+        "claim_type": "descriptive",
+        "supporting_evidence_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "evidence_ranks",
+            "revision": 2
+          }
+        ],
+        "contradicting_evidence_refs": [],
+        "metric_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "metric_count",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "metric_rate",
+            "revision": 1
+          }
+        ],
+        "scope": {
+          "analysis_scope_id": "dengue_2024",
+          "source_year": 2024,
+          "denominator_scenario": "contemporary",
+          "projection_vintage": "indec_census_2022_projection_2022_2040",
+          "population_reference_date": "2024-07-01",
+          "geography": "24 mapped INDEC jurisdictions",
+          "rate_period_basis": "observed_weeks_01_52"
+        },
+        "caveats": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+        "disposition": "qualified"
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "claim_province_10",
+      "revision": 2,
+      "kind": "claim",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-23T16:30:29Z",
+      "record_origin": "retrospective",
+      "status": "accepted",
+      "depends_on": [],
+      "limitations": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+      "payload": {
+        "question_ref": {
+          "project_id": "argentina_dengue_analysis",
+          "artifact_id": "question",
+          "revision": 1
+        },
+        "claim_text": "Catamarca: count rank 13 to rate rank 4.",
+        "claim_type": "descriptive",
+        "supporting_evidence_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "evidence_ranks",
+            "revision": 2
+          }
+        ],
+        "contradicting_evidence_refs": [],
+        "metric_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "metric_count",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "metric_rate",
+            "revision": 1
+          }
+        ],
+        "scope": {
+          "analysis_scope_id": "dengue_2024",
+          "source_year": 2024,
+          "denominator_scenario": "contemporary",
+          "projection_vintage": "indec_census_2022_projection_2022_2040",
+          "population_reference_date": "2024-07-01",
+          "geography": "24 mapped INDEC jurisdictions",
+          "rate_period_basis": "observed_weeks_01_52"
+        },
+        "caveats": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+        "disposition": "qualified"
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "claim_province_46",
+      "revision": 2,
+      "kind": "claim",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-23T16:30:29Z",
+      "record_origin": "retrospective",
+      "status": "accepted",
+      "depends_on": [],
+      "limitations": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+      "payload": {
+        "question_ref": {
+          "project_id": "argentina_dengue_analysis",
+          "artifact_id": "question",
+          "revision": 1
+        },
+        "claim_text": "La Rioja: count rank 12 to rate rank 2.",
+        "claim_type": "descriptive",
+        "supporting_evidence_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "evidence_ranks",
+            "revision": 2
+          }
+        ],
+        "contradicting_evidence_refs": [],
+        "metric_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "metric_count",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "metric_rate",
+            "revision": 1
+          }
+        ],
+        "scope": {
+          "analysis_scope_id": "dengue_2024",
+          "source_year": 2024,
+          "denominator_scenario": "contemporary",
+          "projection_vintage": "indec_census_2022_projection_2022_2040",
+          "population_reference_date": "2024-07-01",
+          "geography": "24 mapped INDEC jurisdictions",
+          "rate_period_basis": "observed_weeks_01_52"
+        },
+        "caveats": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+        "disposition": "qualified"
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "claim_province_90",
+      "revision": 2,
+      "kind": "claim",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-23T16:30:29Z",
+      "record_origin": "retrospective",
+      "status": "accepted",
+      "depends_on": [],
+      "limitations": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+      "payload": {
+        "question_ref": {
+          "project_id": "argentina_dengue_analysis",
+          "artifact_id": "question",
+          "revision": 1
+        },
+        "claim_text": "Tucumán: count rank 3 to rate rank 1.",
+        "claim_type": "descriptive",
+        "supporting_evidence_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "evidence_ranks",
+            "revision": 2
+          }
+        ],
+        "contradicting_evidence_refs": [],
+        "metric_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "metric_count",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "metric_rate",
+            "revision": 1
+          }
+        ],
+        "scope": {
+          "analysis_scope_id": "dengue_2024",
+          "source_year": 2024,
+          "denominator_scenario": "contemporary",
+          "projection_vintage": "indec_census_2022_projection_2022_2040",
+          "population_reference_date": "2024-07-01",
+          "geography": "24 mapped INDEC jurisdictions",
+          "rate_period_basis": "observed_weeks_01_52"
+        },
+        "caveats": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+        "disposition": "qualified"
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "contract_c16",
+      "revision": 1,
+      "kind": "data_contract_ref",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-22T21:44:32Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Retrospective, bounded audit; human acceptance is not inferred."
+      ],
+      "payload": {
+        "contract_id": "published_count_rate_indicators",
+        "contract_version": "1.0.0",
+        "document_ref": {
+          "path": "docs/published_count_rate_indicators_contract.md",
+          "sha256": "e87e1d2c0e73b897aab8a3c1cda02f27c4ba17c93915f039be81f2f66f4284d1",
+          "locator": "Identity; scope; validation",
+          "availability": "verified_local"
+        },
+        "producer_ref": {
+          "path": "scripts/analysis/16_build_published_count_rate_indicators.R",
+          "sha256": "84309b7e3ea78861bbc84cf4b782c601e04d7b0d96fb57decebeaa643e94826c",
+          "locator": "main and owned helper functions",
+          "availability": "verified_local"
+        },
+        "consumer_roles": [
+          "retrospective_auditor",
+          "report_reviewer"
+        ]
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "contract_c20",
+      "revision": 1,
+      "kind": "data_contract_ref",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-22T21:44:32Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Retrospective, bounded audit; human acceptance is not inferred."
+      ],
+      "payload": {
+        "contract_id": "epidemiological_portfolio_visualization",
+        "contract_version": "1.0.0",
+        "document_ref": {
+          "path": "docs/epidemiological_portfolio_visualization_contract.md",
+          "sha256": "5574959afc347167a6259ddc6762ac63b82a179c89dec14f5718aa1514d42b73",
+          "locator": "Identity; scope; validation",
+          "availability": "verified_local"
+        },
+        "producer_ref": {
+          "path": "scripts/visualization/20_generate_epidemiological_portfolio_figures.R",
+          "sha256": "4e36806755653c2392242d969b8432fa696f1417fd115ea98db9bf34f350c91b",
+          "locator": "main and owned helper functions",
+          "availability": "verified_local"
+        },
+        "consumer_roles": [
+          "retrospective_auditor",
+          "report_reviewer"
+        ]
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "contract_pilot",
+      "revision": 1,
+      "kind": "data_contract_ref",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-22T21:44:32Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Retrospective, bounded audit; human acceptance is not inferred."
+      ],
+      "payload": {
+        "contract_id": "dataspec_rank_pilot",
+        "contract_version": "1.0.0",
+        "document_ref": {
+          "path": "docs/dataspec_rank_pilot_contract.md",
+          "sha256": "a7bb4275e31da131da5463c116e4dfc84581d9d3a54cb35124953b843fa5a859",
+          "locator": "Identity; scope; validation",
+          "availability": "verified_local"
+        },
+        "producer_ref": {
+          "path": "scripts/validation/21_audit_dataspec_rank_pilot.R",
+          "sha256": "56942594ccf60e5020726b35a88368705cb51875da4e1d9d3cfc38948ec1fc21",
+          "locator": "main and owned helper functions",
+          "availability": "verified_local"
+        },
+        "consumer_roles": [
+          "retrospective_auditor",
+          "report_reviewer"
+        ]
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "delivery",
+      "revision": 2,
+      "kind": "delivery",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-23T16:30:29Z",
+      "record_origin": "retrospective",
+      "status": "accepted",
+      "depends_on": [],
+      "limitations": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+      "payload": {
+        "question_ref": {
+          "project_id": "argentina_dengue_analysis",
+          "artifact_id": "question",
+          "revision": 1
+        },
+        "deliverable_refs": [
+          {
+            "path": "data/metadata/dataspec_rank_closure_v1/report_fragment.html",
+            "sha256": "07d60803b8854912d979cbb52b180a6982163668d3eed0940a152a1a6984903d",
+            "locator": "#population-adjustment-and-provincial-rank-shifts",
+            "availability": "verified_local"
+          },
+          {
+            "path": "figures/province_count_rate_rank_shift_2024_en.png",
+            "sha256": "a7436545d8e9dc25b8b2efddf3488bef429dbe22de3a57d3aaf436820ad1be3f",
+            "locator": "Full figure; scope/calendar labels and four highlighted provincial paths",
+            "availability": "verified_local"
+          }
+        ],
+        "spec_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "narrative",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "visual",
+            "revision": 2
+          }
+        ],
+        "claim_location_map": [
+          {
+            "claim_ref": {
+              "project_id": "argentina_dengue_analysis",
+              "artifact_id": "claim_population_adjustment",
+              "revision": 2
+            },
+            "artifact_ref": {
+              "path": "data/metadata/dataspec_rank_closure_v1/report_fragment.html",
+              "sha256": "07d60803b8854912d979cbb52b180a6982163668d3eed0940a152a1a6984903d",
+              "locator": "#population-adjustment-and-provincial-rank-shifts",
+              "availability": "verified_local"
+            },
+            "location": "#population-adjustment-and-provincial-rank-shifts; #fig-province-ranks"
+          },
+          {
+            "claim_ref": {
+              "project_id": "argentina_dengue_analysis",
+              "artifact_id": "claim_province_06",
+              "revision": 2
+            },
+            "artifact_ref": {
+              "path": "data/metadata/dataspec_rank_closure_v1/report_fragment.html",
+              "sha256": "07d60803b8854912d979cbb52b180a6982163668d3eed0940a152a1a6984903d",
+              "locator": "#population-adjustment-and-provincial-rank-shifts",
+              "availability": "verified_local"
+            },
+            "location": "#population-adjustment-and-provincial-rank-shifts; #fig-province-ranks"
+          },
+          {
+            "claim_ref": {
+              "project_id": "argentina_dengue_analysis",
+              "artifact_id": "claim_province_90",
+              "revision": 2
+            },
+            "artifact_ref": {
+              "path": "data/metadata/dataspec_rank_closure_v1/report_fragment.html",
+              "sha256": "07d60803b8854912d979cbb52b180a6982163668d3eed0940a152a1a6984903d",
+              "locator": "#population-adjustment-and-provincial-rank-shifts",
+              "availability": "verified_local"
+            },
+            "location": "#population-adjustment-and-provincial-rank-shifts; #fig-province-ranks"
+          },
+          {
+            "claim_ref": {
+              "project_id": "argentina_dengue_analysis",
+              "artifact_id": "claim_province_46",
+              "revision": 2
+            },
+            "artifact_ref": {
+              "path": "data/metadata/dataspec_rank_closure_v1/report_fragment.html",
+              "sha256": "07d60803b8854912d979cbb52b180a6982163668d3eed0940a152a1a6984903d",
+              "locator": "#population-adjustment-and-provincial-rank-shifts",
+              "availability": "verified_local"
+            },
+            "location": "#population-adjustment-and-provincial-rank-shifts; #fig-province-ranks"
+          },
+          {
+            "claim_ref": {
+              "project_id": "argentina_dengue_analysis",
+              "artifact_id": "claim_province_10",
+              "revision": 2
+            },
+            "artifact_ref": {
+              "path": "data/metadata/dataspec_rank_closure_v1/report_fragment.html",
+              "sha256": "07d60803b8854912d979cbb52b180a6982163668d3eed0940a152a1a6984903d",
+              "locator": "#population-adjustment-and-provincial-rank-shifts",
+              "availability": "verified_local"
+            },
+            "location": "#population-adjustment-and-provincial-rank-shifts; #fig-province-ranks"
+          }
+        ],
+        "review_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "review_closure_automated",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "review_human",
+            "revision": 1
+          }
+        ],
+        "dependency_snapshot": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_population_adjustment",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_06",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_10",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_46",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_90",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "contract_c16",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "contract_c20",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "contract_pilot",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "evidence_ranks",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "execution_audit",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "metric_count",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "metric_rate",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "narrative",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "plan",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "question",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "review_closure_automated",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "review_human",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "visual",
+            "revision": 2
+          }
+        ],
+        "reproduction_instructions": "Run Rscript --vanilla scripts/processing/23_close_dataspec_rank_pilot.R --check from the project root. Available ignored analytical inputs and the verified R environment are required; original metadata and report remain immutable.",
+        "known_gaps": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+        "delivery_disposition": "qualified_answer"
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "evidence_ranks",
+      "revision": 2,
+      "kind": "evidence",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-23T16:30:29Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Retrospective, bounded audit; human acceptance is not inferred."
+      ],
+      "payload": {
+        "evidence_type": "computational",
+        "source_refs": [
+          {
+            "path": "data/metadata/dataspec_rank_closure_v1/audit.json",
+            "sha256": "d5407e927b27a84fd8ce54e7b3fa3bbbed2f570726a5320a0a10cc43354bb74c",
+            "locator": "featured_rank_checks; c16_reproduction; png_reproduction",
+            "availability": "verified_local"
+          },
+          {
+            "path": "data/processed/epidemiology_province_summary.csv",
+            "sha256": "fd372b45aa2eaa173b163367b657ed9523943ab10951ad714abbb2f1106cb734",
+            "locator": "analysis_scope_id=dengue_2024; denominator_scenario=contemporary; all 24 reference_province_id rows",
+            "availability": "verified_local"
+          }
+        ],
+        "execution_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "execution_audit",
+            "revision": 2
+          }
+        ],
+        "result_locator": "featured_rank_checks; rank_06, rank_90, rank_46, rank_10 checks",
+        "scope": {
+          "analysis_scope_id": "dengue_2024",
+          "source_year": 2024,
+          "denominator_scenario": "contemporary",
+          "projection_vintage": "indec_census_2022_projection_2022_2040",
+          "population_reference_date": "2024-07-01",
+          "geography": "24 mapped INDEC jurisdictions",
+          "rate_period_basis": "observed_weeks_01_52"
+        },
+        "finding": "The four published count-to-rate rank pairs agree with the governed indicators, independent ordering, figure, and archived prose.",
+        "uncertainty": "Descriptive published-count semantics and incomplete geographic assignment; no sampling or causal uncertainty estimate is inferred.",
+        "validation_refs": [
+          {
+            "path": "data/metadata/dataspec_rank_closure_v1/checks.json",
+            "sha256": "d997eaea5640eb282301ab9b5ad46df85dfe2d0209973f2ac673821d8db2a831",
+            "locator": "rate_formula; population_reference; geographic_eligibility; rank and report checks",
+            "availability": "verified_local"
+          }
+        ]
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "execution_audit",
+      "revision": 2,
+      "kind": "execution",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-23T16:30:29Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Retrospective, bounded audit; human acceptance is not inferred."
+      ],
+      "payload": {
+        "plan_ref": {
+          "project_id": "argentina_dengue_analysis",
+          "artifact_id": "plan",
+          "revision": 1
+        },
+        "command": [
+          "Rscript",
+          "--vanilla",
+          "scripts/processing/23_close_dataspec_rank_pilot.R"
+        ],
+        "working_directory": ".",
+        "code_refs": [
+          {
+            "path": "scripts/analysis/16_build_published_count_rate_indicators.R",
+            "sha256": "84309b7e3ea78861bbc84cf4b782c601e04d7b0d96fb57decebeaa643e94826c",
+            "locator": "main",
+            "availability": "verified_local"
+          },
+          {
+            "path": "scripts/processing/22_build_dataspec_rank_trace.R",
+            "sha256": "bdb688db39969b4871b837100fbfa760f4ae0634bf975f95fcbdef8b13b472fa",
+            "locator": "build_rank_records reused for schema-compatible registration",
+            "availability": "verified_local"
+          },
+          {
+            "path": "scripts/processing/23_close_dataspec_rank_pilot.R",
+            "sha256": "b808851e532b953feb6729bc2866f937600c4021429455afd5cdda41b7c98010",
+            "locator": "Canonical editorial revision, audit and closure producer",
+            "availability": "verified_local"
+          },
+          {
+            "path": "scripts/validation/21_audit_dataspec_rank_pilot.R",
+            "sha256": "56942594ccf60e5020726b35a88368705cb51875da4e1d9d3cfc38948ec1fc21",
+            "locator": "main",
+            "availability": "verified_local"
+          },
+          {
+            "path": "scripts/visualization/20_generate_epidemiological_portfolio_figures.R",
+            "sha256": "4e36806755653c2392242d969b8432fa696f1417fd115ea98db9bf34f350c91b",
+            "locator": "rank_measure; build_province_rank_plot; render_png",
+            "availability": "verified_local"
+          }
+        ],
+        "config_refs": [
+          {
+            "path": "config/project.yml",
+            "sha256": "a212265d0754b61a7d6829a0398d99335247ed849226f11b370aaf4619553c15",
+            "locator": "dataspec_rank_pilot and existing analytical configuration",
+            "availability": "verified_local"
+          },
+          {
+            "path": "data/metadata/dataspec_rank_closure_v1/baseline_project.yml",
+            "sha256": "71a45f4c1fe85433939cbadeb32084a1254ded146c2f569d1c720b3e8d218519",
+            "locator": "Exact pre-pilot analytical configuration",
+            "availability": "verified_local"
+          }
+        ],
+        "environment_ref": {
+          "path": "data/metadata/dataspec_rank_closure_v1/environment.json",
+          "sha256": "1ead0fd04255df57840889d458848e643d6dcdb57a8982a73e7e663566b05374",
+          "locator": "R and installed versions; code identities",
+          "availability": "verified_local"
+        },
+        "input_refs": [
+          {
+            "path": "data/metadata/dataspec_rank_pilot_v1/bundle.json",
+            "sha256": "eb90c201406eb24c07cec2a88bc7e845b299d47411f2e877594c435904948391",
+            "locator": "Immutable retrospective revision-1 record history",
+            "availability": "verified_local"
+          },
+          {
+            "path": "data/metadata/geographic_mapping_validation_snapshot.csv",
+            "sha256": "41575a6e2d8e25fd030858c0736c9e66ca22de3b03f48039ffda1ed5c3c43131",
+            "locator": "C.16 input artifact; schema governed by its existing contract",
+            "availability": "verified_local"
+          },
+          {
+            "path": "data/metadata/province_region_crosswalk.csv",
+            "sha256": "8ba14d50b85863b46c0b0214192fbeff46fc658e43e752770af440b04634c09c",
+            "locator": "C.16 input artifact; schema governed by its existing contract",
+            "availability": "verified_local"
+          },
+          {
+            "path": "data/metadata/source_geography_crosswalk.csv",
+            "sha256": "6029ba4e56d42deb0edb377385f4bf9495357cac52795fda1b64af7a79e96f37",
+            "locator": "C.16 input artifact; schema governed by its existing contract",
+            "availability": "verified_local"
+          },
+          {
+            "path": "data/processed/multiyear_dengue_province_summary.csv",
+            "sha256": "ddf6d95068373959f262cc6fce42ba8b9849dd7196be964da26cc54a41e31b7f",
+            "locator": "C.16 input artifact; schema governed by its existing contract",
+            "availability": "verified_local"
+          },
+          {
+            "path": "data/processed/multiyear_dengue_weekly_national.csv",
+            "sha256": "7013f337ecd3314a6f9af74dd1909635b90b66bd282c0797529280e2c43fedf7",
+            "locator": "C.16 input artifact; schema governed by its existing contract",
+            "availability": "verified_local"
+          },
+          {
+            "path": "data/processed/multiyear_dengue_weekly_province.csv",
+            "sha256": "1fe1f35fed2b41f1bcd4d05c2a89183c59e8df7d1e0e8cb26e7c8e5267201850",
+            "locator": "C.16 input artifact; schema governed by its existing contract",
+            "availability": "verified_local"
+          },
+          {
+            "path": "data/reference/population_denominators.csv",
+            "sha256": "faa4ef83232ab85077f1cc1e47a4574628372c62dae3e9ca509de5bcf60ec97e",
+            "locator": "C.16 input artifact; schema governed by its existing contract",
+            "availability": "verified_local"
+          },
+          {
+            "path": "dataspec/studies/rank_shift_2024/accepted_report.qmd",
+            "sha256": "c19607d33b977338c406f99c6c2f642532e748a160b53276268e18078fbb0369",
+            "locator": "Authoritative approved narrative and alt text",
+            "availability": "verified_local"
+          },
+          {
+            "path": "dataspec/studies/rank_shift_2024/human_decision_request.txt",
+            "sha256": "37569a233e43e83e7ad5008e2c83eb26356e791d5a122cb92c44333d48935ed5",
+            "locator": "Explicit user dispositions and conditional closure authorization",
+            "availability": "verified_local"
+          },
+          {
+            "path": "dataspec/studies/rank_shift_2024/human_decisions.yml",
+            "sha256": "6a4a8d9e43f53268093f4496f3a31008b06404e38778e1e37d52e7e10059f9d9",
+            "locator": "H01-H09, exact edits, full limitations and review scopes",
+            "availability": "verified_local"
+          },
+          {
+            "path": "dataspec/studies/rank_shift_2024/pre_closure_project.yml",
+            "sha256": "57252af26f95610cd1fb5f1ec0dba4bacd28d6cc22dd6415956dc56f2714ff4e",
+            "locator": "Exact pre-closure configuration; original bundle replay",
+            "availability": "verified_local"
+          },
+          {
+            "path": "docs/dataspec_rank_closure_contract.md",
+            "sha256": "127ab2127a859d9a1d4d7a2ab1ae3ab3e8854fc16684f9fb2a805867a12d236e",
+            "locator": "Identity, lifecycle and bounded acceptance",
+            "availability": "verified_local"
+          }
+        ],
+        "output_refs": [
+          {
+            "path": "data/metadata/dataspec_rank_closure_v1/audit.json",
+            "sha256": "d5407e927b27a84fd8ce54e7b3fa3bbbed2f570726a5320a0a10cc43354bb74c",
+            "locator": "Audit comparisons and timestamps",
+            "availability": "verified_local"
+          },
+          {
+            "path": "data/metadata/dataspec_rank_closure_v1/checks.json",
+            "sha256": "d997eaea5640eb282301ab9b5ad46df85dfe2d0209973f2ac673821d8db2a831",
+            "locator": "All 21 checks",
+            "availability": "verified_local"
+          },
+          {
+            "path": "data/metadata/dataspec_rank_closure_v1/report_fragment.html",
+            "sha256": "07d60803b8854912d979cbb52b180a6982163668d3eed0940a152a1a6984903d",
+            "locator": "#population-adjustment-and-provincial-rank-shifts",
+            "availability": "verified_local"
+          }
+        ],
+        "started_at": "2026-09-23T16:30:25Z",
+        "finished_at": "2026-09-23T16:30:29Z",
+        "exit_code": 0,
+        "validation_refs": [
+          {
+            "path": "data/metadata/dataspec_rank_closure_v1/checks.json",
+            "sha256": "d997eaea5640eb282301ab9b5ad46df85dfe2d0209973f2ac673821d8db2a831",
+            "locator": "All 21 checks",
+            "availability": "verified_local"
+          }
+        ],
+        "reproduction_status": "passed"
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "metric_count",
+      "revision": 1,
+      "kind": "metric",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-22T21:44:32Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Retrospective, bounded audit; human acceptance is not inferred."
+      ],
+      "payload": {
+        "contract_ref": {
+          "project_id": "argentina_dengue_analysis",
+          "artifact_id": "contract_c16",
+          "revision": 1
+        },
+        "definition_locator": "Artifacts and common fields; grains and fields",
+        "grain": "analysis_scope_id + denominator_scenario + reference_province_id",
+        "unit": "published counts",
+        "dimensions": [
+          "reference_province_id"
+        ],
+        "population_or_domain": "Mapped published surveillance counts in 24 INDEC jurisdictions",
+        "time_basis": "Calendar year 2024; observed weeks W01-W52",
+        "spatial_basis": {
+          "applicable": true,
+          "description": "INDEC jurisdiction; validated source mapping"
+        },
+        "scope": {
+          "analysis_scope_id": "dengue_2024",
+          "source_year": 2024,
+          "denominator_scenario": "contemporary",
+          "projection_vintage": "indec_census_2022_projection_2022_2040",
+          "population_reference_date": "2024-07-01",
+          "geography": "24 mapped INDEC jurisdictions",
+          "rate_period_basis": "observed_weeks_01_52"
+        },
+        "metric_type": "count",
+        "denominator": {
+          "applicable": false,
+          "reason": "A count has no denominator."
+        },
+        "missingness_policy": {
+          "rule": "Do not redistribute unknown geography or fill absent rows.",
+          "authority_ref": {
+            "path": "docs/published_count_rate_indicators_contract.md",
+            "sha256": "e87e1d2c0e73b897aab8a3c1cda02f27c4ba17c93915f039be81f2f66f4284d1",
+            "locator": "Geographic policy; week coverage; grains",
+            "availability": "verified_local"
+          }
+        },
+        "aggregation_policy": {
+          "rule": "Use already governed C.16 aggregates; rates are not additive.",
+          "authority_ref": {
+            "path": "docs/published_count_rate_indicators_contract.md",
+            "sha256": "e87e1d2c0e73b897aab8a3c1cda02f27c4ba17c93915f039be81f2f66f4284d1",
+            "locator": "Geographic policy; week coverage; grains",
+            "availability": "verified_local"
+          }
+        },
+        "join_policy": {
+          "rule": "Use validated exact province IDs and matching population year/vintage.",
+          "authority_ref": {
+            "path": "docs/published_count_rate_indicators_contract.md",
+            "sha256": "e87e1d2c0e73b897aab8a3c1cda02f27c4ba17c93915f039be81f2f66f4284d1",
+            "locator": "Geographic policy; week coverage; grains",
+            "availability": "verified_local"
+          }
+        },
+        "computation_ref": {
+          "path": "scripts/analysis/16_build_published_count_rate_indicators.R",
+          "sha256": "84309b7e3ea78861bbc84cf4b782c601e04d7b0d96fb57decebeaa643e94826c",
+          "locator": "main: governed C.12 numerator hand-off",
+          "availability": "verified_local"
+        },
+        "interpretation_limits": [
+          "Published-count rates are descriptive, not incidence, unique persons, or individual risk.",
+          "Territorial numerators exclude unknown/nonassignable geography without redistribution.",
+          "Calendar-year 2024 is not the SE31/2024-SE30/2025 seasonal scope."
+        ]
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "metric_rate",
+      "revision": 1,
+      "kind": "metric",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-22T21:44:32Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Retrospective, bounded audit; human acceptance is not inferred."
+      ],
+      "payload": {
+        "contract_ref": {
+          "project_id": "argentina_dengue_analysis",
+          "artifact_id": "contract_c16",
+          "revision": 1
+        },
+        "definition_locator": "Artifacts and common fields; grains and fields",
+        "grain": "analysis_scope_id + denominator_scenario + reference_province_id",
+        "unit": "published counts per 100000 population",
+        "dimensions": [
+          "reference_province_id"
+        ],
+        "population_or_domain": "Mapped published surveillance counts in 24 INDEC jurisdictions",
+        "time_basis": "Calendar year 2024; observed weeks W01-W52",
+        "spatial_basis": {
+          "applicable": true,
+          "description": "INDEC jurisdiction; validated source mapping"
+        },
+        "scope": {
+          "analysis_scope_id": "dengue_2024",
+          "source_year": 2024,
+          "denominator_scenario": "contemporary",
+          "projection_vintage": "indec_census_2022_projection_2022_2040",
+          "population_reference_date": "2024-07-01",
+          "geography": "24 mapped INDEC jurisdictions",
+          "rate_period_basis": "observed_weeks_01_52"
+        },
+        "metric_type": "rate",
+        "denominator": {
+          "applicable": true,
+          "reason": "Official province population for the matching year and vintage.",
+          "definition_ref": {
+            "path": "docs/population_denominator_reference_contract.md",
+            "sha256": "2bfce787919fed3c91f66f19347b54272de75fe9f18f9a0b89f18184e7e3b544",
+            "locator": "Population scope and reference date",
+            "availability": "verified_local"
+          }
+        },
+        "missingness_policy": {
+          "rule": "Do not redistribute unknown geography or fill absent rows.",
+          "authority_ref": {
+            "path": "docs/published_count_rate_indicators_contract.md",
+            "sha256": "e87e1d2c0e73b897aab8a3c1cda02f27c4ba17c93915f039be81f2f66f4284d1",
+            "locator": "Geographic policy; week coverage; grains",
+            "availability": "verified_local"
+          }
+        },
+        "aggregation_policy": {
+          "rule": "Use already governed C.16 aggregates; rates are not additive.",
+          "authority_ref": {
+            "path": "docs/published_count_rate_indicators_contract.md",
+            "sha256": "e87e1d2c0e73b897aab8a3c1cda02f27c4ba17c93915f039be81f2f66f4284d1",
+            "locator": "Geographic policy; week coverage; grains",
+            "availability": "verified_local"
+          }
+        },
+        "join_policy": {
+          "rule": "Use validated exact province IDs and matching population year/vintage.",
+          "authority_ref": {
+            "path": "docs/published_count_rate_indicators_contract.md",
+            "sha256": "e87e1d2c0e73b897aab8a3c1cda02f27c4ba17c93915f039be81f2f66f4284d1",
+            "locator": "Geographic policy; week coverage; grains",
+            "availability": "verified_local"
+          }
+        },
+        "computation_ref": {
+          "path": "scripts/analysis/16_build_published_count_rate_indicators.R",
+          "sha256": "84309b7e3ea78861bbc84cf4b782c601e04d7b0d96fb57decebeaa643e94826c",
+          "locator": "published_count_rate; main",
+          "availability": "verified_local"
+        },
+        "interpretation_limits": [
+          "Published-count rates are descriptive, not incidence, unique persons, or individual risk.",
+          "Territorial numerators exclude unknown/nonassignable geography without redistribution.",
+          "Calendar-year 2024 is not the SE31/2024-SE30/2025 seasonal scope."
+        ]
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "narrative",
+      "revision": 2,
+      "kind": "narrative_spec",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-23T16:30:29Z",
+      "record_origin": "retrospective",
+      "status": "accepted",
+      "depends_on": [],
+      "limitations": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+      "payload": {
+        "audience": "Scientific portfolio readers",
+        "communication_goal": "Explain the two descriptive orderings using selected contrasts, without implying temporal change, effect magnitude or disease risk.",
+        "ordered_sections": [
+          {
+            "section_id": "population_adjustment",
+            "text": "Absolute published counts and population-adjusted published-count rates answer different descriptive questions. The following four examples illustrate differences between the two orderings in calendar year 2024 under the contemporary denominator scenario. They are selected contrasts, not the four largest rank shifts. Rank differences do not represent changes over time or the magnitude of differences in counts or rates.",
+            "claim_refs": [
+              {
+                "project_id": "argentina_dengue_analysis",
+                "artifact_id": "claim_population_adjustment",
+                "revision": 2
+              },
+              {
+                "project_id": "argentina_dengue_analysis",
+                "artifact_id": "claim_province_06",
+                "revision": 2
+              },
+              {
+                "project_id": "argentina_dengue_analysis",
+                "artifact_id": "claim_province_10",
+                "revision": 2
+              },
+              {
+                "project_id": "argentina_dengue_analysis",
+                "artifact_id": "claim_province_46",
+                "revision": 2
+              },
+              {
+                "project_id": "argentina_dengue_analysis",
+                "artifact_id": "claim_province_90",
+                "revision": 2
+              }
+            ],
+            "context_source_refs": []
+          }
+        ],
+        "claim_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_population_adjustment",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_06",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_10",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_46",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_90",
+            "revision": 2
+          }
+        ],
+        "context_source_refs": [],
+        "mandatory_caveats": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+        "excluded_claims_with_reasons": []
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "plan",
+      "revision": 1,
+      "kind": "analysis_plan",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-22T21:44:32Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Retrospective, bounded audit; human acceptance is not inferred."
+      ],
+      "payload": {
+        "question_ref": {
+          "project_id": "argentina_dengue_analysis",
+          "artifact_id": "question",
+          "revision": 1
+        },
+        "design_type": "descriptive",
+        "methods": [
+          "Reconstruct the existing question retrospectively.",
+          "Reproduce C.16 and the selected C.20 figure in isolation; compare exact bytes.",
+          "Independently reconcile ranks and verify the archived selected report section."
+        ],
+        "contract_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "contract_c16",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "contract_c20",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "contract_pilot",
+            "revision": 1
+          }
+        ],
+        "metric_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "metric_count",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "metric_rate",
+            "revision": 1
+          }
+        ],
+        "hypothesis_refs": [],
+        "hypothesis_omission_reason": "Descriptive retrospective comparison; no historical confirmatory timing is claimed.",
+        "validation_strategy": "21 mechanical checks, recorded assistant review, common trace validation, and in-memory stale propagation.",
+        "sensitivity_policy": "Contemporary scenario only; this pilot makes no denominator-sensitivity result claim.",
+        "stopping_rule": "Close the mechanical audit on exact reconciliation; retain the human-review gate."
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "question",
+      "revision": 1,
+      "kind": "question",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-22T21:44:32Z",
+      "record_origin": "retrospective",
+      "status": "draft",
+      "depends_on": [],
+      "limitations": [
+        "Retrospective, bounded audit; human acceptance is not inferred."
+      ],
+      "payload": {
+        "question_text": "How does population adjustment change the existing provincial published-count ordering in calendar year 2024?",
+        "intended_use": "Audit the traceability of an already published descriptive comparison.",
+        "audience": "Scientific portfolio readers and reviewers",
+        "scope": {
+          "analysis_scope_id": "dengue_2024",
+          "source_year": 2024,
+          "denominator_scenario": "contemporary",
+          "projection_vintage": "indec_census_2022_projection_2022_2040",
+          "population_reference_date": "2024-07-01",
+          "geography": "24 mapped INDEC jurisdictions",
+          "rate_period_basis": "observed_weeks_01_52"
+        },
+        "non_goals": [
+          "Causal or individual-risk inference",
+          "New indicators or seasonal claims"
+        ],
+        "answer_criteria": [
+          "Recover the four published rank shifts from the governed artifacts and preserve their interpretation limits."
+        ]
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "review_closure_automated",
+      "revision": 1,
+      "kind": "review",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-23T16:30:29Z",
+      "record_origin": "retrospective",
+      "status": "accepted",
+      "depends_on": [],
+      "limitations": [
+        "Retrospective, bounded audit; human acceptance is not inferred."
+      ],
+      "payload": {
+        "target_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_population_adjustment",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_06",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_10",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_46",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_90",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "narrative",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "visual",
+            "revision": 2
+          }
+        ],
+        "reviewer": "codex_assistant",
+        "review_mode": "automated",
+        "review_dimensions": [
+          "narrative",
+          "reproducibility",
+          "scientific",
+          "visual"
+        ],
+        "checks": [
+          {
+            "check_id": "bounded_assistant_review",
+            "result": "pass",
+            "evidence_refs": [
+              {
+                "path": "data/metadata/dataspec_rank_closure_v1/checks.json",
+                "sha256": "d997eaea5640eb282301ab9b5ad46df85dfe2d0209973f2ac673821d8db2a831",
+                "locator": "21 canonical post-review controls",
+                "availability": "verified_local"
+              }
+            ],
+            "note": "Mechanical closure audit passed; human dispositions are recorded separately from the explicit user instruction."
+          }
+        ],
+        "findings": [
+          "Approved introduction/alt/caption reconciled; PNG and six indicators unchanged. No whole-report rerender or independent peer review is claimed."
+        ],
+        "disposition": "pass",
+        "reviewed_at": "2026-09-23T16:30:29Z"
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "review_delivery",
+      "revision": 1,
+      "kind": "review",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-23T16:30:29Z",
+      "record_origin": "retrospective",
+      "status": "accepted",
+      "depends_on": [],
+      "limitations": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+      "payload": {
+        "target_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "delivery",
+            "revision": 2
+          }
+        ],
+        "reviewer": "requesting_user",
+        "review_mode": "self",
+        "review_dimensions": [
+          "scientific"
+        ],
+        "checks": [
+          {
+            "check_id": "conditional_delivery_acceptance",
+            "result": "pass",
+            "evidence_refs": [
+              {
+                "path": "data/metadata/dataspec_rank_pilot_v1/bundle.json",
+                "sha256": "eb90c201406eb24c07cec2a88bc7e845b299d47411f2e877594c435904948391",
+                "locator": "Immutable retrospective revision-1 record history",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decision_request.txt",
+                "sha256": "37569a233e43e83e7ad5008e2c83eb26356e791d5a122cb92c44333d48935ed5",
+                "locator": "Explicit user dispositions and conditional closure authorization",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decisions.yml",
+                "sha256": "6a4a8d9e43f53268093f4496f3a31008b06404e38778e1e37d52e7e10059f9d9",
+                "locator": "H01-H09, exact edits, full limitations and review scopes",
+                "availability": "verified_local"
+              },
+              {
+                "path": "docs/dataspec_rank_closure_contract.md",
+                "sha256": "127ab2127a859d9a1d4d7a2ab1ae3ab3e8854fc16684f9fb2a805867a12d236e",
+                "locator": "Identity, lifecycle and bounded acceptance",
+                "availability": "verified_local"
+              }
+            ],
+            "note": "Close only after all accepted edits, technical controls, exact-revision reviews, unchanged analytical evidence, truthful retrospective provenance and bounded reproducibility pass; explicitly authorized in human_decision_request.txt sections 9–10."
+          }
+        ],
+        "findings": [
+          "User-authorized conditional closure applied after technical checks and exact edits; no new scientific claim or independent certification."
+        ],
+        "disposition": "pass",
+        "reviewed_at": "2026-09-23T16:30:29Z"
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "review_human",
+      "revision": 1,
+      "kind": "review",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-23T16:30:29Z",
+      "record_origin": "retrospective",
+      "status": "accepted",
+      "depends_on": [],
+      "limitations": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+      "payload": {
+        "target_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_population_adjustment",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_06",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_10",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_46",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_90",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "narrative",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "visual",
+            "revision": 2
+          }
+        ],
+        "reviewer": "requesting_user",
+        "review_mode": "self",
+        "review_dimensions": [
+          "narrative",
+          "reproducibility",
+          "scientific",
+          "visual"
+        ],
+        "checks": [
+          {
+            "check_id": "h01",
+            "result": "pass",
+            "evidence_refs": [
+              {
+                "path": "data/metadata/dataspec_rank_pilot_v1/bundle.json",
+                "sha256": "eb90c201406eb24c07cec2a88bc7e845b299d47411f2e877594c435904948391",
+                "locator": "Immutable retrospective revision-1 record history",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decision_request.txt",
+                "sha256": "37569a233e43e83e7ad5008e2c83eb26356e791d5a122cb92c44333d48935ed5",
+                "locator": "Explicit user dispositions and conditional closure authorization",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decisions.yml",
+                "sha256": "6a4a8d9e43f53268093f4496f3a31008b06404e38778e1e37d52e7e10059f9d9",
+                "locator": "H01-H09, exact edits, full limitations and review scopes",
+                "availability": "verified_local"
+              },
+              {
+                "path": "docs/dataspec_rank_closure_contract.md",
+                "sha256": "127ab2127a859d9a1d4d7a2ab1ae3ab3e8854fc16684f9fb2a805867a12d236e",
+                "locator": "Identity, lifecycle and bounded acceptance",
+                "availability": "verified_local"
+              }
+            ],
+            "note": "ACCEPT for claim_population_adjustment scientific — accepted within recorded scope and limitations."
+          },
+          {
+            "check_id": "h02",
+            "result": "pass",
+            "evidence_refs": [
+              {
+                "path": "data/metadata/dataspec_rank_pilot_v1/bundle.json",
+                "sha256": "eb90c201406eb24c07cec2a88bc7e845b299d47411f2e877594c435904948391",
+                "locator": "Immutable retrospective revision-1 record history",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decision_request.txt",
+                "sha256": "37569a233e43e83e7ad5008e2c83eb26356e791d5a122cb92c44333d48935ed5",
+                "locator": "Explicit user dispositions and conditional closure authorization",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decisions.yml",
+                "sha256": "6a4a8d9e43f53268093f4496f3a31008b06404e38778e1e37d52e7e10059f9d9",
+                "locator": "H01-H09, exact edits, full limitations and review scopes",
+                "availability": "verified_local"
+              },
+              {
+                "path": "docs/dataspec_rank_closure_contract.md",
+                "sha256": "127ab2127a859d9a1d4d7a2ab1ae3ab3e8854fc16684f9fb2a805867a12d236e",
+                "locator": "Identity, lifecycle and bounded acceptance",
+                "availability": "verified_local"
+              }
+            ],
+            "note": "ACCEPT for claim_province_06 scientific — accepted within recorded scope and limitations."
+          },
+          {
+            "check_id": "h03",
+            "result": "pass",
+            "evidence_refs": [
+              {
+                "path": "data/metadata/dataspec_rank_pilot_v1/bundle.json",
+                "sha256": "eb90c201406eb24c07cec2a88bc7e845b299d47411f2e877594c435904948391",
+                "locator": "Immutable retrospective revision-1 record history",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decision_request.txt",
+                "sha256": "37569a233e43e83e7ad5008e2c83eb26356e791d5a122cb92c44333d48935ed5",
+                "locator": "Explicit user dispositions and conditional closure authorization",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decisions.yml",
+                "sha256": "6a4a8d9e43f53268093f4496f3a31008b06404e38778e1e37d52e7e10059f9d9",
+                "locator": "H01-H09, exact edits, full limitations and review scopes",
+                "availability": "verified_local"
+              },
+              {
+                "path": "docs/dataspec_rank_closure_contract.md",
+                "sha256": "127ab2127a859d9a1d4d7a2ab1ae3ab3e8854fc16684f9fb2a805867a12d236e",
+                "locator": "Identity, lifecycle and bounded acceptance",
+                "availability": "verified_local"
+              }
+            ],
+            "note": "ACCEPT for claim_province_90 scientific — accepted within recorded scope and limitations."
+          },
+          {
+            "check_id": "h04",
+            "result": "pass",
+            "evidence_refs": [
+              {
+                "path": "data/metadata/dataspec_rank_pilot_v1/bundle.json",
+                "sha256": "eb90c201406eb24c07cec2a88bc7e845b299d47411f2e877594c435904948391",
+                "locator": "Immutable retrospective revision-1 record history",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decision_request.txt",
+                "sha256": "37569a233e43e83e7ad5008e2c83eb26356e791d5a122cb92c44333d48935ed5",
+                "locator": "Explicit user dispositions and conditional closure authorization",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decisions.yml",
+                "sha256": "6a4a8d9e43f53268093f4496f3a31008b06404e38778e1e37d52e7e10059f9d9",
+                "locator": "H01-H09, exact edits, full limitations and review scopes",
+                "availability": "verified_local"
+              },
+              {
+                "path": "docs/dataspec_rank_closure_contract.md",
+                "sha256": "127ab2127a859d9a1d4d7a2ab1ae3ab3e8854fc16684f9fb2a805867a12d236e",
+                "locator": "Identity, lifecycle and bounded acceptance",
+                "availability": "verified_local"
+              }
+            ],
+            "note": "ACCEPT for claim_province_46 scientific — accepted within recorded scope and limitations."
+          },
+          {
+            "check_id": "h05",
+            "result": "pass",
+            "evidence_refs": [
+              {
+                "path": "data/metadata/dataspec_rank_pilot_v1/bundle.json",
+                "sha256": "eb90c201406eb24c07cec2a88bc7e845b299d47411f2e877594c435904948391",
+                "locator": "Immutable retrospective revision-1 record history",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decision_request.txt",
+                "sha256": "37569a233e43e83e7ad5008e2c83eb26356e791d5a122cb92c44333d48935ed5",
+                "locator": "Explicit user dispositions and conditional closure authorization",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decisions.yml",
+                "sha256": "6a4a8d9e43f53268093f4496f3a31008b06404e38778e1e37d52e7e10059f9d9",
+                "locator": "H01-H09, exact edits, full limitations and review scopes",
+                "availability": "verified_local"
+              },
+              {
+                "path": "docs/dataspec_rank_closure_contract.md",
+                "sha256": "127ab2127a859d9a1d4d7a2ab1ae3ab3e8854fc16684f9fb2a805867a12d236e",
+                "locator": "Identity, lifecycle and bounded acceptance",
+                "availability": "verified_local"
+              }
+            ],
+            "note": "ACCEPT for claim_province_10 scientific — accepted within recorded scope and limitations."
+          },
+          {
+            "check_id": "h06",
+            "result": "pass",
+            "evidence_refs": [
+              {
+                "path": "data/metadata/dataspec_rank_pilot_v1/bundle.json",
+                "sha256": "eb90c201406eb24c07cec2a88bc7e845b299d47411f2e877594c435904948391",
+                "locator": "Immutable retrospective revision-1 record history",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decision_request.txt",
+                "sha256": "37569a233e43e83e7ad5008e2c83eb26356e791d5a122cb92c44333d48935ed5",
+                "locator": "Explicit user dispositions and conditional closure authorization",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decisions.yml",
+                "sha256": "6a4a8d9e43f53268093f4496f3a31008b06404e38778e1e37d52e7e10059f9d9",
+                "locator": "H01-H09, exact edits, full limitations and review scopes",
+                "availability": "verified_local"
+              },
+              {
+                "path": "docs/dataspec_rank_closure_contract.md",
+                "sha256": "127ab2127a859d9a1d4d7a2ab1ae3ab3e8854fc16684f9fb2a805867a12d236e",
+                "locator": "Identity, lifecycle and bounded acceptance",
+                "availability": "verified_local"
+              }
+            ],
+            "note": "ACCEPT WITH EDIT for narrative narrative — exact authorized editorial revision applied before acceptance."
+          },
+          {
+            "check_id": "h07",
+            "result": "pass",
+            "evidence_refs": [
+              {
+                "path": "data/metadata/dataspec_rank_pilot_v1/bundle.json",
+                "sha256": "eb90c201406eb24c07cec2a88bc7e845b299d47411f2e877594c435904948391",
+                "locator": "Immutable retrospective revision-1 record history",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decision_request.txt",
+                "sha256": "37569a233e43e83e7ad5008e2c83eb26356e791d5a122cb92c44333d48935ed5",
+                "locator": "Explicit user dispositions and conditional closure authorization",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decisions.yml",
+                "sha256": "6a4a8d9e43f53268093f4496f3a31008b06404e38778e1e37d52e7e10059f9d9",
+                "locator": "H01-H09, exact edits, full limitations and review scopes",
+                "availability": "verified_local"
+              },
+              {
+                "path": "docs/dataspec_rank_closure_contract.md",
+                "sha256": "127ab2127a859d9a1d4d7a2ab1ae3ab3e8854fc16684f9fb2a805867a12d236e",
+                "locator": "Identity, lifecycle and bounded acceptance",
+                "availability": "verified_local"
+              }
+            ],
+            "note": "ACCEPT for narrative reproducibility — accepted within recorded scope and limitations."
+          },
+          {
+            "check_id": "h08",
+            "result": "pass",
+            "evidence_refs": [
+              {
+                "path": "data/metadata/dataspec_rank_pilot_v1/bundle.json",
+                "sha256": "eb90c201406eb24c07cec2a88bc7e845b299d47411f2e877594c435904948391",
+                "locator": "Immutable retrospective revision-1 record history",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decision_request.txt",
+                "sha256": "37569a233e43e83e7ad5008e2c83eb26356e791d5a122cb92c44333d48935ed5",
+                "locator": "Explicit user dispositions and conditional closure authorization",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decisions.yml",
+                "sha256": "6a4a8d9e43f53268093f4496f3a31008b06404e38778e1e37d52e7e10059f9d9",
+                "locator": "H01-H09, exact edits, full limitations and review scopes",
+                "availability": "verified_local"
+              },
+              {
+                "path": "docs/dataspec_rank_closure_contract.md",
+                "sha256": "127ab2127a859d9a1d4d7a2ab1ae3ab3e8854fc16684f9fb2a805867a12d236e",
+                "locator": "Identity, lifecycle and bounded acceptance",
+                "availability": "verified_local"
+              }
+            ],
+            "note": "ACCEPT WITH EDIT for visual visual — exact authorized editorial revision applied before acceptance."
+          },
+          {
+            "check_id": "h09",
+            "result": "pass",
+            "evidence_refs": [
+              {
+                "path": "data/metadata/dataspec_rank_pilot_v1/bundle.json",
+                "sha256": "eb90c201406eb24c07cec2a88bc7e845b299d47411f2e877594c435904948391",
+                "locator": "Immutable retrospective revision-1 record history",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decision_request.txt",
+                "sha256": "37569a233e43e83e7ad5008e2c83eb26356e791d5a122cb92c44333d48935ed5",
+                "locator": "Explicit user dispositions and conditional closure authorization",
+                "availability": "verified_local"
+              },
+              {
+                "path": "dataspec/studies/rank_shift_2024/human_decisions.yml",
+                "sha256": "6a4a8d9e43f53268093f4496f3a31008b06404e38778e1e37d52e7e10059f9d9",
+                "locator": "H01-H09, exact edits, full limitations and review scopes",
+                "availability": "verified_local"
+              },
+              {
+                "path": "docs/dataspec_rank_closure_contract.md",
+                "sha256": "127ab2127a859d9a1d4d7a2ab1ae3ab3e8854fc16684f9fb2a805867a12d236e",
+                "locator": "Identity, lifecycle and bounded acceptance",
+                "availability": "verified_local"
+              }
+            ],
+            "note": "ACCEPT for visual reproducibility — accepted within recorded scope and limitations."
+          }
+        ],
+        "findings": [
+          "Explicit dispositions supplied by the requesting human in human_decision_request.txt; no personal name or independent peer-review identity is inferred.",
+          "The generated reviewed_at records when these present dispositions were applied, not an invented original decision or historical review timestamp.",
+          "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.",
+          "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."
+        ],
+        "disposition": "pass",
+        "reviewed_at": "2026-09-23T16:30:29Z"
+      }
+    },
+    {
+      "schema_version": "0.1.0",
+      "project_id": "argentina_dengue_analysis",
+      "study_id": "rank_shift_2024",
+      "artifact_id": "visual",
+      "revision": 2,
+      "kind": "visualization_spec",
+      "owner": "codex_retrospective_audit",
+      "created_at": "2026-09-23T16:30:29Z",
+      "record_origin": "retrospective",
+      "status": "accepted",
+      "depends_on": [
+        {
+          "project_id": "argentina_dengue_analysis",
+          "artifact_id": "contract_c20",
+          "revision": 1
+        }
+      ],
+      "limitations": ["Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope.", "24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024.", "Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects.", "Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage.", "Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented.", "No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed.", "Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates.", "The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.", "This is retrospective DataSpec adoption. The question and plan were reconstructed after the analysis; no preregistration or confirmatory hypothesis is claimed.", "Original C.16/C.20 execution times and historical human approvals were not recovered. Present reproductions record their actual times.", "Narrative reproducibility covers independent rank reconciliation, the archived selected section, and source linkage to governed values. No complete Quarto report rerender is asserted.", "Visualization reproducibility covers the 2400×1800 PNG, its byte-identical isolated rerender in the verified environment, and its byte-identical HTML image. Binary identity across every environment is not guaranteed; a bare Git clone lacks ignored analytical inputs."],
+      "payload": {
+        "claim_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_population_adjustment",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_06",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_10",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_46",
+            "revision": 2
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "claim_province_90",
+            "revision": 2
+          }
+        ],
+        "metric_refs": [
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "metric_count",
+            "revision": 1
+          },
+          {
+            "project_id": "argentina_dengue_analysis",
+            "artifact_id": "metric_rate",
+            "revision": 1
+          }
+        ],
+        "input_refs": [
+          {
+            "path": "data/processed/epidemiology_province_summary.csv",
+            "sha256": "fd372b45aa2eaa173b163367b657ed9523943ab10951ad714abbb2f1106cb734",
+            "locator": "dengue_2024 / contemporary / all 24 jurisdictions",
+            "availability": "verified_local"
+          }
+        ],
+        "chart_type": "slopegraph",
+        "encodings": [
+          {
+            "channel": "x",
+            "field": "measure_rank_type",
+            "description": "Published count rank on left; published-count rate rank on right."
+          },
+          {
+            "channel": "y",
+            "field": "rank",
+            "description": "Ordinal rank 1 at top through 24; descending measure and province ID tie-break."
+          },
+          {
+            "channel": "group",
+            "field": "reference_province_id",
+            "description": "Connect the same jurisdiction across axes; direct labels for four featured provinces."
+          }
+        ],
+        "transformations": [
+          {
+            "operation": "ordinal_order",
+            "category": "display",
+            "description": "Deterministic ordering from existing measures, checked against C.20."
+          }
+        ],
+        "labels": {
+          "title": "Population adjustment changes the territorial ordering",
+          "caption": "Published-count rate per 100,000; it is not incidence, risk, or unique persons. Territorial numerators exclude unknown/nonassignable geography; no redistribution was applied.",
+          "alt_text": "Slopegraph comparing published-count ranks and published-count-rate-per-100,000 ranks across 24 Argentine jurisdictions, including CABA, in calendar year 2024 under the contemporary denominator scenario. Buenos Aires: 1 to 16; Tucumán: 3 to 1; La Rioja: 12 to 2; Catamarca: 13 to 4. Lines connect two measures for the same period, not changes over time."
+        },
+        "uncertainty_display": "Calendar year 2024, observed W01–W52; this does not certify complete surveillance and is not the SE31/2024–SE30/2025 seasonal scope. 24 mapped Argentine jurisdictions, including CABA; contemporary denominator scenario using the INDEC Census 2022 population projection at 1 July 2024. Published counts and published-count rates per 100,000 are descriptive, not unique persons, incidence, individual risk, infection probability, or causal effects. Territorial numerators contain 555,045 mapped published counts; 27,220 geographically unassignable counts are excluded without redistribution. Geographic assignment coverage is not surveillance coverage. Residence semantics remain incompletely documented: the source field name supports residence, but its operational semantics are undocumented. No uncertainty intervals were estimated, and no alternative-denominator ranking stability analysis was performed. Rank differences compare two measures for the same period; they do not express temporal change or the magnitude of differences in counts or rates. The four highlighted jurisdictions are selected contrasts, not the four largest rank shifts.",
+        "accessibility_criteria": [
+          "Direct labels, positional encoding and HTML alternative text."
+        ],
+        "render_targets": [
+          "Unchanged English PNG and its embedded copy in the accepted report fragment"
+        ],
+        "qa_criteria": [
+          "Independent rank reconciliation",
+          "2400x1800 PNG validation and byte-identical isolated rerender",
+          "Assistant visual inspection of labels, scope, and caveats"
+        ]
+      }
+    }
+  ]
+}

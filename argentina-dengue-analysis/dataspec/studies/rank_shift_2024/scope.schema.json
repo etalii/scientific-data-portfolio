@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dengue 2024 retrospective rank audit scope",
+  "type": "object",
+  "properties": {
+    "analysis_scope_id": {
+      "const": "dengue_2024"
+    },
+    "source_year": {
+      "const": 2024
+    },
+    "denominator_scenario": {
+      "const": "contemporary"
+    },
+    "projection_vintage": {
+      "const": "indec_census_2022_projection_2022_2040"
+    },
+    "population_reference_date": {
+      "const": "2024-07-01"
+    },
+    "geography": {
+      "const": "24 mapped INDEC jurisdictions"
+    },
+    "rate_period_basis": {
+      "const": "observed_weeks_01_52"
+    }
+  },
+  "required": [
+    "analysis_scope_id",
+    "source_year",
+    "denominator_scenario",
+    "projection_vintage",
+    "population_reference_date",
+    "geography",
+    "rate_period_basis"
+  ],
+  "additionalProperties": false
+}

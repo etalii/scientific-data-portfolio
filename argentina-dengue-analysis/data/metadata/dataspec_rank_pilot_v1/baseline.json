@@ -1,0 +1,592 @@
+{
+  "baseline_git_commit": "2550b91927db1a49e5fbbf6fa0facb092dc74ecb",
+  "captured_at": "2026-09-22T21:32:40Z",
+  "project_tracked_diff": "",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "3c2242f96a7637cf17b999efa32a69fa7ad2446dc60948647e72784dcbd7f7f4",
+      "bytes": 7698
+    },
+    {
+      "path": "DESCRIPTION",
+      "sha256": "daff5faa5fa96cd6b11c7d8c3005ac3c3dee667c0d6e33c332f3cda076cc8521",
+      "bytes": 1013
+    },
+    {
+      "path": "README.md",
+      "sha256": "780654681994f7337ab62b8292e5b1a9a2ed6d8278849344f55f372b9c6cf31c",
+      "bytes": 5557
+    },
+    {
+      "path": "config/project.yml",
+      "sha256": "71a45f4c1fe85433939cbadeb32084a1254ded146c2f569d1c720b3e8d218519",
+      "bytes": 10455
+    },
+    {
+      "path": "data/metadata/canonical_resources.csv",
+      "sha256": "8da5716e9a4c51035e4142dc819aef9734f1dc3b5b13acbc1031d1ed3ab11bc0",
+      "bytes": 1819
+    },
+    {
+      "path": "data/metadata/download_log.csv",
+      "sha256": "05a6f5f0ad55c94580357aaf7af3850cfc945578aaa079c5c9da6b3fbb1e1f21",
+      "bytes": 23793
+    },
+    {
+      "path": "data/metadata/epidemiological_season_scope_snapshot.csv",
+      "sha256": "3a8cd0af4a92a74c1daf86b8f0c8ad1b87327f820644b06f0a16e2680d56645b",
+      "bytes": 521
+    },
+    {
+      "path": "data/metadata/geographic_mapping_validation_snapshot.csv",
+      "sha256": "41575a6e2d8e25fd030858c0736c9e66ca22de3b03f48039ffda1ed5c3c43131",
+      "bytes": 1834
+    },
+    {
+      "path": "data/metadata/harmonized_quality_snapshot.csv",
+      "sha256": "91a75f8bed5a44a6519ac066912b209a4ef67d4483476d52a065f945d05e4e01",
+      "bytes": 757982
+    },
+    {
+      "path": "data/metadata/multiyear_comparability_snapshot.csv",
+      "sha256": "28124c408c45f0fb0f2b53ce89be2f5ee38219cfb1e00b0d9f5a83d586eb6b4b",
+      "bytes": 7165
+    },
+    {
+      "path": "data/metadata/population_source_provenance.csv",
+      "sha256": "e458c765a027a4f66949f6fa591c0d60729f04b8f198ed59b835d96efbb9f624",
+      "bytes": 1369
+    },
+    {
+      "path": "data/metadata/province_reference.csv",
+      "sha256": "3409ef219514cc6e03efe4642dbe79461dc7eefe0448937fdc76900a5b28da2f",
+      "bytes": 2103
+    },
+    {
+      "path": "data/metadata/province_region_crosswalk.csv",
+      "sha256": "8ba14d50b85863b46c0b0214192fbeff46fc658e43e752770af440b04634c09c",
+      "bytes": 4949
+    },
+    {
+      "path": "data/metadata/resources_catalog.csv",
+      "sha256": "9134353e4ea0bc9d1aa26d72e3028f36244455de73902df7d82fde6db856f188",
+      "bytes": 6383
+    },
+    {
+      "path": "data/metadata/season_geographic_validation_snapshot.csv",
+      "sha256": "91392c17a9f7be8643d3d0cd33b65f821deb0a9322a45868eea14fff96706383",
+      "bytes": 1064
+    },
+    {
+      "path": "data/metadata/source_geography_crosswalk.csv",
+      "sha256": "6029ba4e56d42deb0edb377385f4bf9495357cac52795fda1b64af7a79e96f37",
+      "bytes": 7341
+    },
+    {
+      "path": "data/metadata/validation_snapshot.csv",
+      "sha256": "f66d5acca3534c8f0b8cc3cf1d968d48a103c343036330a55cb51770bb431aeb",
+      "bytes": 7886
+    },
+    {
+      "path": "data/processed/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "data/processed/analysis_age_group_summary.csv",
+      "sha256": "742caeb9eca462c31b2aab6640e3de15aad9a8a714f30a454ab3d1d6e15b8b06",
+      "bytes": 1738
+    },
+    {
+      "path": "data/processed/analysis_province_summary.csv",
+      "sha256": "f1ee8bff9e9751a04e2062f4291f1907786ec1401b943fa72bc060fc17b30b1b",
+      "bytes": 2947
+    },
+    {
+      "path": "data/processed/analysis_weekly_national.csv",
+      "sha256": "8908b0c9db162a26850081c867ca8628791b5338fff031d92e70f490a9d21746",
+      "bytes": 4205
+    },
+    {
+      "path": "data/processed/analysis_weekly_province.csv",
+      "sha256": "fd6fc142dd284be1275041fb301358fdc524d49468bec14c36c0ad2eefb0f06b",
+      "bytes": 61161
+    },
+    {
+      "path": "data/processed/canonical_resources_structural.csv",
+      "sha256": "6adde4b1b636377de2394bc4fc352b649769e401a9ae887f9d71e14e0247d7fe",
+      "bytes": 6885999
+    },
+    {
+      "path": "data/processed/dengue_season_2024_2025_rows.csv",
+      "sha256": "1aa1d5a6f45ce188182fdaa2192f573cd8d5726f97d21a1f3da6bdf2f7eafa6c",
+      "bytes": 819731
+    },
+    {
+      "path": "data/processed/epidemiology_national_summary.csv",
+      "sha256": "52a97179802bf70ead1c7fc3b9649b6d0b7b63b15eb96836da7aefa691859e4f",
+      "bytes": 3088
+    },
+    {
+      "path": "data/processed/epidemiology_province_summary.csv",
+      "sha256": "fd372b45aa2eaa173b163367b657ed9523943ab10951ad714abbb2f1106cb734",
+      "bytes": 22095
+    },
+    {
+      "path": "data/processed/epidemiology_region_summary.csv",
+      "sha256": "9235f1ee51ac09e896c8a78a8b52effb86aec74050765e0b2ab3e2c55a568805",
+      "bytes": 4936
+    },
+    {
+      "path": "data/processed/epidemiology_weekly_national.csv",
+      "sha256": "610dcf73807ece0c7859cd259a1eece5f3bff15f3c1f35dd0cb3b35e643d2c0b",
+      "bytes": 59511
+    },
+    {
+      "path": "data/processed/epidemiology_weekly_province.csv",
+      "sha256": "68ca0626ae3e6ea7f04c1bbadf0373c8a9412fc3b68f72aeaaae318a13261c4b",
+      "bytes": 372867
+    },
+    {
+      "path": "data/processed/epidemiology_weekly_region.csv",
+      "sha256": "505007667b809beb2dfd0d2c0646dde987f86732458339b45d2078135aaa20ca",
+      "bytes": 119762
+    },
+    {
+      "path": "data/processed/multiyear_dengue_age_summary.csv",
+      "sha256": "439b0c7674eb37afbfa655015b5e2141e50929cb788ab49ce0099cc4fa454bd4",
+      "bytes": 5927
+    },
+    {
+      "path": "data/processed/multiyear_dengue_province_summary.csv",
+      "sha256": "ddf6d95068373959f262cc6fce42ba8b9849dd7196be964da26cc54a41e31b7f",
+      "bytes": 7530
+    },
+    {
+      "path": "data/processed/multiyear_dengue_scopes.csv",
+      "sha256": "3b05e369eb0eee21b7861f94f74b605591b3ca00e1b6eb2e0fa67aca6cdf3c65",
+      "bytes": 7573560
+    },
+    {
+      "path": "data/processed/multiyear_dengue_weekly_national.csv",
+      "sha256": "7013f337ecd3314a6f9af74dd1909635b90b66bd282c0797529280e2c43fedf7",
+      "bytes": 11032
+    },
+    {
+      "path": "data/processed/multiyear_dengue_weekly_province.csv",
+      "sha256": "1fe1f35fed2b41f1bcd4d05c2a89183c59e8df7d1e0e8cb26e7c8e5267201850",
+      "bytes": 98594
+    },
+    {
+      "path": "data/processed/primary_dengue_analysis_rows.csv",
+      "sha256": "8f6a16021212eb1d28527edfdd2b33ab0493bf197139e5bcad661dce7967e6db",
+      "bytes": 7067015
+    },
+    {
+      "path": "data/processed/season_national_summary.csv",
+      "sha256": "f14bd295fdf22e15ca378400d15e12b34593a724994d7a1ffbf1ddf084ba30ba",
+      "bytes": 430
+    },
+    {
+      "path": "data/processed/season_province_summary.csv",
+      "sha256": "0cbd1ac14fb060c6c2bb7be1e14a17c754f1341b3da8882be29f67a1a281b2ea",
+      "bytes": 2846
+    },
+    {
+      "path": "data/processed/season_region_summary.csv",
+      "sha256": "12b218fa5a53c1e5a5a08c820f355d29f37a9577676a1b9876681162a6ab0d3b",
+      "bytes": 763
+    },
+    {
+      "path": "data/processed/season_temporal_national_concentration_windows.csv",
+      "sha256": "04940714e03640aeea359e9fc1c2600ee2c7de86aad0f78686d6198de2220090",
+      "bytes": 623
+    },
+    {
+      "path": "data/processed/season_temporal_national_summary.csv",
+      "sha256": "ed3dc5643ae0a90b34409ff4fc24f797ae63c834a600d1f5a7e8299196dd2a8c",
+      "bytes": 1419
+    },
+    {
+      "path": "data/processed/season_temporal_region_summary.csv",
+      "sha256": "d9e4801c42a1973b581ec97e96a3d729807d4755d24a9ddf5e6f5f1876b0f027",
+      "bytes": 2125
+    },
+    {
+      "path": "data/processed/season_weekly_national.csv",
+      "sha256": "9b063bee254f2701944017a87685ad28271976748425312da806d72901d0a53e",
+      "bytes": 20390
+    },
+    {
+      "path": "data/processed/season_weekly_province.csv",
+      "sha256": "eefa8626233cb967672a5590de7446d3a2db3f4da4b3075609faad73f998845b",
+      "bytes": 129579
+    },
+    {
+      "path": "data/processed/season_weekly_region.csv",
+      "sha256": "8aee64cef9602e02b76977c5288db3b5de7e767676644664090ac2621f01ebd6",
+      "bytes": 64323
+    },
+    {
+      "path": "data/raw/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "data/raw/171ffcc7-b555-548e-a940-a8a7d3e2210a.csv",
+      "sha256": "8b99074adaf46142c994853a0992df333357f4d1943778957a11186a20deac20",
+      "bytes": 19584
+    },
+    {
+      "path": "data/raw/18c883dc-cfa7-5986-b018-467b0d0adae9.csv",
+      "sha256": "46838c27572c76d71a809eccf1406f30517f08e43821a8e83e694b0fe94be0bf",
+      "bytes": 2266082
+    },
+    {
+      "path": "data/raw/4b24fdb8-918e-5365-94e6-e4086b1e958f.csv",
+      "sha256": "d3c984f83fb40f9493711d133e64b885d4e55b8bbc13f001bc7ae2a8fcab8f35",
+      "bytes": 69344
+    },
+    {
+      "path": "data/raw/7d5a0c5e-ca1e-56b5-84bc-66d9aaebf16e.csv",
+      "sha256": "21c4a554a6b420fa61940a5ec28ac5417cd3ece833245bc9fc831a56b1f34fce",
+      "bytes": 196727
+    },
+    {
+      "path": "data/raw/9cc86d39-ab29-537b-a7d4-bf60555a05b6.csv",
+      "sha256": "ffe3990d0f8c1e2ad73f2b0def00192db8a40280fa0791d59c151bd80f851676",
+      "bytes": 2261105
+    },
+    {
+      "path": "data/raw/d2b9a176-9959-5f4f-825a-b063e1e93c6e.csv",
+      "sha256": "012d2fab3d2264abeb39d562859d5e112a1d409380c8f6b17232d577fc49ce0e",
+      "bytes": 2260516
+    },
+    {
+      "path": "data/raw/population/c1_proyecciones_prov_2010_2040.xls",
+      "sha256": "c651e0f0b237abaf8709dd20e2c8bb62caa3f6ebbd6b77a2b5349a5f81287a5b",
+      "bytes": 207360
+    },
+    {
+      "path": "data/raw/population/proyecciones_jurisdicciones_2022_2040_c1.xlsx",
+      "sha256": "7dd84165fe90415793f6788338ed3273ed1d2fe9ea25cbe355110805e1cc89f3",
+      "bytes": 84288
+    },
+    {
+      "path": "data/reference/population_denominators.csv",
+      "sha256": "faa4ef83232ab85077f1cc1e47a4574628372c62dae3e9ca509de5bcf60ec97e",
+      "bytes": 36751
+    },
+    {
+      "path": "docs/ai_context.md",
+      "sha256": "89807597c1855239b5302359f7f5e7a5b3f0cef37c405b57442de9426ec6640f",
+      "bytes": 3924
+    },
+    {
+      "path": "docs/analysis_protocol.md",
+      "sha256": "f98971544a85c4ffac80a851ac3bd5b2e140e8456acb0b9b051bffd5293de704",
+      "bytes": 3437
+    },
+    {
+      "path": "docs/analysis_scope_selection_contract.md",
+      "sha256": "a3d8346298fdce5eb1c85fe8ec69c931431da5e7b3846e8cd78f46010b333c47",
+      "bytes": 6335
+    },
+    {
+      "path": "docs/analysis_table_derivation_contract.md",
+      "sha256": "9b943c66d040cd0f9f68aee4d6cced7a11b893114339b042ab70f344a50d4898",
+      "bytes": 7275
+    },
+    {
+      "path": "docs/canonical_resource_selection_contract.md",
+      "sha256": "c8f521aca19d0dbc2542d0599dd3a1d688617df49e103b5508eb33573d2a0d08",
+      "bytes": 7031
+    },
+    {
+      "path": "docs/dataset_assessment.md",
+      "sha256": "50db186f2594e9e052cb8908e06025d12dde8178cebf2d8922dbbd9fbdc0b7a5",
+      "bytes": 2486
+    },
+    {
+      "path": "docs/download_log_contract.md",
+      "sha256": "ea1c46f559e101b8dc5f6c51598bb83f7ff7254b8a3320a8a9f3a6b83a26b5f4",
+      "bytes": 9073
+    },
+    {
+      "path": "docs/environment_setup.md",
+      "sha256": "c14cfd8f84c79a9cc388fa092d25b267d4d7eca49239d75e500aaf9e8bb52596",
+      "bytes": 1199
+    },
+    {
+      "path": "docs/epidemiological_portfolio_visualization_contract.md",
+      "sha256": "5574959afc347167a6259ddc6762ac63b82a179c89dec14f5718aa1514d42b73",
+      "bytes": 6007
+    },
+    {
+      "path": "docs/epidemiological_season_scope_contract.md",
+      "sha256": "839d076ec6a8f96ae7fa9b669d6af690d49bc5d83715d66a0a9da52c631ac5b7",
+      "bytes": 3980
+    },
+    {
+      "path": "docs/geographic_reference_mapping_contract.md",
+      "sha256": "46e418cb0137467c62796b9bb4bbb7c29b0043c5cb6d116990249f1c0e455206",
+      "bytes": 3216
+    },
+    {
+      "path": "docs/harmonized_quality_assessment_contract.md",
+      "sha256": "a0cab922e0c1333a75ad4228882d3731298615d422c73505e3986d95c5e0c520",
+      "bytes": 9394
+    },
+    {
+      "path": "docs/multiyear_analysis_table_derivation_contract.md",
+      "sha256": "233dfd9d577f25d79e47888af473eb2735d53c305d1babbfddc1e4ef3b117d3b",
+      "bytes": 1502
+    },
+    {
+      "path": "docs/multiyear_comparability_assessment_contract.md",
+      "sha256": "2ba4944f29950cdbf2d300091b3844d755cf98688258cf953312470119eb34d1",
+      "bytes": 1828
+    },
+    {
+      "path": "docs/multiyear_dengue_scope_contract.md",
+      "sha256": "60695e5b372544b487fafa64ca052456972067d29649d15664b519ed66a7ee5c",
+      "bytes": 1238
+    },
+    {
+      "path": "docs/population_denominator_reference_contract.md",
+      "sha256": "2bfce787919fed3c91f66f19347b54272de75fe9f18f9a0b89f18184e7e3b544",
+      "bytes": 7579
+    },
+    {
+      "path": "docs/portfolio_descriptive_visualization_contract.md",
+      "sha256": "c74f3694bf6c860e3acae16745a1ef533e1944dee7373d4fef44b85807dea529",
+      "bytes": 7030
+    },
+    {
+      "path": "docs/project_architecture.md",
+      "sha256": "2a4f0e2d74ee1748aa69d6f05c024ebbfb782828d6b9cbcda427f730d2e261a2",
+      "bytes": 11458
+    },
+    {
+      "path": "docs/project_log.md",
+      "sha256": "c371135cf54ba85bc6fa112c5a1377214b5c508a7a8e27243957afebb54d05ea",
+      "bytes": 1039
+    },
+    {
+      "path": "docs/published_count_rate_indicators_contract.md",
+      "sha256": "e87e1d2c0e73b897aab8a3c1cda02f27c4ba17c93915f039be81f2f66f4284d1",
+      "bytes": 4170
+    },
+    {
+      "path": "docs/resources_catalog_contract.md",
+      "sha256": "178d39fbe2e94d58ebaa32205df65ac7435c65faaa52193a92fe90a936983c59",
+      "bytes": 6646
+    },
+    {
+      "path": "docs/season_published_count_indicators_contract.md",
+      "sha256": "40d0d6d68bd4016ea326d7c28f31c5a334981763f1e74f7f4c0b79e99f5135fc",
+      "bytes": 1788
+    },
+    {
+      "path": "docs/season_temporal_descriptors_contract.md",
+      "sha256": "8c97d8e43581596826ae6b83666e4c0493db027b22c2dfbd287373db15502832",
+      "bytes": 2859
+    },
+    {
+      "path": "docs/structural_harmonization_contract.md",
+      "sha256": "b6eace5f5a4111985ea90538bf89f701a5d8e6a4750ccc43a1025723fe1eb305",
+      "bytes": 7517
+    },
+    {
+      "path": "docs/validation_snapshot_contract.md",
+      "sha256": "49f22a2449b9277f02fc3e25f50e7fcfd380ccbe76b42f9a93ed7b544d662fd0",
+      "bytes": 8704
+    },
+    {
+      "path": "figures/dengue_2024_age_group_composition.png",
+      "sha256": "eb518dcb4b961d90a7bd4676c1478aac5daf7b639efd1b7534ac8027f0b1c3e9",
+      "bytes": 171704
+    },
+    {
+      "path": "figures/dengue_2024_province_ranking.png",
+      "sha256": "d331f687299d47ef62c4a618f6cdcd00356ce0ed62879dccd944cb45a553de07",
+      "bytes": 195478
+    },
+    {
+      "path": "figures/dengue_2024_top5_provinces_weekly.png",
+      "sha256": "fefb0cee0a452a06e917c9976502ccae490899bb63ee199c8f9e20a61197deb3",
+      "bytes": 221106
+    },
+    {
+      "path": "figures/dengue_2024_weekly_national.png",
+      "sha256": "edeb7c2cd37294397130c727b013033dc7acc65600c14b82a93ca588bc672236",
+      "bytes": 130434
+    },
+    {
+      "path": "figures/province_count_rate_rank_shift_2024.png",
+      "sha256": "540d179118bf218952f0d589e80ea3f1c67830a17497080c8ad8d365607cc64f",
+      "bytes": 266474
+    },
+    {
+      "path": "figures/province_count_rate_rank_shift_2024_en.png",
+      "sha256": "a7436545d8e9dc25b8b2efddf3488bef429dbe22de3a57d3aaf436820ad1be3f",
+      "bytes": 262036
+    },
+    {
+      "path": "figures/region_population_adjusted_burden_2024.png",
+      "sha256": "015579f76b5c23ec26482ffc4133d880618e54a3a9791c92951d3babcd3a87b3",
+      "bytes": 110456
+    },
+    {
+      "path": "figures/region_population_adjusted_burden_2024_en.png",
+      "sha256": "c9e7cd9fd3255dded0412c837518d09922cd460cc09f2d7d7633e7f1b1ec4322",
+      "bytes": 108925
+    },
+    {
+      "path": "figures/season_national_temporal_profile.png",
+      "sha256": "2601cec094f764c54fe22c4abdcef25f5aa3588b00ba291263eb1cf5240eef40",
+      "bytes": 181848
+    },
+    {
+      "path": "figures/season_national_temporal_profile_en.png",
+      "sha256": "7f8314af71578efd2a4d6708d6f08b18266317da1a4a461aadd60056ca9dec28",
+      "bytes": 178038
+    },
+    {
+      "path": "figures/season_regional_observed_timing.png",
+      "sha256": "d1b4bdd048ee61fe9ab39e04710380fb2213a11c93fdf4dbd0abcb6130ba5b78",
+      "bytes": 145166
+    },
+    {
+      "path": "figures/season_regional_observed_timing_en.png",
+      "sha256": "89fda6bc776dff0c0db7d2c35472c35e57b74adb38b225642aaf50b2aa03906f",
+      "bytes": 153019
+    },
+    {
+      "path": "renv.lock",
+      "sha256": "37e810f9ddb708dad71fc4c0481ce549acd387264598d60715bf5d038fad90cf",
+      "bytes": 165435
+    },
+    {
+      "path": "reports/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "reports/argentina_dengue_portfolio.html",
+      "sha256": "12de3aa0d5a912304828e55fe99549b23d409c2cbfe4a6498617ea45f8e2d505",
+      "bytes": 5869409
+    },
+    {
+      "path": "reports/argentina_dengue_portfolio.qmd",
+      "sha256": "9d51fbd491e52aab0d8552fc18c518afe7496ff1986f15749e8080afd56843c0",
+      "bytes": 22406
+    },
+    {
+      "path": "scripts/acquisition/00_fetch_metadata.R",
+      "sha256": "da045b0219cef91a20fd522728e622777cb33aee7a8a4223530b624dbef3c729",
+      "bytes": 15220
+    },
+    {
+      "path": "scripts/acquisition/01_download_data.R",
+      "sha256": "c283135765689855910a9924bdeff4859b1651a84cb778de05471ff41a4d47a2",
+      "bytes": 28947
+    },
+    {
+      "path": "scripts/analysis/07_build_analysis_tables.R",
+      "sha256": "38cd7dc9246de208d51359b0c118c4fded66aa3f8b2c5dd21fa615e48464772b",
+      "bytes": 19562
+    },
+    {
+      "path": "scripts/analysis/12_build_multiyear_analysis_tables.R",
+      "sha256": "3fbda290add9896c7deb2d169d3514d98db7f8c3984e3f82ce11daabd690e8f5",
+      "bytes": 6114
+    },
+    {
+      "path": "scripts/analysis/13_assess_multiyear_comparability.R",
+      "sha256": "dcdc78bfe4491a98eaa84b0ac60f941f37af9f86fe07705abbf11c947c3977ab",
+      "bytes": 10977
+    },
+    {
+      "path": "scripts/analysis/16_build_published_count_rate_indicators.R",
+      "sha256": "84309b7e3ea78861bbc84cf4b782c601e04d7b0d96fb57decebeaa643e94826c",
+      "bytes": 19907
+    },
+    {
+      "path": "scripts/analysis/18_build_season_published_count_indicators.R",
+      "sha256": "b823f96e53a2bcac43695cfdd25dd79bfd1a86da59b00a5b7492c8bb83816b09",
+      "bytes": 14277
+    },
+    {
+      "path": "scripts/analysis/19_build_season_temporal_descriptors.R",
+      "sha256": "08784ae8a09d5bd508837aa0fe4991f3fff209b96d51ddcd09ab8d60426c2cb0",
+      "bytes": 11726
+    },
+    {
+      "path": "scripts/processing/03_select_canonical_resources.R",
+      "sha256": "1e08334c10886d547f21390e4b8f25bcf3ec3d7e780f9aae2cedb7a92026639d",
+      "bytes": 18875
+    },
+    {
+      "path": "scripts/processing/04_harmonize_canonical_resources.R",
+      "sha256": "7e9f1fbb5abab74745ca9c5d45ce1dec2688f3c122b2f512a60cb46c340d9bd8",
+      "bytes": 18655
+    },
+    {
+      "path": "scripts/processing/05_assess_harmonized_quality.R",
+      "sha256": "201a24cb29097ddba4587fb31f87c1c66271713f7402081e2e65fa45d2a7446d",
+      "bytes": 22665
+    },
+    {
+      "path": "scripts/processing/06_select_analysis_scope.R",
+      "sha256": "33140a0110a24a88df23a9c338685ca8c2292af619185cdd04d7b32464f14b42",
+      "bytes": 13208
+    },
+    {
+      "path": "scripts/processing/11_build_multiyear_dengue_scopes.R",
+      "sha256": "6fda3d621e9e4a53ef3a3f5bc567716f1775c17c6cce401986ec2b42d3b237b4",
+      "bytes": 4831
+    },
+    {
+      "path": "scripts/processing/17_build_epidemiological_season_scope.R",
+      "sha256": "d01de96d50ccb163849576889c26521ef748f482dc1f81c7ea205bd5dd03caad",
+      "bytes": 9894
+    },
+    {
+      "path": "scripts/reference/14_acquire_population_denominators.R",
+      "sha256": "51cc14705e86fef06fbbb16a2be366433c57d0ca1f644c9567c1a369af38bf30",
+      "bytes": 21339
+    },
+    {
+      "path": "scripts/reference/15_build_geographic_references.R",
+      "sha256": "4c47d9d9a2039c0791286c5697b2534d426bd8fe4a1c53d1a37d72363fe9a9ac",
+      "bytes": 16296
+    },
+    {
+      "path": "scripts/utils/check_environment.R",
+      "sha256": "b0ab4fc19c6677f0b5cb78c67ae3d7780dc130c74dd9ac07adbc2cc36c108568",
+      "bytes": 4870
+    },
+    {
+      "path": "scripts/utils/download_log.R",
+      "sha256": "973ed367bc53544ce9ce595b2931942113d34569e74570de267657c12d3456ff",
+      "bytes": 4459
+    },
+    {
+      "path": "scripts/validation/02_validate_downloads.R",
+      "sha256": "c9965b715fd0fd19b5fd23dbba31970e9d94017b01802f7ee9d668f37a7e1e2e",
+      "bytes": 9866
+    },
+    {
+      "path": "scripts/visualization/08_generate_figures.R",
+      "sha256": "6f4f38bf357d84a1b23fa44275639382eaf4c4f0d769fcbf3d457f1592c04d7c",
+      "bytes": 30302
+    },
+    {
+      "path": "scripts/visualization/20_generate_epidemiological_portfolio_figures.R",
+      "sha256": "4e36806755653c2392242d969b8432fa696f1417fd115ea98db9bf34f350c91b",
+      "bytes": 44627
+    }
+  ]
+}

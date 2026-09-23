@@ -1,0 +1,159 @@
+{
+  "contract_id": "dataspec_rank_closure",
+  "contract_version": "1.0.0",
+  "started_at": "2026-09-23T16:30:25Z",
+  "finished_at": "2026-09-23T16:30:29Z",
+  "command": [
+    "Rscript",
+    "--vanilla",
+    "scripts/processing/23_close_dataspec_rank_pilot.R"
+  ],
+  "baseline_git_commit": "2550b91927db1a49e5fbbf6fa0facb092dc74ecb",
+  "scope": {
+    "analysis_scope_id": "dengue_2024",
+    "source_year": 2024,
+    "denominator_scenario": "contemporary",
+    "projection_vintage": "indec_census_2022_projection_2022_2040",
+    "population_reference_date": "2024-07-01",
+    "geography": "24 mapped INDEC jurisdictions",
+    "rate_period_basis": "observed_weeks_01_52"
+  },
+  "inputs": [
+    {
+      "artifact_key": "multiyear_dengue_weekly_national",
+      "path": "data/processed/multiyear_dengue_weekly_national.csv",
+      "sha256": "7013f337ecd3314a6f9af74dd1909635b90b66bd282c0797529280e2c43fedf7"
+    },
+    {
+      "artifact_key": "multiyear_dengue_province_summary",
+      "path": "data/processed/multiyear_dengue_province_summary.csv",
+      "sha256": "ddf6d95068373959f262cc6fce42ba8b9849dd7196be964da26cc54a41e31b7f"
+    },
+    {
+      "artifact_key": "multiyear_dengue_weekly_province",
+      "path": "data/processed/multiyear_dengue_weekly_province.csv",
+      "sha256": "1fe1f35fed2b41f1bcd4d05c2a89183c59e8df7d1e0e8cb26e7c8e5267201850"
+    },
+    {
+      "artifact_key": "population_denominators",
+      "path": "data/reference/population_denominators.csv",
+      "sha256": "faa4ef83232ab85077f1cc1e47a4574628372c62dae3e9ca509de5bcf60ec97e"
+    },
+    {
+      "artifact_key": "source_geography_crosswalk",
+      "path": "data/metadata/source_geography_crosswalk.csv",
+      "sha256": "6029ba4e56d42deb0edb377385f4bf9495357cac52795fda1b64af7a79e96f37"
+    },
+    {
+      "artifact_key": "province_region_crosswalk",
+      "path": "data/metadata/province_region_crosswalk.csv",
+      "sha256": "8ba14d50b85863b46c0b0214192fbeff46fc658e43e752770af440b04634c09c"
+    },
+    {
+      "artifact_key": "geographic_mapping_validation_snapshot",
+      "path": "data/metadata/geographic_mapping_validation_snapshot.csv",
+      "sha256": "41575a6e2d8e25fd030858c0736c9e66ca22de3b03f48039ffda1ed5c3c43131"
+    }
+  ],
+  "c16_reproduction": {
+    "run": {
+      "exit_code": 0,
+      "output": []
+    },
+    "comparisons": [
+      {
+        "artifact_key": "epidemiology_national_summary",
+        "path": "data/processed/epidemiology_national_summary.csv",
+        "original_sha256": "52a97179802bf70ead1c7fc3b9649b6d0b7b63b15eb96836da7aefa691859e4f",
+        "reproduced_sha256": "52a97179802bf70ead1c7fc3b9649b6d0b7b63b15eb96836da7aefa691859e4f",
+        "identical_bytes": true
+      },
+      {
+        "artifact_key": "epidemiology_weekly_national",
+        "path": "data/processed/epidemiology_weekly_national.csv",
+        "original_sha256": "610dcf73807ece0c7859cd259a1eece5f3bff15f3c1f35dd0cb3b35e643d2c0b",
+        "reproduced_sha256": "610dcf73807ece0c7859cd259a1eece5f3bff15f3c1f35dd0cb3b35e643d2c0b",
+        "identical_bytes": true
+      },
+      {
+        "artifact_key": "epidemiology_province_summary",
+        "path": "data/processed/epidemiology_province_summary.csv",
+        "original_sha256": "fd372b45aa2eaa173b163367b657ed9523943ab10951ad714abbb2f1106cb734",
+        "reproduced_sha256": "fd372b45aa2eaa173b163367b657ed9523943ab10951ad714abbb2f1106cb734",
+        "identical_bytes": true
+      },
+      {
+        "artifact_key": "epidemiology_weekly_province",
+        "path": "data/processed/epidemiology_weekly_province.csv",
+        "original_sha256": "68ca0626ae3e6ea7f04c1bbadf0373c8a9412fc3b68f72aeaaae318a13261c4b",
+        "reproduced_sha256": "68ca0626ae3e6ea7f04c1bbadf0373c8a9412fc3b68f72aeaaae318a13261c4b",
+        "identical_bytes": true
+      },
+      {
+        "artifact_key": "epidemiology_region_summary",
+        "path": "data/processed/epidemiology_region_summary.csv",
+        "original_sha256": "9235f1ee51ac09e896c8a78a8b52effb86aec74050765e0b2ab3e2c55a568805",
+        "reproduced_sha256": "9235f1ee51ac09e896c8a78a8b52effb86aec74050765e0b2ab3e2c55a568805",
+        "identical_bytes": true
+      },
+      {
+        "artifact_key": "epidemiology_weekly_region",
+        "path": "data/processed/epidemiology_weekly_region.csv",
+        "original_sha256": "505007667b809beb2dfd0d2c0646dde987f86732458339b45d2078135aaa20ca",
+        "reproduced_sha256": "505007667b809beb2dfd0d2c0646dde987f86732458339b45d2078135aaa20ca",
+        "identical_bytes": true
+      }
+    ]
+  },
+  "featured_rank_checks": [
+    {
+      "reference_province_id": "06",
+      "reference_province_name": "Buenos Aires",
+      "expected_count_rank": 1,
+      "observed_count_rank": 1,
+      "expected_rate_rank": 16,
+      "observed_rate_rank": 16
+    },
+    {
+      "reference_province_id": "90",
+      "reference_province_name": "Tucumán",
+      "expected_count_rank": 3,
+      "observed_count_rank": 3,
+      "expected_rate_rank": 1,
+      "observed_rate_rank": 1
+    },
+    {
+      "reference_province_id": "46",
+      "reference_province_name": "La Rioja",
+      "expected_count_rank": 12,
+      "observed_count_rank": 12,
+      "expected_rate_rank": 2,
+      "observed_rate_rank": 2
+    },
+    {
+      "reference_province_id": "10",
+      "reference_province_name": "Catamarca",
+      "expected_count_rank": 13,
+      "observed_count_rank": 13,
+      "expected_rate_rank": 4,
+      "observed_rate_rank": 4
+    }
+  ],
+  "png_reproduction": {
+    "path": "figures/province_count_rate_rank_shift_2024_en.png",
+    "original_sha256": "a7436545d8e9dc25b8b2efddf3488bef429dbe22de3a57d3aaf436820ad1be3f",
+    "reproduced_sha256": "a7436545d8e9dc25b8b2efddf3488bef429dbe22de3a57d3aaf436820ad1be3f"
+  },
+  "integrity": {
+    "protected_file_count": 117,
+    "all_original_bytes_preserved": true,
+    "permitted_change": "Additive dataspec_rank_pilot configuration only",
+    "original_config_sha256": "71a45f4c1fe85433939cbadeb32084a1254ded146c2f569d1c720b3e8d218519",
+    "extended_config_sha256": "a212265d0754b61a7d6829a0398d99335247ed849226f11b370aaf4619553c15"
+  },
+  "reproduction_status": "passed",
+  "historical_gaps": [
+    "Original C.16/C.20 execution timestamps and human-review attestations were not recovered; this is a new isolated reproduction.",
+    "No upstream acquisition, source completeness, epidemiological incidence, or whole-report certification is asserted."
+  ]
+}

@@ -1,14 +1,15 @@
 # DataSpec v0.1
 
 **Status: minimum schemas and read-only R validator implemented.** Updated on
-2026-09-22. Project adoption pilots remain pending.
+2026-09-23. The dengue retrospective pilot has a human-accepted qualified
+delivery; the climate portability pilot remains pending.
 
 DataSpec connects scientific questions, analytical contracts, reproducible
 evidence, defensible claims, narrative design, and visual communication through
 explicit, versioned relationships. It builds on this repository's existing
 contract-first workflows and R/Quarto implementation.
 
-The common implementation validates synthetic artifact bundles, references,
+The common implementation validates artifact bundles, references,
 local file hashes, dependency freshness, and recorded review prerequisites.
 It does not migrate projects, install external skills, execute analyses, or
 certify scientific results. Existing project contracts remain authoritative.
@@ -72,8 +73,8 @@ implementation precedes evidence; presentation implementation consumes it.
 
 1. Review this common design against both projects.
 2. Minimum record schemas and validator with synthetic fixtures: implemented.
-3. Trace one existing dengue claim through evidence, figure, and report,
-   explicitly as a retrospective reconstruction.
+3. [Dengue retrospective pilot](../argentina-dengue-analysis/dataspec/studies/rank_shift_2024/README.md):
+   accepted after explicit human dispositions and bounded reproduction.
 4. Test the same generic contracts on a bounded climate methodological review
    and its next prospective decision.
 5. Stabilize reusable skills and distribution after both pilots.
@@ -95,6 +96,8 @@ It records declarations of implementation, execution, and human review separatel
 it cannot authenticate those declarations or inspect scientific truth or visual
 quality. Exact locations are recorded but not parsed within CSVs or HTML.
 
-There is no artifact writer, automatic migration, orchestration skill, renderer,
-or publication integration yet. The next bounded task is the retrospective
-dengue pilot defined in the [adoption plan](adoption_plan.md).
+There is no generic artifact writer, automatic migration, orchestration skill,
+renderer, or publication integration yet. The dengue pilot adds project-local
+audit, trace and closure producers without changing the common runtime. Its
+accepted scope and the pending climate portability exercise are described in the
+[adoption plan](adoption_plan.md).

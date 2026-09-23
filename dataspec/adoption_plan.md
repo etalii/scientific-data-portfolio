@@ -44,6 +44,18 @@ mutations by the validator, and no dependence on either project's vocabulary.
 
 ## Slice 2: retrospective dengue pilot
 
+Executed on 2026-09-22: [pilot result and hand-off](../argentina-dengue-analysis/dataspec/studies/rank_shift_2024/README.md).
+The bounded audit passed 21 mechanical checks, reproduced six C.16 artifacts
+and the selected PNG byte-for-byte, and registered 18 records. The proposed
+initial delivery retained nine human-review findings. On 2026-09-23 the user
+accepted five claims and bounded reproducibility, and accepted narrative/visual
+specs with exact editorial changes. The new 20-record snapshot has an accepted
+qualified delivery and no validator findings; the original 18-record snapshot
+remains immutable history. The six original regression scenarios and four
+closure-specific scenario groups pass. No universal scientific certification
+or whole-report rerender is claimed.
+The common schemas and validator were not modified for this pilot.
+
 Scope: the calendar-year 2024 provincial count/rate rank-change claim, contemporary
 denominator scenario, its existing C.20 figure, and associated report prose.
 Scope excludes seasonal analysis, new indicators, rewriting the report, and

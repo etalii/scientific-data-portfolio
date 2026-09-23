@@ -1,0 +1,366 @@
+{
+  "schema_version": "0.1.0",
+  "valid": false,
+  "certification": "not_assessed",
+  "findings": [
+    {
+      "code": "REVIEW",
+      "severity": "error",
+      "record": "argentina_dengue_analysis/delivery/000000000001",
+      "field": "review_refs",
+      "message": "Delivered claim lacks human scientific review"
+    },
+    {
+      "code": "REVIEW",
+      "severity": "error",
+      "record": "argentina_dengue_analysis/delivery/000000000001",
+      "field": "review_refs",
+      "message": "Delivered claim lacks human scientific review"
+    },
+    {
+      "code": "REVIEW",
+      "severity": "error",
+      "record": "argentina_dengue_analysis/delivery/000000000001",
+      "field": "review_refs",
+      "message": "Delivered claim lacks human scientific review"
+    },
+    {
+      "code": "REVIEW",
+      "severity": "error",
+      "record": "argentina_dengue_analysis/delivery/000000000001",
+      "field": "review_refs",
+      "message": "Delivered claim lacks human scientific review"
+    },
+    {
+      "code": "REVIEW",
+      "severity": "error",
+      "record": "argentina_dengue_analysis/delivery/000000000001",
+      "field": "review_refs",
+      "message": "Delivered claim lacks human scientific review"
+    },
+    {
+      "code": "REVIEW",
+      "severity": "error",
+      "record": "argentina_dengue_analysis/delivery/000000000001",
+      "field": "review_refs",
+      "message": "Missing narrative review for argentina_dengue_analysis/narrative/000000000001"
+    },
+    {
+      "code": "REVIEW",
+      "severity": "error",
+      "record": "argentina_dengue_analysis/delivery/000000000001",
+      "field": "review_refs",
+      "message": "Missing reproducibility review for argentina_dengue_analysis/narrative/000000000001"
+    },
+    {
+      "code": "REVIEW",
+      "severity": "error",
+      "record": "argentina_dengue_analysis/delivery/000000000001",
+      "field": "review_refs",
+      "message": "Missing reproducibility review for argentina_dengue_analysis/visual/000000000001"
+    },
+    {
+      "code": "REVIEW",
+      "severity": "error",
+      "record": "argentina_dengue_analysis/delivery/000000000001",
+      "field": "review_refs",
+      "message": "Missing visual review for argentina_dengue_analysis/visual/000000000001"
+    }
+  ],
+  "records": [
+    {
+      "identity": "argentina_dengue_analysis/claim_population_adjustment/000000000001",
+      "selected": true,
+      "readiness": "ready",
+      "specified": true,
+      "implemented": null,
+      "implementation_refs": [],
+      "executed": null,
+      "execution_recorded": false,
+      "execution_refs": [],
+      "human_review_recorded": false,
+      "certified": false
+    },
+    {
+      "identity": "argentina_dengue_analysis/claim_province_06/000000000001",
+      "selected": true,
+      "readiness": "ready",
+      "specified": true,
+      "implemented": null,
+      "implementation_refs": [],
+      "executed": null,
+      "execution_recorded": false,
+      "execution_refs": [],
+      "human_review_recorded": false,
+      "certified": false
+    },
+    {
+      "identity": "argentina_dengue_analysis/claim_province_10/000000000001",
+      "selected": true,
+      "readiness": "ready",
+      "specified": true,
+      "implemented": null,
+      "implementation_refs": [],
+      "executed": null,
+      "execution_recorded": false,
+      "execution_refs": [],
+      "human_review_recorded": false,
+      "certified": false
+    },
+    {
+      "identity": "argentina_dengue_analysis/claim_province_46/000000000001",
+      "selected": true,
+      "readiness": "ready",
+      "specified": true,
+      "implemented": null,
+      "implementation_refs": [],
+      "executed": null,
+      "execution_recorded": false,
+      "execution_refs": [],
+      "human_review_recorded": false,
+      "certified": false
+    },
+    {
+      "identity": "argentina_dengue_analysis/claim_province_90/000000000001",
+      "selected": true,
+      "readiness": "ready",
+      "specified": true,
+      "implemented": null,
+      "implementation_refs": [],
+      "executed": null,
+      "execution_recorded": false,
+      "execution_refs": [],
+      "human_review_recorded": false,
+      "certified": false
+    },
+    {
+      "identity": "argentina_dengue_analysis/contract_c16/000000000001",
+      "selected": true,
+      "readiness": "ready",
+      "specified": true,
+      "implemented": true,
+      "implementation_refs": [
+        {
+          "path": "scripts/analysis/16_build_published_count_rate_indicators.R",
+          "sha256": "84309b7e3ea78861bbc84cf4b782c601e04d7b0d96fb57decebeaa643e94826c",
+          "locator": "main and owned helper functions",
+          "availability": "verified_local"
+        }
+      ],
+      "executed": null,
+      "execution_recorded": false,
+      "execution_refs": [],
+      "human_review_recorded": false,
+      "certified": false
+    },
+    {
+      "identity": "argentina_dengue_analysis/contract_c20/000000000001",
+      "selected": true,
+      "readiness": "ready",
+      "specified": true,
+      "implemented": true,
+      "implementation_refs": [
+        {
+          "path": "scripts/visualization/20_generate_epidemiological_portfolio_figures.R",
+          "sha256": "4e36806755653c2392242d969b8432fa696f1417fd115ea98db9bf34f350c91b",
+          "locator": "main and owned helper functions",
+          "availability": "verified_local"
+        }
+      ],
+      "executed": null,
+      "execution_recorded": false,
+      "execution_refs": [],
+      "human_review_recorded": false,
+      "certified": false
+    },
+    {
+      "identity": "argentina_dengue_analysis/contract_pilot/000000000001",
+      "selected": true,
+      "readiness": "ready",
+      "specified": true,
+      "implemented": true,
+      "implementation_refs": [
+        {
+          "path": "scripts/validation/21_audit_dataspec_rank_pilot.R",
+          "sha256": "56942594ccf60e5020726b35a88368705cb51875da4e1d9d3cfc38948ec1fc21",
+          "locator": "main and owned helper functions",
+          "availability": "verified_local"
+        }
+      ],
+      "executed": null,
+      "execution_recorded": false,
+      "execution_refs": [],
+      "human_review_recorded": false,
+      "certified": false
+    },
+    {
+      "identity": "argentina_dengue_analysis/delivery/000000000001",
+      "selected": true,
+      "readiness": "blocked",
+      "specified": true,
+      "implemented": null,
+      "implementation_refs": [],
+      "executed": null,
+      "execution_recorded": false,
+      "execution_refs": [],
+      "human_review_recorded": false,
+      "certified": false
+    },
+    {
+      "identity": "argentina_dengue_analysis/evidence_ranks/000000000001",
+      "selected": true,
+      "readiness": "ready",
+      "specified": true,
+      "implemented": null,
+      "implementation_refs": [],
+      "executed": null,
+      "execution_recorded": false,
+      "execution_refs": [
+        {
+          "project_id": "argentina_dengue_analysis",
+          "artifact_id": "execution_audit",
+          "revision": 1
+        }
+      ],
+      "human_review_recorded": false,
+      "certified": false
+    },
+    {
+      "identity": "argentina_dengue_analysis/execution_audit/000000000001",
+      "selected": true,
+      "readiness": "ready",
+      "specified": true,
+      "implemented": true,
+      "implementation_refs": [
+        {
+          "path": "scripts/analysis/16_build_published_count_rate_indicators.R",
+          "sha256": "84309b7e3ea78861bbc84cf4b782c601e04d7b0d96fb57decebeaa643e94826c",
+          "locator": "main",
+          "availability": "verified_local"
+        },
+        {
+          "path": "scripts/validation/21_audit_dataspec_rank_pilot.R",
+          "sha256": "56942594ccf60e5020726b35a88368705cb51875da4e1d9d3cfc38948ec1fc21",
+          "locator": "main",
+          "availability": "verified_local"
+        },
+        {
+          "path": "scripts/visualization/20_generate_epidemiological_portfolio_figures.R",
+          "sha256": "4e36806755653c2392242d969b8432fa696f1417fd115ea98db9bf34f350c91b",
+          "locator": "rank_measure; build_province_rank_plot; render_png",
+          "availability": "verified_local"
+        }
+      ],
+      "executed": true,
+      "execution_recorded": true,
+      "execution_refs": [],
+      "human_review_recorded": false,
+      "certified": false
+    },
+    {
+      "identity": "argentina_dengue_analysis/metric_count/000000000001",
+      "selected": true,
+      "readiness": "ready",
+      "specified": true,
+      "implemented": true,
+      "implementation_refs": [
+        {
+          "path": "scripts/analysis/16_build_published_count_rate_indicators.R",
+          "sha256": "84309b7e3ea78861bbc84cf4b782c601e04d7b0d96fb57decebeaa643e94826c",
+          "locator": "main: governed C.12 numerator hand-off",
+          "availability": "verified_local"
+        }
+      ],
+      "executed": null,
+      "execution_recorded": false,
+      "execution_refs": [],
+      "human_review_recorded": false,
+      "certified": false
+    },
+    {
+      "identity": "argentina_dengue_analysis/metric_rate/000000000001",
+      "selected": true,
+      "readiness": "ready",
+      "specified": true,
+      "implemented": true,
+      "implementation_refs": [
+        {
+          "path": "scripts/analysis/16_build_published_count_rate_indicators.R",
+          "sha256": "84309b7e3ea78861bbc84cf4b782c601e04d7b0d96fb57decebeaa643e94826c",
+          "locator": "published_count_rate; main",
+          "availability": "verified_local"
+        }
+      ],
+      "executed": null,
+      "execution_recorded": false,
+      "execution_refs": [],
+      "human_review_recorded": false,
+      "certified": false
+    },
+    {
+      "identity": "argentina_dengue_analysis/narrative/000000000001",
+      "selected": true,
+      "readiness": "ready",
+      "specified": true,
+      "implemented": null,
+      "implementation_refs": [],
+      "executed": null,
+      "execution_recorded": false,
+      "execution_refs": [],
+      "human_review_recorded": false,
+      "certified": false
+    },
+    {
+      "identity": "argentina_dengue_analysis/plan/000000000001",
+      "selected": true,
+      "readiness": "ready",
+      "specified": true,
+      "implemented": null,
+      "implementation_refs": [],
+      "executed": null,
+      "execution_recorded": false,
+      "execution_refs": [],
+      "human_review_recorded": false,
+      "certified": false
+    },
+    {
+      "identity": "argentina_dengue_analysis/question/000000000001",
+      "selected": true,
+      "readiness": "ready",
+      "specified": true,
+      "implemented": null,
+      "implementation_refs": [],
+      "executed": null,
+      "execution_recorded": false,
+      "execution_refs": [],
+      "human_review_recorded": false,
+      "certified": false
+    },
+    {
+      "identity": "argentina_dengue_analysis/review_automated/000000000001",
+      "selected": true,
+      "readiness": "ready",
+      "specified": true,
+      "implemented": null,
+      "implementation_refs": [],
+      "executed": null,
+      "execution_recorded": false,
+      "execution_refs": [],
+      "human_review_recorded": false,
+      "certified": false
+    },
+    {
+      "identity": "argentina_dengue_analysis/visual/000000000001",
+      "selected": true,
+      "readiness": "ready",
+      "specified": true,
+      "implemented": null,
+      "implementation_refs": [],
+      "executed": null,
+      "execution_recorded": false,
+      "execution_refs": [],
+      "human_review_recorded": false,
+      "certified": false
+    }
+  ]
+}

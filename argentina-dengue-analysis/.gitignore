@@ -56,3 +56,6 @@ outputs/population_staging/*
 
 # Temporary files
 *.tmp
+
+# Curated, accepted DataSpec report fragment (closure contract).
+!data/metadata/dataspec_rank_closure_v1/report_fragment.html

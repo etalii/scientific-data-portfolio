@@ -1,0 +1,107 @@
+[
+  {
+    "check_id": "c16_reproduction",
+    "status": "pass",
+    "detail": "All six C.16 outputs reproduce byte-for-byte from governed inputs"
+  },
+  {
+    "check_id": "province_grain",
+    "status": "pass",
+    "detail": "Exactly 24 unique mapped provinces"
+  },
+  {
+    "check_id": "scope_and_denominator",
+    "status": "pass",
+    "detail": "Calendar year, contemporary vintage, July 1 reference, observed W01-W52"
+  },
+  {
+    "check_id": "finite_measures",
+    "status": "pass",
+    "detail": "Nonnegative counts and positive denominators"
+  },
+  {
+    "check_id": "population_reference",
+    "status": "pass",
+    "detail": "All 24 denominators match C.14 by province/year/vintage"
+  },
+  {
+    "check_id": "rate_formula",
+    "status": "pass",
+    "detail": "All rates reconcile to count/population times 100000"
+  },
+  {
+    "check_id": "geographic_eligibility",
+    "status": "pass",
+    "detail": "Mapped totals reconcile to C.15; nonassignable geography is not redistributed"
+  },
+  {
+    "check_id": "rank_06",
+    "status": "pass",
+    "detail": "Buenos Aires: 1 to 16"
+  },
+  {
+    "check_id": "rank_90",
+    "status": "pass",
+    "detail": "Tucumán: 3 to 1"
+  },
+  {
+    "check_id": "rank_46",
+    "status": "pass",
+    "detail": "La Rioja: 12 to 2"
+  },
+  {
+    "check_id": "rank_10",
+    "status": "pass",
+    "detail": "Catamarca: 13 to 4"
+  },
+  {
+    "check_id": "c20_rank_implementation",
+    "status": "pass",
+    "detail": "Independent ordering equals the existing C.20 rank function"
+  },
+  {
+    "check_id": "c20_png_reproduction",
+    "status": "pass",
+    "detail": "Selected English figure reproduces byte-for-byte in isolation"
+  },
+  {
+    "check_id": "report_06",
+    "status": "pass",
+    "detail": "Rendered statement agrees with computed rank"
+  },
+  {
+    "check_id": "report_90",
+    "status": "pass",
+    "detail": "Rendered statement agrees with computed rank"
+  },
+  {
+    "check_id": "report_46",
+    "status": "pass",
+    "detail": "Rendered statement agrees with computed rank"
+  },
+  {
+    "check_id": "report_10",
+    "status": "pass",
+    "detail": "Rendered statement agrees with computed rank"
+  },
+  {
+    "check_id": "report_embedded_figure",
+    "status": "pass",
+    "detail": "Selected report image is byte-identical to the governed PNG"
+  },
+  {
+    "check_id": "report_scope_and_geography",
+    "status": "pass",
+    "detail": "Rendered section states the period/scenario and geographic caveat"
+  },
+  {
+    "check_id": "report_source_link",
+    "status": "pass",
+    "detail": "Quarto source links dynamic ranks, figure, and interpretation limits"
+  },
+  {
+    "check_id": "baseline_integrity",
+    "status": "pass",
+    "detail": "All 117 original identities preserved; only additive configuration permitted"
+  }
+]

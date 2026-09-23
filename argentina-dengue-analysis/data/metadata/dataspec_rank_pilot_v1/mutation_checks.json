@@ -1,0 +1,12 @@
+{
+  "mechanical_bundle_valid": true,
+  "delivery_valid": false,
+  "expected_delivery_blockers": [
+    "REVIEW"
+  ],
+  "changed_in_memory_only": true,
+  "evidence_stale": true,
+  "claim_stale": true,
+  "delivery_stale": true,
+  "unrelated_question_ready": true
+}

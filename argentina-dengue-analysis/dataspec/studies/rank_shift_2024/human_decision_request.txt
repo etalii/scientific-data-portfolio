@@ -1,0 +1,377 @@
+Continue the DataSpec dengue pilot closure.
+
+I have reviewed the human decision packet and my dispositions are:
+
+* **Group 1 — H01–H05, descriptive claims: `ACCEPT`**
+* **Group 2 — H06 and H08, narrative and visualization: `ACCEPT WITH EDIT` using the exact proposed edits from the previous review**
+* **Group 3 — H07 and H09, bounded reproducibility: `ACCEPT` with the documented scope and limitations preserved**
+
+These are now explicit human-review decisions.
+
+Your task is to apply these dispositions, revalidate the complete pilot, close it if and only if all acceptance criteria pass, and prepare it as the stable retrospective DataSpec reference before we begin the climate portability pilot.
+
+Do NOT start climate in this unit.
+
+# 1. Preserve the review semantics
+
+Record the actual dispositions:
+
+* H01: ACCEPT
+* H02: ACCEPT
+* H03: ACCEPT
+* H04: ACCEPT
+* H05: ACCEPT
+* H06: ACCEPT WITH EDIT
+* H07: ACCEPT
+* H08: ACCEPT WITH EDIT
+* H09: ACCEPT
+
+Do not convert these into stronger statements such as “scientifically proven”, “validated universally”, or “independently peer reviewed”.
+
+Human acceptance means the claims/specifications are accepted **within the explicitly documented pilot scope and limitations**.
+
+Preserve all existing caveats, including:
+
+* calendar year 2024, observed W01–W52;
+* this is not equivalent to complete surveillance certification or SE31/2024–SE30/2025;
+* 24 mapped jurisdictions including CABA;
+* contemporary denominator scenario;
+* INDEC population projection at 1 July 2024;
+* published counts and published-count rate per 100,000;
+* no interpretation as unique persons, incidence, individual risk, or causal effect;
+* 27,220 geographically unassignable counts are not redistributed;
+* geographic assignment coverage is not surveillance coverage;
+* residence semantics remain incompletely documented;
+* no uncertainty intervals were estimated;
+* no alternative-denominator ranking stability analysis was performed;
+* rank differences compare two measures for the same period and are not temporal change or effect magnitude.
+
+Do not weaken or silently remove any of these limitations.
+
+# 2. Apply the approved H06 narrative edit
+
+Replace the relevant introduction with the previously proposed wording:
+
+> Absolute published counts and population-adjusted published-count rates answer different descriptive questions. The following four examples illustrate differences between the two orderings in calendar year 2024 under the contemporary denominator scenario. They are selected contrasts, not the four largest rank shifts. Rank differences do not represent changes over time or the magnitude of differences in counts or rates.
+
+Apply this only where required by the approved narrative disposition.
+
+Update all DataSpec consumers of this specification as necessary so that traceability remains valid.
+
+Do not alter analytical evidence or ranking results.
+
+# 3. Apply the approved H08 visualization edits
+
+Align the HTML alt text and the DataSpec visualization specification with:
+
+> Slopegraph comparing published-count ranks and published-count-rate-per-100,000 ranks across 24 Argentine jurisdictions, including CABA, in calendar year 2024 under the contemporary denominator scenario. Buenos Aires: 1 to 16; Tucumán: 3 to 1; La Rioja: 12 to 2; Catamarca: 13 to 4. Lines connect two measures for the same period, not changes over time.
+
+Align `visual.labels.caption` with:
+
+> Published-count rate per 100,000; it is not incidence, risk, or unique persons. Territorial numerators exclude unknown/nonassignable geography; no redistribution was applied.
+
+Remove or correct any remaining wording that calls the complete set “24 Argentine provinces” when it includes CABA.
+
+Do not change the underlying visual encoding, ranking, selected jurisdictions, or analytical values unless required solely to keep the implementation synchronized with the approved specification.
+
+The four highlighted jurisdictions remain **selected contrasts**, not a claim that they are the four largest shifts.
+
+# 4. Preserve bounded reproducibility for H07 and H09
+
+Record H07 as accepted only for the demonstrated narrative reproducibility scope:
+
+* independent rank reconciliation;
+* verification of the archived selected report section;
+* source linkage to governed values;
+* no claim that the entire Quarto report was rerendered as part of this pilot.
+
+Record H09 as accepted only for the demonstrated visualization scope:
+
+* 2400×1800 PNG;
+* isolated rerender byte-identical in the verified environment;
+* embedded HTML image byte-identical;
+* no claim that binary identity is guaranteed on every OS/environment;
+* no claim that a bare Git clone contains every ignored input required for reproduction.
+
+Do not broaden these statements.
+
+# 5. Preserve retrospective provenance
+
+This remains a **retrospective DataSpec adoption**.
+
+Do not rewrite history.
+
+In particular:
+
+* question and plan remain identified as reconstructed retrospectively where applicable;
+* do not invent preregistration;
+* do not introduce a confirmatory hypothesis that did not exist;
+* do not invent historical execution dates;
+* do not invent historical approvals;
+* do not imply DataSpec governed the original analysis before DataSpec existed.
+
+The current retrospective status is part of the provenance and must survive closure.
+
+# 6. Record human review correctly
+
+Update the appropriate review/metadata artifacts using the existing DataSpec schema and repository conventions.
+
+Record:
+
+* the nine dispositions above;
+* their actual approved scope;
+* the approved edits;
+* the fact that H06/H08 required editorial revision before acceptance.
+
+Do not fabricate reviewer identity.
+
+If the schema requires a reviewer identifier, use an existing unambiguous repository convention or already-configured human identity only if it is clearly authoritative.
+
+Otherwise use the least-assumptive valid representation allowed by the schema and report it.
+
+Do not invent historical timestamps.
+
+Use the actual current review timestamp only where the schema requires recording when this present review was applied.
+
+# 7. Regenerate derived artifacts canonically
+
+After updating authoritative source/specification artifacts:
+
+* regenerate derived DataSpec records only using canonical repository tooling;
+* regenerate review/validation outputs rather than hand-editing generated files;
+* regenerate the visualization/report fragment if required by the approved text changes;
+* preserve analytical values.
+
+Do not manually patch generated JSON merely to make hashes or validation pass.
+
+# 8. Run complete technical closure
+
+Re-run the full pilot validation.
+
+At minimum verify:
+
+## Common framework
+
+* all 48 common validator regression scenarios still pass;
+* common schemas remain unchanged unless a genuine previously-existing defect prevents closure;
+* common validator remains unchanged unless a genuine previously-existing defect prevents closure.
+
+Do not modify common DataSpec simply to accommodate dengue-specific content.
+
+## Pilot
+
+* all 6 dengue-specific tests pass;
+* all 21 audit controls pass or their canonical post-review equivalent passes;
+* all 18 DataSpec records resolve;
+* external references resolve;
+* expected hashes are valid;
+* no `REVIEW` requirement remains unresolved unless explicitly intended by the accepted disposition.
+
+## Analytical reproducibility
+
+Re-run the existing canonical reproduction checks and verify:
+
+* the six C.16 outputs;
+* independently calculated rankings;
+* H01–H05 statements;
+* geographic reconciliation.
+
+Analytical results must remain unchanged.
+
+## Visualization reproducibility
+
+Regenerate the visualization using canonical tooling.
+
+Because approved textual metadata may change, distinguish carefully between:
+
+1. **analytical/visual geometry reproducibility**, and
+2. **intentional editorial-byte changes caused by the approved caption/alt/spec revision**.
+
+Do not demand the old PNG hash if the approved change legitimately changes rendered PNG text.
+
+If the PNG itself is not supposed to change, require the original byte-identical result.
+
+If an approved textual change legitimately changes the PNG, record:
+
+* old hash,
+* new hash,
+* exact authorized cause,
+* confirmation that data geometry/ranks/values did not change.
+
+Do not silently redefine reproducibility.
+
+# 9. Re-run traceability review
+
+Verify the final chain:
+
+question
+→ plan
+→ contracts
+→ metrics
+→ execution
+→ evidence
+→ claims
+→ narrative
+→ visualization
+→ human review
+→ delivery
+
+Every important final claim must still trace to evidence.
+
+Every visual claim must still trace to the appropriate evidence/claim records.
+
+No downstream artifact may silently redefine upstream evidence.
+
+Confirm explicitly whether the chain still contains 18 records or whether closure legitimately adds a review/delivery record under the existing contract.
+
+Do not alter expected cardinality merely for cosmetic consistency.
+
+# 10. Determine final pilot disposition
+
+Close the pilot only if:
+
+* technical validation passes;
+* accepted edits are correctly applied;
+* all nine human-review requirements have valid recorded dispositions;
+* no unresolved blocking review remains;
+* analytical evidence is unchanged;
+* traceability remains complete;
+* retrospective provenance remains truthful;
+* reproducibility claims remain within demonstrated scope.
+
+If all conditions hold, mark the pilot according to the existing DataSpec lifecycle as the appropriate accepted/closed/deliverable state.
+
+Use the lifecycle terminology actually implemented by DataSpec.
+
+Do not invent a new status.
+
+If any condition fails, do NOT force closure.
+
+Report:
+
+`DENGUE DATASPEC PILOT: NOT READY TO CLOSE`
+
+with the exact blocker.
+
+# 11. Framework feedback
+
+Preserve the framework observations already identified, but do NOT implement them yet:
+
+* review messages should eventually identify claim/objective/dimension more directly;
+* DataSpec may need to distinguish literal string equality from semantic equivalence;
+* human-review packets benefit from grouping by decision;
+* reproducibility scope should be explicit;
+* partial/revised human dispositions should remain historically traceable.
+
+Keep these as evidence for the post-climate framework refinement.
+
+Do not stabilize new common skills from dengue alone.
+
+# 12. Git and workspace safety
+
+The working tree already contains the dengue pilot and unrelated/untracked climate files.
+
+Preserve all pre-existing work.
+
+Do NOT:
+
+* reset;
+* clean;
+* stash;
+* checkout over user files;
+* delete unrelated untracked files;
+* modify the climate project;
+* add climate files to a dengue commit.
+
+In particular, leave the currently untracked `climate-biodiversity-vulnerability-argentina` files untouched.
+
+# 13. Commit boundary
+
+If and only if the dengue pilot closes successfully:
+
+prepare a clean commit boundary for:
+
+**DataSpec retrospective pilot: argentina dengue rank-shift study**
+
+Before committing, report exactly:
+
+* files that belong to the pilot closure;
+* repository-root DataSpec files that legitimately belong to this pilot;
+* any files that must NOT be included;
+* final `git diff --check`;
+* final validation summary.
+
+Then create **one dedicated commit** containing only the completed dengue/DataSpec pilot changes and the already-intended common DataSpec changes that are genuinely part of this pilot lineage.
+
+Do not include unrelated climate files.
+
+Do not amend previous commits.
+
+Do not push unless the repository workflow explicitly authorizes pushing as part of this already-approved operation; otherwise stop after the commit and report that push remains pending.
+
+If commit scope is ambiguous, do not guess: stop before committing and report the conflicting files.
+
+# Required completion report
+
+Return:
+
+## A. Human dispositions recorded
+
+Show H01–H09 and final disposition.
+
+## B. Approved edits applied
+
+List exact narrative/visual changes.
+
+## C. Technical validation
+
+Report:
+
+* common validator scenarios;
+* dengue tests;
+* audit controls;
+* traceability;
+* external references/hashes.
+
+## D. Reproducibility
+
+Report separately:
+
+* analytical reproduction;
+* narrative reproduction;
+* visualization reproduction;
+* any authorized byte changes and their cause.
+
+## E. Retrospective provenance
+
+Confirm no history was rewritten or invented.
+
+## F. Final DataSpec chain
+
+Show the final lifecycle and whether delivery/closure is valid.
+
+## G. Framework feedback
+
+Preserve generalizable observations for comparison after climate.
+
+## H. Git
+
+Show:
+
+* files included;
+* files excluded;
+* `git diff --check`;
+* commit hash if created;
+* final `git status`.
+
+## I. Pilot verdict
+
+Finish with exactly one of:
+
+`DENGUE DATASPEC PILOT: CLOSED AND CERTIFIED`
+
+or
+
+`DENGUE DATASPEC PILOT: NOT READY TO CLOSE`
+
+Do NOT begin the climate pilot in this unit.
