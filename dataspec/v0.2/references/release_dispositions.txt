@@ -1,0 +1,559 @@
+Continue work on:
+
+`scientific-data-portfolio`
+
+Current state:
+
+`DATASPEC CORE v0.2: CHANGES REQUIRED BEFORE RELEASE`
+
+Human release dispositions:
+
+* **R1 — Lifecycle, narrative and delivery: `ACCEPT WITH EDIT`**
+* **R2 — Review and validity model: `ACCEPT WITH EDIT`**
+* **R3 — Reproducibility and provenance: `ACCEPT WITH EDIT`**
+* **R4 — Skill architecture: `ACCEPT`**
+* **R5 — Versioning and compatibility: `ACCEPT`**
+
+These are explicit human decisions.
+
+Your task is to implement ONLY the three blocking corrections identified by the review, add their semantic regression tests, re-run full compatibility validation, and prepare DataSpec v0.2 for final release review.
+
+Do NOT redesign DataSpec.
+
+Do NOT add unrelated features.
+
+Do NOT modify scientific conclusions or accepted history in dengue or climate.
+
+Do NOT commit or push yet.
+
+# Blocking correction 1 — Narrative must reject unsupported claims everywhere
+
+Current defect:
+
+A narrative can be accepted while an `unsupported` claim appears inside a narrative section, as long as it is omitted from the top-level general `claim_refs`.
+
+This violates the core invariant:
+
+> unsupported candidate claims may exist, but must not silently enter accepted narrative.
+
+## Required behavior
+
+For every narrative record that reaches an accepted/reviewed state:
+
+1. inspect ALL claim references used by the narrative;
+2. include:
+
+   * top-level claim refs;
+   * claim refs nested in sections;
+   * any other schema-supported narrative claim reference location;
+3. require every referenced claim to satisfy the allowed support/review state;
+4. reject any accepted narrative containing an unsupported claim.
+
+The validator must not depend on a later `delivery` check to catch this.
+
+Narrative acceptance itself is a contractual state and must be valid independently.
+
+## Important positive case
+
+Climate must remain valid because:
+
+`claim_direct_suitability`
+
+exists as an unsupported candidate but is explicitly excluded from accepted narrative.
+
+That pattern must continue to work.
+
+## Required tests
+
+Add at minimum:
+
+### Negative
+
+Accepted narrative:
+
+* top-level `claim_refs` contains only supported claims;
+* one nested section references an unsupported claim.
+
+Expected:
+
+* invalid;
+* deterministic finding identifying the narrative and offending claim.
+
+### Positive
+
+Unsupported candidate exists in the bundle but is referenced by no accepted narrative content.
+
+Expected:
+
+* valid.
+
+### Positive
+
+All top-level and section-level claim references are supported/allowed.
+
+Expected:
+
+* valid.
+
+Do not special-case climate.
+
+Implement this generically from the schema.
+
+---
+
+# Blocking correction 2 — ACCEPT WITH EDIT must preserve a complete predecessor
+
+Current defect:
+
+`previous_ref` currently passes validation when the predecessor contains only identifying fields.
+
+That does not preserve the actual prior reviewed content.
+
+## Required behavior
+
+For an `ACCEPT WITH EDIT` lineage:
+
+1. `previous_ref` must resolve;
+2. the predecessor must be a complete valid record under the applicable schema/version;
+3. predecessor identity must be compatible with the current object:
+
+   * same logical object identity;
+   * earlier revision;
+4. the predecessor must preserve the prior substantive content, not merely identifiers;
+5. where review provenance applies, the predecessor must preserve its review state/provenance;
+6. the current revision must preserve a valid lineage to that predecessor.
+
+Do NOT require byte identity between old and edited revision.
+
+The point is preservation of history, not immutability of the edited object.
+
+## Do not over-constrain
+
+Do not require every predecessor to have been accepted if the contract allows editing from another legitimate review state.
+
+Use the existing review semantics.
+
+Do not invent a new review system.
+
+## Required tests
+
+### Negative
+
+`previous_ref` resolves to a record containing only:
+
+* id,
+* type,
+* revision,
+* version identifiers.
+
+Expected:
+
+* invalid.
+
+### Negative
+
+Complete predecessor but:
+
+* incompatible logical identity,
+  or
+* non-earlier revision.
+
+Expected:
+
+* invalid.
+
+### Positive
+
+Complete valid predecessor with:
+
+* compatible identity;
+* earlier revision;
+* substantive content;
+* preserved review provenance where applicable.
+
+Expected:
+
+* valid.
+
+### Positive compatibility case
+
+Dengue's historical edited review lineage must still validate without migration or rewriting.
+
+---
+
+# Blocking correction 3 — Prospective execution must bind to complete frozen registration criteria
+
+Current defect:
+
+The prospective registration currently protects question, plan and contract identities, but declared criteria can be modified while the frozen hashes and execution remain unchanged.
+
+This violates the prospective-ordering invariant.
+
+## Required behavior
+
+Execution must reference an immutable/local identity representing the COMPLETE prospective registration used to authorize execution.
+
+That identity must cover, directly or through a deterministic canonical representation:
+
+* question;
+* analysis plan;
+* authorities/contracts;
+* selected inputs;
+* input hashes/identities;
+* analytical expectations/criteria;
+* gate criteria/state needed to authorize execution;
+* registration timestamp or its declared registration metadata.
+
+The execution record must reference that frozen registration identity.
+
+If any covered prospective criterion changes after registration, validation must fail unless:
+
+* a new registration revision is created;
+* the new execution explicitly references that new revision;
+* chronology remains valid.
+
+## Important scope boundary
+
+This is local repository integrity.
+
+Do NOT add:
+
+* external timestamping;
+* cryptographic signing infrastructure;
+* trusted third-party attestation;
+* remote services.
+
+The system must only prove:
+
+> this execution references this preserved registration state in the repository.
+
+It must NOT claim externally certified preregistration.
+
+## Design preference
+
+Prefer the smallest model that closes the gap.
+
+Good options may include:
+
+* a canonical registration hash/digest;
+* a frozen registration object referenced by execution;
+* a deterministic manifest identity.
+
+Do not duplicate all registration content into execution if a stable identity reference is sufficient.
+
+Explain the chosen design.
+
+## Required tests
+
+### Negative
+
+Start from a valid native/prospective study.
+
+After registration but without updating execution reference:
+
+* change a criterion or analytical expectation.
+
+Expected:
+
+* validation fails.
+
+### Negative
+
+Change gate criteria after execution identity was fixed.
+
+Expected:
+
+* validation fails.
+
+### Positive
+
+Create a new registration revision with new criteria and a new execution that references it, preserving valid chronology.
+
+Expected:
+
+* valid.
+
+### Positive compatibility
+
+Climate historical bundle remains unchanged and valid.
+
+The transient v0.2 interpretation may use the new mechanism only if it does not fabricate historical approval or alter pilot history.
+
+---
+
+# Non-blocking note — structural_validity naming
+
+The review noted that `structural_validity` may contain more than pure structural/schema checks.
+
+Do NOT rename fields in this correction unit unless necessary.
+
+Instead:
+
+* clarify the documentation if the current name could materially mislead;
+* otherwise defer naming cleanup.
+
+Do not create compatibility churn for terminology alone.
+
+---
+
+# Preserve accepted architecture
+
+Do NOT change the following accepted decisions:
+
+## Visualization
+
+Keep:
+
+* `required`
+* `not_required`
+* `undecided`
+
+Keep explicit justification and review.
+
+Do not make visualization mandatory.
+
+## Delivery
+
+Reviewed non-visual delivery remains valid.
+
+## Reproducibility
+
+Keep structured bounded reproducibility.
+
+Do not replace it with a boolean.
+
+## Adoption modes
+
+Keep:
+
+* retrospective;
+* in_place;
+* native.
+
+## Review semantics
+
+Keep grouped human decisions plus individual provenance.
+
+## Skills
+
+Do not redesign the five new skills.
+
+They were accepted:
+
+* `dataspec-router`
+* `dataspec-lifecycle`
+* `dataspec-evidence-review`
+* `dataspec-story-design`
+* `dataspec-human-review`
+
+Only update skill references if a blocking contract correction makes existing wording factually stale.
+
+## Versioning
+
+Keep:
+
+* v0.1 runtime/schema/CLI intact;
+* dual-version validation;
+* historical pilot interpretation unchanged.
+
+Do not migrate v0.1 records.
+
+---
+
+# Regression suite requirements
+
+Current baseline:
+
+* 48 historical
+* 58 v0.2
+* 106 total
+
+Add semantic tests for the three fixes.
+
+Do not merely update existing expectations.
+
+At minimum the new suite must include the nine positive/negative cases described above, unless some are naturally combined without losing semantic coverage.
+
+Report:
+
+* historical count;
+* previous v0.2 count;
+* newly added count;
+* new total.
+
+All old tests must still pass.
+
+---
+
+# Compatibility requirements
+
+## Dengue
+
+Must remain:
+
+* 20 records;
+* zero findings;
+* historical report unchanged;
+* retrospective provenance unchanged;
+* accepted review/edit lineage valid;
+* visualization delivery unchanged.
+
+No pilot files may be modified.
+
+## Climate
+
+Must remain:
+
+* 20 records;
+* zero findings;
+* historical report unchanged;
+* 51 pinned inputs unchanged;
+* prospective chronology unchanged;
+* `claim_direct_suitability` unsupported and excluded;
+* historical closure untouched.
+
+No pilot files may be modified.
+
+The transient v0.2 non-visual delivery interpretation must still work without inventing historical acceptance.
+
+---
+
+# Re-check all 14 invariants
+
+After the corrections, re-evaluate all 14.
+
+The three previously blocking invariants must become:
+
+* invariant 5 → `SATISFIED`
+* invariant 9 → `SATISFIED`
+* invariant 11 → `SATISFIED`
+
+Do not mark them satisfied merely because tests pass.
+
+Explain the contract mechanism that now enforces each one.
+
+All other previously satisfied invariants must remain satisfied.
+
+---
+
+# Determinism
+
+Re-run:
+
+* schema generation;
+* validator regression;
+* both pilot compatibility checks;
+* synthetic examples;
+* skill reference validation.
+
+Require deterministic output where already specified.
+
+No new nondeterministic timestamps should enter generated artifacts/tests.
+
+---
+
+# Git/workspace safety
+
+Preserve:
+
+* both pilot commits;
+* all pilot files;
+* the 10 original untracked climate files;
+* unrelated work.
+
+Do NOT:
+
+* reset;
+* clean;
+* stash;
+* amend;
+* modify pilots;
+* stage unrelated files.
+
+Use `/tmp` for diagnostic fixtures.
+
+---
+
+# Final release-readiness review
+
+After implementation, perform a focused self-review.
+
+Answer:
+
+1. Can an unsupported claim now enter an accepted narrative through ANY schema-supported claim-ref path?
+2. Can `ACCEPT WITH EDIT` now point to a predecessor that fails to preserve prior substantive content?
+3. Can prospective criteria change without invalidating the execution's registration identity?
+4. Did any fix introduce project-specific logic?
+5. Did any fix alter v0.1 semantics?
+6. Did any fix alter historical pilot artifacts?
+7. Did the fixes add more machinery than required?
+
+If any answer indicates a remaining contract gap, do not declare release-ready.
+
+---
+
+# Required completion report
+
+Return:
+
+## A. Human dispositions applied
+
+Confirm R1–R5.
+
+## B. Three blocking fixes
+
+For each:
+
+* defect;
+* implementation;
+* contract semantics;
+* files changed.
+
+## C. New regressions
+
+List every new semantic test and its result.
+
+## D. Full regression result
+
+Report exact counts.
+
+## E. Dengue compatibility
+
+Report validation and unchanged historical behavior.
+
+## F. Climate compatibility
+
+Report validation, prospective history and non-visual interpretation.
+
+## G. Invariants
+
+Report all 14, with special detail for 5, 9 and 11.
+
+## H. Skill/version compatibility
+
+Confirm no unwanted changes.
+
+## I. Determinism
+
+Report schema/output/reference checks.
+
+## J. Git
+
+Report:
+
+* modified/new files;
+* `git diff --check`;
+* final working tree;
+* exact stabilization commit scope.
+
+Do NOT commit yet.
+
+## K. Final verdict
+
+Finish with exactly one of:
+
+`DATASPEC CORE v0.2: READY FOR RELEASE COMMIT`
+
+`DATASPEC CORE v0.2: CHANGES STILL REQUIRED`
+
+Do NOT push.

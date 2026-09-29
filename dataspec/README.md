@@ -1,103 +1,49 @@
-# DataSpec v0.1
+# DataSpec
 
-**Status: minimum schemas and read-only R validator implemented.** Updated on
-2026-09-23. The dengue retrospective pilot has a human-accepted qualified
-delivery; the climate portability pilot remains pending.
+DataSpec connects questions, analytical authorities, reproducible evidence,
+qualified claims, narrative, purposeful visualization and human review through
+versioned filesystem artifacts. Projects retain their scientific contracts.
 
-DataSpec connects scientific questions, analytical contracts, reproducible
-evidence, defensible claims, narrative design, and visual communication through
-explicit, versioned relationships. It builds on this repository's existing
-contract-first workflows and R/Quarto implementation.
+**Current implementation for review: [DataSpec v0.2](v0.2/README.md).** It adds
+explicit visual/nonvisual delivery, per-item human dispositions, bounded
+reproducibility and workspace prospective registration. It keeps technical
+validity, human acceptance and scientific certification separate.
 
-The common implementation validates artifact bundles, references,
-local file hashes, dependency freshness, and recorded review prerequisites.
-It does not migrate projects, install external skills, execute analyses, or
-certify scientific results. Existing project contracts remain authoritative.
-
-## Run the minimum implementation
-
-From the portfolio root, with R 4.1 or later and the dependencies recorded in
-[DESCRIPTION](DESCRIPTION) and [renv.lock](renv.lock):
-
-```bash
-Rscript dataspec/validators/validate.R \
-  dataspec/tests/fixtures/minimal/bundle.json \
-  dataspec/tests/fixtures/minimal
-
+```sh
+# Dual-version read-only entrypoint (0.1 and 0.2):
+Rscript dataspec/v0.2/validators/validate.R BUNDLE PROJECT_ROOT
+# Historical suite, new semantics, and immutable-pilot compatibility:
 Rscript dataspec/tests/run_tests.R
+Rscript dataspec/v0.2/tests/run_tests.R
+Rscript dataspec/v0.2/tests/pilot_compatibility.R
 ```
 
-The first command prints a deterministic JSON report to stdout. Exit 0 means
-the declared structure and traceability passed; exit 1 means validation failed;
-exit 2 means input parsing, invocation, or runtime failed. It writes no files.
-`certification` remains `not_assessed`. The test bundle describes invented data
-and review attestations; it is not evidence of a real analysis or human review.
-
-Use [the validation contract](validation_contract.md) for exact behavior,
-limitations, error codes, and the restricted JSON Schema profile. External
-schema engines can use the schema documents, but still need the R checks for
-cross-record relationships, local hashes, and scientific review prerequisites.
-
-## Read the proposal
+No analysis, migration, acquisition, publication or scientific approval is
+performed by validation. Exit 0 means supplied structure and linkage passed;
+certification remains not_assessed. Example reviews are synthetic declarations,
+not real human approval. Existing project raw/generated-file policies apply.
 
 | Document | Purpose |
-| --- | --- |
-| [Architecture](architecture.md) | Boundaries, lifecycle, ownership, semantic layer, and skill composition. |
-| [Minimum artifact contracts](artifact_contracts.md) | Proposed record model, relationships, validation rules, and lifecycle states. |
-| [Executable validation contract](validation_contract.md) | CLI behavior, schema profile, state semantics, and error families. |
-| [Bundle schema](schemas/bundle.schema.json) | Typed records, references, nested fields, and controlled vocabularies. |
-| [Authoring starters](templates/README.md) | Draft question template and complete synthetic bundle example. |
-| [Verification record](verification.md) | Executed regression checks, tested environment, limits, and next hand-off. |
-| [Project inventory](project_inventory.md) | Evidence of existing capabilities, gaps, and limits of this inspection. |
-| [Adoption and pilot](adoption_plan.md) | Ordered implementation slices and measurable acceptance criteria. |
-| [Upstream sources](upstream_sources.md) | Reference projects, intended adaptations, and dependency policy. |
+|---|---|
+| [v0.2 architecture delta](v0.2/architecture_delta.md) | Cross-pilot evidence, classification and minimal decisions |
+| [v0.2 guide](v0.2/README.md) | Lifecycle, adoption, status axes, skills and limits |
+| [v0.2 governance contract](v0.2/references/governance.md) | Typed fields and validation semantics |
+| [v0.2 schema](v0.2/schemas/bundle.schema.json) | Closed versioned envelope and records |
+| [v0.2 verification](v0.2/verification.md) | Executed checks, invariants, compatibility and scope |
+| [v0.1 architecture](architecture.md) | Historical proposal; newer semantics are defined in v0.2 |
+| [v0.1 contracts](artifact_contracts.md) | Original record responsibilities |
+| [v0.1 validation contract](validation_contract.md) | Preserved historical executable behavior |
+| [Upstream references](upstream_sources.md) | Design influences; no mandatory remote dependency |
 
-## Intended workflow
+The original `schemas/`, `validators/validate.R`, `validators/core.R`, fixtures and
+48-scenario suite remain unchanged. The two closed pilot bundles remain 0.1:
+[dengue closure](../argentina-dengue-analysis/dataspec/studies/rank_shift_2024/closure.md)
+and [climate closure](../climate-biodiversity-vulnerability-argentina/dataspec/studies/bio01_pair_eligibility/closure.md).
+Their history is not rewritten to pretend they used v0.2. A transient compatibility
+interpretation demonstrates that climate's nonvisual delivery is representable
+without inventing a figure or new human acceptance.
 
-```text
-question + intended use + audience
-  -> analysis plan <-> data contracts + semantic definitions
-  -> hypotheses or descriptive questions
-  -> analytical implementation -> execution -> validated evidence
-  -> insights and claims -> narrative specification
-  -> visualization specification -> presentation implementation
-  -> scientific, narrative, visual, and reproducibility review
-  -> versioned delivery
-```
-
-This is an iterative dependency model. A revision may reopen dependent work;
-an inconclusive finding or documented exclusion is a valid outcome. Analytical
-implementation precedes evidence; presentation implementation consumes it.
-
-## First adoption sequence
-
-1. Review this common design against both projects.
-2. Minimum record schemas and validator with synthetic fixtures: implemented.
-3. [Dengue retrospective pilot](../argentina-dengue-analysis/dataspec/studies/rank_shift_2024/README.md):
-   accepted after explicit human dispositions and bounded reproduction.
-4. Test the same generic contracts on a bounded climate methodological review
-   and its next prospective decision.
-5. Stabilize reusable skills and distribution after both pilots.
-
-Existing repository and project `AGENTS.md` instructions remain authoritative.
-Project methodology stays within its project. Common rules must not encode
-disease names, climate products, regional definitions, or domain thresholds.
-
-## Implementation boundary
-
-All 14 artifact kinds have typed schemas. The synthetic tests cover a complete
-descriptive chain, documentary evidence without an analytical execution,
-inconclusive outcomes, hypothesis timing, framework changes, invalid references,
-scope/denominator rules, review gates, byte integrity, and stale propagation.
-
-This version supports one project/study per bundle and conservative exact scope
-matching. It reads project-provided scope schemas without executing adapter code.
-It records declarations of implementation, execution, and human review separately;
-it cannot authenticate those declarations or inspect scientific truth or visual
-quality. Exact locations are recorded but not parsed within CSVs or HTML.
-
-There is no generic artifact writer, automatic migration, orchestration skill,
-renderer, or publication integration yet. The dengue pilot adds project-local
-audit, trace and closure producers without changing the common runtime. Its
-accepted scope and the pending climate portability exercise are described in the
-[adoption plan](adoption_plan.md).
+Five lightweight repository skills route, coordinate lifecycle, assemble/review
+evidence, design the story/visual branch and prepare/apply human decisions. See
+[skill architecture](v0.2/README.md#skills). Existing contract/comparability,
+geographic, rate, Quarto and publication skills retain their scopes.

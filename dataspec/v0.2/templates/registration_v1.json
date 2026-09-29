@@ -1,0 +1,92 @@
+{
+  "question_ref": {
+    "project_id": "synthetic",
+    "artifact_id": "question",
+    "revision": 1
+  },
+  "plan_ref": {
+    "project_id": "synthetic",
+    "artifact_id": "plan",
+    "revision": 1
+  },
+  "contract_refs": [
+    {
+      "project_id": "synthetic",
+      "artifact_id": "contract",
+      "revision": 1
+    }
+  ],
+  "input_refs": [
+    {
+      "path": "tests/fixtures/minimal/assets/observations.csv",
+      "sha256": "84fc8008fc3e8d26fbd06f29f3dc2bb08836def743a02092835e8d2884bfa8ac",
+      "locator": "whole file",
+      "availability": "verified_local"
+    }
+  ],
+  "criteria": [
+    "Diagnostic compatibility only"
+  ],
+  "registered_at": "2026-01-01T12:00:00Z",
+  "attestation": "workspace",
+  "record_hashes": [
+    {
+      "record_ref": {
+        "project_id": "synthetic",
+        "artifact_id": "question",
+        "revision": 1
+      },
+      "sha256": "fad66b05af79d9bdc4e1187b77e26e4a61335e4a0a15276b7d300949f117fc33"
+    },
+    {
+      "record_ref": {
+        "project_id": "synthetic",
+        "artifact_id": "plan",
+        "revision": 1
+      },
+      "sha256": "7f3d67fbad1fca4d1597b14fa63b764dfe791ab9084ca3187baba4811ab06308"
+    },
+    {
+      "record_ref": {
+        "project_id": "synthetic",
+        "artifact_id": "contract",
+        "revision": 1
+      },
+      "sha256": "b64607defebdcc9bfec71aa08f9dc544e8ddcab988e28b2ca18812554c8b08ad"
+    }
+  ],
+  "gate_checks": [
+    {
+      "criterion": "question_defined",
+      "passed": true,
+      "rationale": "Synthetic declared criterion"
+    },
+    {
+      "criterion": "inputs_fixed",
+      "passed": true,
+      "rationale": "Synthetic declared criterion"
+    },
+    {
+      "criterion": "provenance_sufficient",
+      "passed": true,
+      "rationale": "Synthetic declared criterion"
+    },
+    {
+      "criterion": "semantics_documented",
+      "passed": true,
+      "rationale": "Synthetic declared criterion"
+    },
+    {
+      "criterion": "method_specified",
+      "passed": true,
+      "rationale": "Synthetic declared criterion"
+    },
+    {
+      "criterion": "failure_conditions_defined",
+      "passed": true,
+      "rationale": "Synthetic declared criterion"
+    }
+  ],
+  "revision": 1,
+  "previous_ref": null
+}
